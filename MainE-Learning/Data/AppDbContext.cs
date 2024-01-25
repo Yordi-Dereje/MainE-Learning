@@ -19,6 +19,8 @@ namespace MainE_Learning.Data
         public DbSet<Instructor> Instructure { get; set; }
         public DbSet<MyProjects> MyProjects { get; set; }
         public DbSet<SubCourses> SubCourses { get; set; }
+        public DbSet<Admin> Admin { get; set; }
+        public DbSet<YoutubeVideos> YoutubeVideos { get; set;}
 
       
 

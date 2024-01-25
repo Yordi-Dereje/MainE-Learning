@@ -13,6 +13,7 @@ namespace MainE_Learning.Controllers
             _logger = logger;
         }
 
+
         public IActionResult Index()
         {
             return View();
@@ -25,15 +26,15 @@ namespace MainE_Learning.Controllers
             return RedirectToAction("Index");
         }
 
-        [HttpPost]
+        //[HttpPost]
         public IActionResult Register(string fullname, string username, string password)
         {
             // Add logic for handling registration
             return RedirectToAction("Index");
         }
-    
 
-    public IActionResult Privacy()
+
+        public IActionResult Privacy()
         {
             return View();
         }

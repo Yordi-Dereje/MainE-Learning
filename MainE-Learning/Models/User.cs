@@ -4,6 +4,7 @@ namespace MainE_Learning.Models
 {
     public class User
     {
+
         [Key]
         public int UserId { get; set; }
         [Required]
@@ -12,6 +13,8 @@ namespace MainE_Learning.Models
         [Required]
         public string Email { get; set; }
 
+        [Required]
+        public string UserName { get; set; }
         [Required]
         public string Password { get; set; }
         public string ReturnUrl { get; set; }

@@ -14,34 +14,15 @@ namespace MainE_Learning.Controllers
             this.userManager = userManager;
             this.passwordHasher = passwordHasher;
         }
-
-        public IActionResult Index()
-        {
-            return View(userManager.Users);
-        }
         [HttpGet]
-        public ViewResult Create() => View();
-
-        [HttpPost]
-        public async Task<IActionResult> Create(User user)
+        public IActionResult login()
         {
-            if (ModelState.IsValid)
-            {
-                AppUser appuser = new AppUser() { UserName = user.FullName, Email = user.Email };
-                IdentityResult result = await userManager.CreateAsync(appuser, user.Password);
-                if (result.Succeeded)
-                {
-                    return RedirectToAction("Index");
-                }
-                else
-                {
-                    foreach (IdentityError error in result.Errors)
-                    {
-                        ModelState.AddModelError("", error.Description);
-                    }
-                }
-            }
-            return View(user);
+            return View();
+        }
+        public ActionResult verify(HomeController add, User user)
+        {
+            return View();
         }
     }
+
 }

@@ -1,5 +1,5 @@
 ﻿@page
-@model User
+@model LoginModel
 
 @{
     ViewData["Title"] = "Log in";
@@ -36,13 +36,15 @@
                     <!-- ---tabs for login and register---- -->
                     <ul class="nav nav-tabs d-flex justify-content-start mt-4">
                         <li class="nav-item pt-2">
-                            <a class="nav-link active" data-bs-toggle="tab"
-                               href="#login">Login</a>
-                        </li>
+                           <a class="nav-link active" data-bs-toggle="tab"
+                               href="Login">Login</a>
+                            @*                             <a class="nav-link active" data-bs-toggle="tab" asp-page="/Views/Shared/UserLogin">Login</a>
+ *@                        </li>
                         <li class="nav-item pt-2">
                             <a class="nav-link" data-bs-toggle="tab"
-                               href="#register">Register</a>
-                        </li>
+                               href="Register">Register</a>
+@*                             <a class="nav-link" data-bs-toggle="tab"  asp-area="Identity" asp-page="/Account/Register">Register</a>
+ *@                        </li>
                     </ul>
                     <!-- -----tab-content-login---- -->
                     <div class="tab-content pt-3">
