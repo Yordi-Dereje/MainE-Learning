@@ -2,6 +2,7 @@
 @model RegisterModel
 @{
     ViewData["Title"] = "Register";
+    var roles = (List<IdentityRole>)ViewData["roles"];
 }
 
 @* <h1>@ViewData["Title"]</h1> *@
@@ -58,7 +59,33 @@
 
 
                                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+@* 
+                                <div class="form-floating">
+                                    <label asp-for="Input.UserRole"></label>
+                                    <select asp-for="Input.UserRole" class="form-control" asp-items='new SelectList(roles,"Id","Name")'>
+                                    </select>
+                                    <span asp-validation-for="Input.UserRole" class="text-danger"></span>
+                                </div>
 
+ *@
+                                <div class="form-floating">
+                                    <label asp-for="Input.UserRole"></label>
+                                    <input asp-for="Input.UserRole" class="form-control" value="User" readonly />
+                                    <span asp-validation-for="Input.UserRole" class="text-danger"></span>
+                                </div>
+
+
+                                <div class="form-floating">
+                                    <input asp-for="Input.FirstName" class="form-control input-field" autocomplete="FirstName" aria-required="true" />
+                                    <label asp-for="Input.FirstName"></label>
+                                    <span asp-validation-for="Input.FirstName" class="text-danger"></span>
+                                </div>
+
+                                <div class="form-floating">
+                                    <input asp-for="Input.LastName" class="form-control input-field" autocomplete="LastName" aria-required="true" />
+                                    <label asp-for="Input.LastName"></label>
+                                    <span asp-validation-for="Input.LastName" class="text-danger"></span>
+                                </div>
 
                                 <div class="form-floating">
                                     <input asp-for="Input.Email" class="form-control input-field" autocomplete="username" aria-required="true" />
@@ -80,6 +107,11 @@
                                     <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
                                 </div>
 
+                                <div class="form-floating">
+                                    <input asp-for="Input.imagePath" type="file" class="form-control input-field" aria-required="true" />
+                                    <label asp-for="Input.imagePath">Select Image</label>
+                                    <span asp-validation-for="Input.imagePath" class="text-danger"></span>
+                                </div>
 
                                 <button id="registerSubmit" type="submit" class="ibtn mt-2 hover-effect btn btn-lg btn-primary">Register</button>
 
@@ -97,19 +129,12 @@
 </section>
 <div class="col-md-6 col-md-offset-2">
     <section>
-        <h3>Use another service to register.</h3>
+       
         <hr />
         @{
             if ((Model.ExternalLogins?.Count ?? 0) == 0)
             {
-                <div>
-                    <p>
-                        There are no external authentication services configured. See this <a href="https://go.microsoft.com/fwlink/?LinkID=532715">
-                            article
-                            about setting up this ASP.NET application to support logging in via external services
-                        </a>.
-                    </p>
-                </div>
+              
             }
             else
             {

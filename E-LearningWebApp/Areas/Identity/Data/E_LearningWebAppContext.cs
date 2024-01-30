@@ -13,13 +13,7 @@ public class E_LearningWebAppContext : IdentityDbContext<E_LearningWebAppUser>
     {
     }
 
-    public DbSet<User> User { get; set; }
-    public DbSet<Courses> Courses { get; set; }
-    public DbSet<Instructor> Instructure { get; set; }
-    public DbSet<MyProjects> MyProjects { get; set; }
-    public DbSet<SubCourses> SubCourses { get; set; }
-    public DbSet<Admin> Admin { get; set; }
-    public DbSet<YoutubeVideos> YoutubeVideos { get; set; }
+    
 
     protected override void OnModelCreating(ModelBuilder builder)
     {

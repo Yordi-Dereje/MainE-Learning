@@ -1,5 +1,10 @@
-﻿
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = null;
 
+}
 <head>
     <meta charset="utf-8">
     <meta Content="width=device-width, initial-scale=1.0" name="viewport">
@@ -25,7 +30,7 @@
     <link rel="stylesheet" href="~/content/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
     <!-- Template Main CSS File -->
-    <link rel ="stylesheet" href="~/content/assets/css/style.css" >
+    <link rel="stylesheet" href="~/content/assets/css/style.css">
 
     <!-- =======================================================
     * Template Name: Mentor
@@ -35,6 +40,7 @@
     * License: https://bootstrapmade.com/license/
     ======================================================== -->
 </head>
+
 <body>
 
     <!-- ======= Header ======= -->
@@ -49,44 +55,23 @@
                 <ul>
                     <li class="nav-item">
                         <a class="nav-link text-dark" asp-area="Identity" asp-controller="Role" asp-action="Index">Roles</a>
-</li>
-                    <li class ="nav-item">
-                        <a class="nav-link text-dark" asp-controller="Admin" asp-action="Index">Admin</a>
                     </li>
-                    <li><a class="active" href="about.html">About</a></li>
-                    <li><a href="courses.html">Courses</a></li>
-                    <li><a href="trainers.html">Trainers</a></li>
-                    <li><a href="events.html">Events</a></li>
-                    <li><a href="pricing.html">Pricing</a></li> 
-                    <ul>
-   
-
                     
-                    <li class="dropdown">
-                        <a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-                        <ul>
-                            <li><a href="#">Drop Down 1</a></li>
-                            <li class="dropdown">
-                                <a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                                <ul>
-                                    <li><a href="#">Deep Drop Down 1</a></li>
-                                    <li><a href="#">Deep Drop Down 2</a></li>
-                                    <li><a href="#">Deep Drop Down 3</a></li>
-                                    <li><a href="#">Deep Drop Down 4</a></li>
-                                    <li><a href="#">Deep Drop Down 5</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Drop Down 2</a></li>
-                            <li><a href="#">Drop Down 3</a></li>
-                            <li><a href="#">Drop Down 4</a></li>
-                        </ul>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark"  asp-controller="Instructor" asp-action="Index">Instructor</a>
+                        
                     </li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-                <i class="bi bi-list mobile-nav-toggle"></i>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-controller="Course" asp-action="Index">Course</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="Identity" asp-controller="Instructor" asp-action="Index">Roles</a>
+                        <a href="trainers.html">Dashboard</a></li>
+                 
+                    <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
-            <a class="get-started-btn" asp-area="Identity" asp-page="/Account/Login">Get Started</a>
-          
+           
+
             <!-- Vendor JS Files -->
             <script src="~/content/assets/vendor/purecounter/purecounter_vanilla.js"></script>
             <script src="~/content/assets/vendor/aos/aos.js"></script>
@@ -105,7 +90,4 @@
 </body>
 @RenderSection( "Scripts",required:false)
 </ul>
-    @RenderBody()
-    
-
-
+@RenderBody()

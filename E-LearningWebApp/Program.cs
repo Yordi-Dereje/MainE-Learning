@@ -12,12 +12,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
+using E_LearningWebApp.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
 
 builder.Services.AddControllersWithViews();
-builder.Services.AddScoped<E_LearningWebAppContext, E_LearningWebAppContext>();
+/*builder.Services.AddScoped<E_LearningWebAppContext, E_LearningWebAppContext>();
+*/
+/*builder.Services.AddScoped<E_LearningDbContext, E_LearningDbContext>();...................................used*/
 
 /*builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<E_LearningWebAppContext>(options =>
@@ -28,17 +32,38 @@ builder.Services.AddDbContext<E_LearningWebAppContext>(options =>
 
 var connectionString = builder.Configuration.GetConnectionString("Conn") ?? throw new InvalidOperationException("Connection string 'E_LearningWebAppContextConnection' not found.");
 
-builder.Services.AddDbContext<E_LearningWebAppContext>(options =>
-    options.UseSqlServer(connectionString));
+/*builder.Services.AddDbContext<E_LearningDbContext>(options =>
+    options.UseSqlServer(connectionString));*/
+
+/*builder.Services.AddDbContext<E_LearningDbContext>(options =>
+        options.UseSqlServer(builder.Configuration.GetConnectionString("Conn")));.....................................used*/
 /*
 builder.Services.AddIdentity<E_LearningWebAppUser, IdentityRole>().
     AddEntityFrameworkStores<E_LearningWebAppContext>().
     AddDefaultTokenProviders();*/
 
 builder.Services.AddRazorPages();
-builder.Services.AddDefaultIdentity<E_LearningWebAppUser>(options => options.SignIn.RequireConfirmedAccount = false)
-    .AddEntityFrameworkStores<E_LearningWebAppContext>();
 
+/*builder.Services.AddDefaultIdentity<E_LearningWebAppUser>(options => options.SignIn.RequireConfirmedAccount = false)
+     .AddRoles<IdentityRole>()
+.AddEntityFrameworkStores<E_LearningWebAppContext>();....................used replaced by identityhosting*/
+
+/*
+builder.Services.AddDefaultIdentity<IdentityUser>()
+        .AddRoles<IdentityRole>() // This line registers the RoleManager service
+        .AddEntityFrameworkStores<E_LearningWebAppContext>();
+*/
+
+
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("EmailID", policy =>
+    policy.RequireClaim("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name", "support@procodeguide.com"
+    ));
+    options.AddPolicy("Adminroles", policy =>
+    policy.RequireRole("Admin")
+    );
+});
 
 var app = builder.Build();
 
@@ -56,6 +81,8 @@ app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
+
+
 
 app.MapControllerRoute(
     name: "default",

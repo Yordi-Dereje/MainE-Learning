@@ -1,9 +1,11 @@
 ﻿using E_LearningWebApp.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
 namespace E_LearningWebApp.Controllers
 {
+  
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -17,7 +19,7 @@ namespace E_LearningWebApp.Controllers
         {
             return View();
         }
-
+        [Authorize(Policy = "Adminroles")]
         public IActionResult Privacy()
         {
             return View();

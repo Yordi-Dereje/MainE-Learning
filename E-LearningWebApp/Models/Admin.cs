@@ -1,13 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace E_LearningWebApp.Models
+﻿namespace E_LearningWebApp.Models
 {
     public class Admin
     {
-        [Key]
         public int AdminId { get; set; }
-        [Required]
-        public string AdminName { get; set; }
-
+        public string Username { get; set; }
+        public string Password { get; set; }
     }
 }
