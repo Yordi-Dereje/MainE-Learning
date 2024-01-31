@@ -1,0 +1,84 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model E_LearningWebApp.Areas.Identity.Data.E_LearningWebAppUser;
+@* @model string *@
+ 
+@{
+   
+    Layout = "_Layout";
+}
+<br />
+<br />
+<br />
+<header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+        
+        <h1 class="logo me-auto"><a href="index.html">Mentor</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+        
+        <nav id="navbar" class="navbar order-last order-lg-0">
+            <ul>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="Identity" asp-controller="Role" asp-action="Index"></a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-controller="Instructor" asp-action="Index">User</a>
+
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-controller="Course" asp-action="Index">Course</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="Identity" asp-controller="Instructor" asp-action="Index">Roles</a>
+                    <a href="trainers.html">Dashboard</a>
+                </li>
+
+
+
+
+                @*  <li class="nav-item dropdown no-arrow">
+                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                       
+                    </a> *@
+                <li class="dropdown">
+                <a href="#"> <i class="fas fa-user-circle fa-fw"></i> </a>
+                <ul>
+
+
+
+
+                        <li><a class="nav-link text-dark" asp-area="Identity" asp-controller="User" asp-action="Profile"  asp-route-userId="@Model.Id">Profile</a></li>
+
+                <li><a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a></li>
+
+             </ul>
+
+                </li>
+
+
+@* 
+
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                         <a class="dropdown-item" href="#">Settings</a>
+                       <a class="nav-link text-dark" href="User/Profile">Profile</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
+                    </div>
+
+
+                </li> *@
+
+
+
+
+                <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+
+
+    </div>
+@*     <partial name="_Loginpartial" /> *@
+</header>
+<h1> hello user</h1>

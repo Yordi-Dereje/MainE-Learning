@@ -62,43 +62,83 @@ namespace E_LearningWebApp.Controllers
                     _context.SaveChanges();
                     return RedirectToAction("Index");
                 }*/
+        /*
+                [HttpGet("Edit/{CourseId}")]
+                public ActionResult Edit(int CourseId)
+                {
+                    CourseRepository pr = new CourseRepository(_context);
+                    Courses course = pr.GetCourseById(CourseId);
+                    return View(course);
+                }
 
-        /*[HttpGet("Edit/{CourseId}")]*/
-        public ActionResult Edit(int CourseId)
+
+                [HttpPost]
+                [ValidateAntiForgeryToken]
+                public IActionResult Edit(int CourseId, Courses UpdatedCourse)
+                {
+                    if (!ModelState.IsValid)
+                    {
+                        // Get the validation errors
+                        var errors = ModelState.SelectMany(x => x.Value.Errors.Select(p => p.ErrorMessage)).ToList();
+
+                        // Display the errors
+                        foreach (var error in errors)
+                        {
+                            ModelState.AddModelError("", error);
+                        }
+
+                        return View(UpdatedCourse);
+                    }
+                    CourseRepository cr = new CourseRepository(_context);
+                    Courses course = cr.GetCourseById(CourseId);
+                    if (course is not null)
+                    {
+                        course.CourseName = UpdatedCourse.CourseName;
+                        course.CourseCode = UpdatedCourse.CourseCode;
+                        course.CoursePrice = UpdatedCourse.CoursePrice;
+                        course.CourseDescription = UpdatedCourse.CourseDescription;
+                        course.CoursePrice = UpdatedCourse.CoursePrice;
+                        course.CourseDuration = UpdatedCourse.CourseDuration;
+                        cr.UpdateCourse(course);
+                    }
+                    return RedirectToAction("Index");
+                }*/
+        [HttpGet]
+        public async Task<IActionResult> Edit(int courseid)
         {
-            CourseRepository pr = new CourseRepository(_context);
-            Courses course = pr.GetCourseById(CourseId);
+            /*CourseRepository pr = new CourseRepository(_context);
+            Courses course = pr.GetCourseById(CourseId);*/
+            var course = await _context.Courses.FindAsync(courseid);
             return View(course);
         }
 
-        /* [HttpPost("Edit/{CourseId}")]
-         [ValidateAntiForgeryToken]
 
-         public IActionResult Edit(int CourseId, Courses UpdatedCourse)
-         {
-             CourseRepository cr = new CourseRepository(_context);
-             Courses course = cr.GetCourseById(CourseId);
-             if (course is not null)
-             {
-                 course.CourseName = UpdatedCourse.CourseName;
-                 course.CourseCode = UpdatedCourse.CourseCode;
-                 course.CoursePrice = UpdatedCourse.CoursePrice;
-                 course.CourseDescription = UpdatedCourse.CourseDescription;
-                 course.CoursePrice = UpdatedCourse.CoursePrice;
-                 course.CourseDuration = UpdatedCourse.CourseDuration;
-                 cr.UpdateCourse(course);
-             }
-             return RedirectToAction("Index");
-         }*/
         [HttpPost]
-        public IActionResult Edit(Courses UpdatedCourse)
+        public async Task<IActionResult> Edit( Courses UpdatedCourse)
         {
-            CourseRepository cr = new CourseRepository(_context);
-
-            cr.UpdateCourse(UpdatedCourse);
-
+            Courses course = await _context.Courses.FindAsync(UpdatedCourse.CourseId);
+          
+            if (course is not null)
+            {
+                course.CourseName = UpdatedCourse.CourseName;
+                course.CourseCode = UpdatedCourse.CourseCode;
+                course.CoursePrice = UpdatedCourse.CoursePrice;
+                course.CourseDescription = UpdatedCourse.CourseDescription;
+                course.CoursePrice = UpdatedCourse.CoursePrice;
+                course.CourseDuration = UpdatedCourse.CourseDuration;
+               await _context.SaveChangesAsync();
+            }
             return RedirectToAction("Index");
         }
+        /*  [HttpPost]
+          public IActionResult Edit(Courses UpdatedCourse)
+          {
+              CourseRepository cr = new CourseRepository(_context);
+
+              cr.UpdateCourse(UpdatedCourse);
+
+              return RedirectToAction("Index");
+          }*/
         [HttpGet]
         public ActionResult Delete(int? CourseId)
         {

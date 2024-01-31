@@ -255,3 +255,7 @@ C:\Users\Hp\Desktop\E-LearningWebApp\E-LearningWebApp\bin\Debug\net6.0\runtimes\
 C:\Users\Hp\Desktop\E-LearningWebApp\E-LearningWebApp\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\Hp\Desktop\E-LearningWebApp\E-LearningWebApp\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\Hp\Desktop\E-LearningWebApp\E-LearningWebApp\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\Hp\Desktop\E-LearningWebApp\E-LearningWebApp\bin\Debug\net6.0\RestSharp.dll
+C:\Users\Hp\Desktop\E-LearningWebApp\E-LearningWebApp\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+C:\Users\Hp\Desktop\E-LearningWebApp\E-LearningWebApp\bin\Debug\net6.0\System.Text.Json.dll
+C:\Users\Hp\Desktop\E-LearningWebApp\E-LearningWebApp\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
