@@ -1,0 +1,57 @@
+﻿@model E_LearningWebApp.Models.SubCourses
+
+@{
+    ViewData["Title"] = "CreateSubCourse";
+}
+
+<h1>CreateSubCourse</h1>
+
+<h4>SubCourses</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateSubCourse" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="SubCourseName" class="control-label"></label>
+                <input asp-for="SubCourseName" class="form-control" />
+                <span asp-validation-for="SubCourseName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SubCourseDescription" class="control-label"></label>
+                <input asp-for="SubCourseDescription" class="form-control" />
+                <span asp-validation-for="SubCourseDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StartDate" class="control-label"></label>
+                <input asp-for="StartDate" class="form-control" />
+                <span asp-validation-for="StartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EndDate" class="control-label"></label>
+                <input asp-for="EndDate" class="form-control" />
+                <span asp-validation-for="EndDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CourseId" class="control-label"></label>
+                <span class="form-control">@ViewBag.CourseName</span>
+            </div>
+
+           @*  <div class="form-group">
+                <label asp-for="CourseId" class="control-label"></label>
+                <label asp-for="CourseId" class="form-control">@ViewBag.CourseId</label>
+            </div> *@@* asp-items="ViewBag.CourseId" *@
+            <div class="form-group">
+                <input type="submit" value="Create" asp-route-courseId="@ViewBag.CourseId" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

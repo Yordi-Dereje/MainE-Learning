@@ -64,32 +64,36 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hp/Desktop/E-LearningWebApp/E-LearningWebApp/Views/Admin/CreateCourse.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3JlYXRlQ291cnNlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Hp/Desktop/E-LearningWebApp/E-LearningWebApp/Views/Admin/DashBoard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGFzaEJvYXJkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hp/Desktop/E-LearningWebApp/E-LearningWebApp/Views/Admin/DeleteCourse.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGVsZXRlQ291cnNlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Hp/Desktop/E-LearningWebApp/E-LearningWebApp/Views/Admin/EditCourse.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdENvdXJzZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Hp/Desktop/E-LearningWebApp/E-LearningWebApp/Views/Admin/GetAllCourses.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cR2V0QWxsQ291cnNlcy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Hp/Desktop/E-LearningWebApp/E-LearningWebApp/Views/Admin/GetCourseById.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cR2V0Q291cnNlQnlJZC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Hp/Desktop/E-LearningWebApp/E-LearningWebApp/Views/Admin/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hp/Desktop/E-LearningWebApp/E-LearningWebApp/Views/Course/CreateCourse.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXENyZWF0ZUNvdXJzZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hp/Desktop/E-LearningWebApp/E-LearningWebApp/Views/Course/DeleteCourse.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXERlbGV0ZUNvdXJzZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hp/Desktop/E-LearningWebApp/E-LearningWebApp/Views/Course/EditCourse.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXEVkaXRDb3Vyc2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hp/Desktop/E-LearningWebApp/E-LearningWebApp/Views/Course/EditCourses.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXEVkaXRDb3Vyc2VzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hp/Desktop/E-LearningWebApp/E-LearningWebApp/Views/Course/GetAllCourses.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXEdldEFsbENvdXJzZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hp/Desktop/E-LearningWebApp/E-LearningWebApp/Views/Course/GetCourseById.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXEdldENvdXJzZUJ5SWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Hp/Desktop/E-LearningWebApp/E-LearningWebApp/Views/Course/Index.cshtml]
@@ -138,6 +142,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Hp/Desktop/E-LearningWebApp/E-LearningWebApp/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hp/Desktop/E-LearningWebApp/E-LearningWebApp/Views/SubCourse/CreateSubCourse.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViQ291cnNlXENyZWF0ZVN1YkNvdXJzZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Hp/Desktop/E-LearningWebApp/E-LearningWebApp/Views/User/Index.cshtml]

@@ -4,6 +4,7 @@ using E_LearningWebApp.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace E_LearningWebApp.Migrations.E_LearningDb
 {
     [DbContext(typeof(E_LearningDbContext))]
-    partial class E_LearningDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240201054404_fksubcourse")]
+    partial class fksubcourse
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

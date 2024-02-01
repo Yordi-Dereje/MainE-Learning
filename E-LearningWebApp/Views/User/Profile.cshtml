@@ -1,8 +1,44 @@
 ﻿@model E_LearningWebApp.Areas.Identity.Data.E_LearningWebAppUser;
-@{
+@* @{
     Layout = "_Layout";
-}
-<h2>UserId: @Model.Id</h2>
+} *@
+<br />
+<br />
+<br />
+<
+<section class="form-body">
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+        <div class="container d-flex align-items-center">
+
+            <h1 class="logo me-auto"><a href="index.html">Mentor</a></h1>
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+            <nav id="navbar" class="navbar order-last order-lg-0">
+                <ul>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="Identity" asp-controller="Role" asp-action="Index">Roles</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-controller="Instructor" asp-action="Index">Instructor</a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-controller="Course" asp-action="Index">Course</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="Identity" asp-controller="Instructor" asp-action="Index">Roles</a>
+                        <a href="trainers.html">Dashboard</a>
+                    </li>
+
+                    <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav>
+
+
+        </div>
+    </header>
 <h2>Username: @Model.UserName</h2>
 <h2>FirstName: @Model.FirstName</h2>
 <h2>LastName: @Model.LastName</h2>

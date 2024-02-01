@@ -10,7 +10,7 @@
 <h1>GetAllCourses</h1>
 
 <p>
-    <a asp-action="Course/Create">Create New</a>
+    <a asp-controller="Course" asp-action="CreateCourse">Create New</a>
 </p>
 <table class="table">
     <thead>
@@ -55,19 +55,19 @@
                 @* <a asp-action="Edit" asp-route-id="@item.CourseId">Edit</a> | *@
 
 
-                    <a href="/Course/Edit/@item.CourseId" >Edit</a> |
-
+                   @*  <a href="/Course/Edit/@item.CourseId" >Edit</a> | *@
+                    <a asp-controller="Course" asp-action="EditCourses" asp-route-courseid="@item.CourseId">Edit</a>|
 
                     @* <a href="/Course/GetCourseById/@item.CourseId">Details</a> | *@
 
                     <div class="btn-group">
-                        <a href="/Course/GetCourseById/@item.CourseId" class="btn btn-sm btn-outline-secondary">View Detail</a>
+                        <a asp-controller="Course" asp-action="GetCourseById" asp-route-courseid="@item.CourseId" class="btn btn-sm btn-outline-secondary">View Detail</a>
                     </div>|
-
-                    <a href ="/Course/Delete/@item.CourseId">
+@*                    
+                *@                    <a asp-controller="Course" asp-action="DeleteCourse" asp-route-courseid="@item.CourseId">
                         Delete
                     </a>
-
+                   @*  <a asp-controller="Course" asp-action="DeleteCourse" asp-route-courseid="@item?.CourseId">Delete</a> *@
 
                   @*   <a href="/Courses/Delete/@item.CourseId">Delete</a> *@
 @*                 <a asp-action="Delete" asp-route-id="@item.CourseId">Delete</a>

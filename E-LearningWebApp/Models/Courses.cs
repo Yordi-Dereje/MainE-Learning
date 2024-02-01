@@ -21,6 +21,7 @@ namespace E_LearningWebApp.Models
 
         [Required]
         public DateTime CourseDuration { get; set; }
+        public List<SubCourses>? SubCourses { get; set;}
 
     }
 }

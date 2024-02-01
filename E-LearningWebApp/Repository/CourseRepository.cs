@@ -1,5 +1,6 @@
 ﻿using E_LearningWebApp.Data;
 using E_LearningWebApp.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace E_LearningWebApp.Repository
 {
@@ -19,22 +20,31 @@ namespace E_LearningWebApp.Repository
         }
         public List<Courses> GetAllCourses()
         {
-            return this._context.Courses.ToList();
+            return this._context.Courses.AsNoTracking().ToList();
         }
         public Courses GetCourseById(int id)
         {
-            Courses? courses = this._context.Courses.Find(id);
+           var courses = this._context.Courses.Find(id);
             return courses;
         }
         public void UpdateCourse(Courses updatedCourse)
         {
-            _context.Update(updatedCourse);
-            _context.SaveChanges();
+            var updated  = _context.Courses.AsNoTracking().FirstOrDefault(p =>p.CourseId == updatedCourse.CourseId);
+            if (updated != null)
+            {
+                _context.Courses.Update(updated);
+                _context.SaveChanges();
+            }            
         }
         public void DeleteCourse(Courses courses)
         {
-            _context.Remove(courses);
-            _context.SaveChanges();
+            var deletecourse = _context.Courses.AsNoTracking().FirstOrDefault(p => p.CourseId == courses.CourseId);
+            if(deletecourse != null)
+            {
+                _context.Remove(deletecourse);
+                _context.SaveChanges();
+            }
+           
         }
     }
 }

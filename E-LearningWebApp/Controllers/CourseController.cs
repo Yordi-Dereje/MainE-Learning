@@ -4,6 +4,8 @@ using E_LearningWebApp.Repository;
 using E_LearningWebApp.Data;
 using Microsoft.AspNetCore.Identity;
 using E_LearningWebApp.Areas.Identity.Data;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
+using Microsoft.EntityFrameworkCore;
 
 namespace E_LearningWebApp.Controllers
 {
@@ -12,9 +14,8 @@ namespace E_LearningWebApp.Controllers
         private E_LearningDbContext _context = new E_LearningDbContext();
 
         private readonly UserManager<E_LearningWebAppUser> _userManager;
-        public CourseController(/*E_LearningDbContext _context*/ UserManager<E_LearningWebAppUser> _userManager)
+        public CourseController(UserManager<E_LearningWebAppUser> _userManager)
         {
-          /*  this._context = _context;*/
             this._userManager = _userManager;
         }
         public IActionResult Index()
@@ -22,20 +23,20 @@ namespace E_LearningWebApp.Controllers
             return View();
         }
 
-        public IActionResult Create()
+        public IActionResult CreateCourse()
         {
             return View();
         }
         [HttpPost]
-        public IActionResult Create(Courses course)
+        public IActionResult CreateCourse(Courses course)
         {
             CourseRepository cr = new CourseRepository(_context);
 
             if (!ModelState.IsValid)
-                    return View("Create");
+                return View("CreateCourse");
 
             cr.AddCourse(course);
-            return RedirectToAction("Index");
+            return RedirectToAction("GetAllCourses");
         }
 
 
@@ -46,115 +47,57 @@ namespace E_LearningWebApp.Controllers
             List<Courses> courses = pr.GetAllCourses();
             return View(courses);
         }
-
-        public IActionResult GetCourseById(int id)
-        {
-            CourseRepository pr = new CourseRepository(_context);
-            Courses course = pr.GetCourseById(id);
-            return View(course);
-        }
-
-        /*
-                [HttpPost]
-                public ActionResult Edit(Customer customer)
-                {
-                    _context.Customers.Update(customer);
-                    _context.SaveChanges();
-                    return RedirectToAction("Index");
-                }*/
-        /*
-                [HttpGet("Edit/{CourseId}")]
-                public ActionResult Edit(int CourseId)
-                {
-                    CourseRepository pr = new CourseRepository(_context);
-                    Courses course = pr.GetCourseById(CourseId);
-                    return View(course);
-                }
-
-
-                [HttpPost]
-                [ValidateAntiForgeryToken]
-                public IActionResult Edit(int CourseId, Courses UpdatedCourse)
-                {
-                    if (!ModelState.IsValid)
-                    {
-                        // Get the validation errors
-                        var errors = ModelState.SelectMany(x => x.Value.Errors.Select(p => p.ErrorMessage)).ToList();
-
-                        // Display the errors
-                        foreach (var error in errors)
-                        {
-                            ModelState.AddModelError("", error);
-                        }
-
-                        return View(UpdatedCourse);
-                    }
-                    CourseRepository cr = new CourseRepository(_context);
-                    Courses course = cr.GetCourseById(CourseId);
-                    if (course is not null)
-                    {
-                        course.CourseName = UpdatedCourse.CourseName;
-                        course.CourseCode = UpdatedCourse.CourseCode;
-                        course.CoursePrice = UpdatedCourse.CoursePrice;
-                        course.CourseDescription = UpdatedCourse.CourseDescription;
-                        course.CoursePrice = UpdatedCourse.CoursePrice;
-                        course.CourseDuration = UpdatedCourse.CourseDuration;
-                        cr.UpdateCourse(course);
-                    }
-                    return RedirectToAction("Index");
-                }*/
         [HttpGet]
-        public async Task<IActionResult> Edit(int courseid)
+        public async Task<IActionResult> GetCourseById([FromQuery] int courseid)
         {
-            /*CourseRepository pr = new CourseRepository(_context);
-            Courses course = pr.GetCourseById(CourseId);*/
+            var course = await _context.Courses.FindAsync(courseid);
+            return View(course);
+
+        }
+        [HttpGet("editCourses/{courseid}")]
+        public async Task<IActionResult> EditCourses( int courseid)
+        {
             var course = await _context.Courses.FindAsync(courseid);
             return View(course);
         }
+     
 
 
-        [HttpPost]
-        public async Task<IActionResult> Edit( Courses UpdatedCourse)
+        [HttpPost("editCourses/{courseid}")]
+        public IActionResult EditCourses(int courseid, Courses UpdatedCourse)
         {
-            Courses course = await _context.Courses.FindAsync(UpdatedCourse.CourseId);
-          
-            if (course is not null)
+            var courses = _context.Courses.AsNoTracking().FirstOrDefaultAsync(course => course.CourseId ==courseid);
+
+            if (courses != null)
             {
-                course.CourseName = UpdatedCourse.CourseName;
-                course.CourseCode = UpdatedCourse.CourseCode;
-                course.CoursePrice = UpdatedCourse.CoursePrice;
-                course.CourseDescription = UpdatedCourse.CourseDescription;
-                course.CoursePrice = UpdatedCourse.CoursePrice;
-                course.CourseDuration = UpdatedCourse.CourseDuration;
-               await _context.SaveChangesAsync();
+                _context.Update(UpdatedCourse);
+                _context.SaveChanges();
             }
-            return RedirectToAction("Index");
-        }
-        /*  [HttpPost]
-          public IActionResult Edit(Courses UpdatedCourse)
-          {
-              CourseRepository cr = new CourseRepository(_context);
 
-              cr.UpdateCourse(UpdatedCourse);
-
-              return RedirectToAction("Index");
-          }*/
-        [HttpGet]
-        public ActionResult Delete(int? CourseId)
-        {
-            var courses = _context.Courses.Find(CourseId);
-            return View(courses);
+            return RedirectToAction("GetAllCourses", "Course");
         }
-        [HttpPost]
-        public IActionResult Delete(int? CourseId, Courses courses)
+
+        [HttpGet("deleteCourse/{courseid}")]
+        public async Task<IActionResult> DeleteCourse(int courseid)
         {
-            var cour = _context.Courses.Find(CourseId);
-            _context.Courses.Remove(cour);
-            _context.SaveChanges();
-            /*CourseRepository cr = new CourseRepository(_context);
-            Courses course = cr.GetCourseById(CourseId);
-            cr.DeleteCourse(course);*/
-            return RedirectToAction("Index");
+            var course = await _context.Courses.FindAsync(courseid);
+            return View(course);
+        }
+        /*all above are working i dare you to touch it and die*/
+        [HttpPost("deleteCourse/{courseid}")]
+        public IActionResult DeleteCourse(int courseid, Courses deletedcourse)
+        {
+            var courses =_context.Courses.AsNoTracking().FirstOrDefaultAsync(course => course.CourseId == courseid);
+
+            if (courses != null)
+            {
+                _context.Remove(deletedcourse);
+                _context.SaveChanges();
+            }
+
+            return RedirectToAction("GetAllCourses", "Course");
         }
     }
-}
+                
+    } 
+

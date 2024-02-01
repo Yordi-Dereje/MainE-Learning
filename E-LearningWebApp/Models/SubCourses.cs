@@ -10,6 +10,8 @@ namespace E_LearningWebApp.Models
         public string SubCourseDescription { get; set;}
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set;}
+        public int CourseId { get; set; }
+        public virtual Courses Course { get; set; }
 
     }
 }
