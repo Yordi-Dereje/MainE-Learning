@@ -13,16 +13,8 @@
       "PackagePath": "staticwebassets\\Content\\Readme.txt"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\E-LearningWebApp\\E-LearningWebApp\\wwwroot\\Content\\assests\\img2.jpg",
-      "PackagePath": "staticwebassets\\Content\\assests\\img2.jpg"
-    },
-    {
-      "Id": "C:\\Users\\Hp\\Desktop\\E-LearningWebApp\\E-LearningWebApp\\wwwroot\\Content\\assests\\logo-dark.svg",
-      "PackagePath": "staticwebassets\\Content\\assests\\logo-dark.svg"
-    },
-    {
-      "Id": "C:\\Users\\Hp\\Desktop\\E-LearningWebApp\\E-LearningWebApp\\wwwroot\\Content\\assests\\logo-light.svg",
-      "PackagePath": "staticwebassets\\Content\\assests\\logo-light.svg"
+      "Id": "C:\\Users\\Hp\\Desktop\\E-LearningWebApp\\E-LearningWebApp\\wwwroot\\Content\\assests\\temari.PNG",
+      "PackagePath": "staticwebassets\\Content\\assests\\temari.PNG"
     },
     {
       "Id": "C:\\Users\\Hp\\Desktop\\E-LearningWebApp\\E-LearningWebApp\\wwwroot\\Content\\assets\\css\\style.css",
@@ -485,24 +477,8 @@
       "PackagePath": "staticwebassets\\Content\\index.html"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\E-LearningWebApp\\E-LearningWebApp\\wwwroot\\Content\\iofrm-form.zip",
-      "PackagePath": "staticwebassets\\Content\\iofrm-form.zip"
-    },
-    {
       "Id": "C:\\Users\\Hp\\Desktop\\E-LearningWebApp\\E-LearningWebApp\\wwwroot\\Content\\iofrm-form\\README.md",
       "PackagePath": "staticwebassets\\Content\\iofrm-form\\README.md"
-    },
-    {
-      "Id": "C:\\Users\\Hp\\Desktop\\E-LearningWebApp\\E-LearningWebApp\\wwwroot\\Content\\iofrm-form\\assests\\img2.jpg",
-      "PackagePath": "staticwebassets\\Content\\iofrm-form\\assests\\img2.jpg"
-    },
-    {
-      "Id": "C:\\Users\\Hp\\Desktop\\E-LearningWebApp\\E-LearningWebApp\\wwwroot\\Content\\iofrm-form\\assests\\logo-dark.svg",
-      "PackagePath": "staticwebassets\\Content\\iofrm-form\\assests\\logo-dark.svg"
-    },
-    {
-      "Id": "C:\\Users\\Hp\\Desktop\\E-LearningWebApp\\E-LearningWebApp\\wwwroot\\Content\\iofrm-form\\assests\\logo-light.svg",
-      "PackagePath": "staticwebassets\\Content\\iofrm-form\\assests\\logo-light.svg"
     },
     {
       "Id": "C:\\Users\\Hp\\Desktop\\E-LearningWebApp\\E-LearningWebApp\\wwwroot\\Content\\iofrm-form\\css\\responsive.css",

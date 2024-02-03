@@ -100,6 +100,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Hp/Desktop/E-LearningWebApp/E-LearningWebApp/Views/Home/ContactUs.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0VXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hp/Desktop/E-LearningWebApp/E-LearningWebApp/Views/Home/Courses.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb3Vyc2VzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Hp/Desktop/E-LearningWebApp/E-LearningWebApp/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -146,6 +154,22 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Hp/Desktop/E-LearningWebApp/E-LearningWebApp/Views/SubCourse/CreateSubCourse.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViQ291cnNlXENyZWF0ZVN1YkNvdXJzZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hp/Desktop/E-LearningWebApp/E-LearningWebApp/Views/SubCourse/DeleteSubCourse.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViQ291cnNlXERlbGV0ZVN1YkNvdXJzZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hp/Desktop/E-LearningWebApp/E-LearningWebApp/Views/SubCourse/EditSubCourse.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViQ291cnNlXEVkaXRTdWJDb3Vyc2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hp/Desktop/E-LearningWebApp/E-LearningWebApp/Views/SubCourse/GetAllSubCourses.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViQ291cnNlXEdldEFsbFN1YkNvdXJzZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hp/Desktop/E-LearningWebApp/E-LearningWebApp/Views/SubCourse/GetSubCourseByCourseId.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViQ291cnNlXEdldFN1YkNvdXJzZUJ5Q291cnNlSWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Hp/Desktop/E-LearningWebApp/E-LearningWebApp/Views/User/Index.cshtml]

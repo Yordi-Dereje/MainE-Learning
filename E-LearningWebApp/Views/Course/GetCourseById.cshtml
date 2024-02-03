@@ -10,6 +10,7 @@
     <h4>Courses</h4>
     <hr />
     <dl class="row">
+        
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.CourseName)
         </dt>
@@ -43,6 +44,8 @@
     </dl>
 </div>
 <div>
-    <a asp-controller="Subcourse" asp-action="CreateSubCourse" asp-route-courseid="@Model?.CourseId">SubCourse</a> |
-    <a asp-action="Index">Back to List</a>
+@*  ..works perfectly dont touch   <a class="nav-link text-dark" asp-controller="Subcourse" asp-action="CreateSubCourse" asp-route-courseid="@ViewBag.CourseId">AllSubCourse</a>|
+ *@
+     <a class="nav-link text-dark" asp-controller="Subcourse" asp-action="GetAllSubCourses" asp-route-courseid="@ViewBag.CourseId">AllSubCourse</a>|
+     <a asp-action="Index">Back to List</a>
 </div>

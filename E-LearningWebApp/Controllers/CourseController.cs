@@ -51,6 +51,7 @@ namespace E_LearningWebApp.Controllers
         public async Task<IActionResult> GetCourseById([FromQuery] int courseid)
         {
             var course = await _context.Courses.FindAsync(courseid);
+            ViewBag.CourseId = courseid;
             return View(course);
 
         }
@@ -83,7 +84,7 @@ namespace E_LearningWebApp.Controllers
             var course = await _context.Courses.FindAsync(courseid);
             return View(course);
         }
-        /*all above are working i dare you to touch it and die*/
+        
         [HttpPost("deleteCourse/{courseid}")]
         public IActionResult DeleteCourse(int courseid, Courses deletedcourse)
         {
@@ -97,7 +98,8 @@ namespace E_LearningWebApp.Controllers
 
             return RedirectToAction("GetAllCourses", "Course");
         }
+        /*all above are working i dare you to touch it and die*/
     }
-                
-    } 
+
+} 
 

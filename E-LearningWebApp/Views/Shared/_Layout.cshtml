@@ -49,24 +49,107 @@
 <body>
 
     <!-- ======= Header ======= -->
+   
+       
+
     <header id="header" class="fixed-top">
         <div class="container d-flex align-items-center">
 
-          
-            <!-- Vendor JS Files -->
-            <script src="~/content/assets/vendor/purecounter/purecounter_vanilla.js"></script>
-            <script src="~/content/assets/vendor/aos/aos.js"></script>
-            <script src="~/content/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-            <script src="~/content/assets/vendor/swiper/swiper-bundle.min.js"></script>
-            <script src="~/content/assets/vendor/php-email-form/validate.js"></script>
+            <h1 class="logo me-auto"><a href="index.html">Mentor</a></h1>
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
-            <!-- Template Main JS File -->
-            <script src="~/content/assets/js/main.js"></script>
+            <nav id="navbar" class="navbar order-last order-lg-0">
+                <ul>
+                    <!--use the below commented li on admin layout-->
+                    @*  <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="Identity" asp-controller="Role" asp-action="Index">Roles</a>
+                    </li> *@
+                    @* <li class="nav-item">
+                    <a class="nav-link text-dark" asp-controller="Admin" asp-action="Index">Admin</a>
+                    </li> *@
+                    @* <li class="nav-item">
+                    <a class="nav-link text-dark" asp-controller="User" asp-action="ListUsers">User</a>
+                    </li> *@
+
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-controller="Home" asp-action="Courses">Courses</a>
+                    </li>
+
+
+                    <li><a class="active" href="#about">About</a></li>
+
+
+                    <li><a href="#trainers">Trainers</a></li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-controller="Home" asp-action="ContactUs">Contact</a>
+                    </li>
+
+                    <ul>
+
+
+
+                        <li class="dropdown">
+                            <a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+                            <ul>
+                                <li><a href="#">Drop Down 1</a></li>
+
+
+
+
+                                <li class="dropdown">
+                                    <a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                                    <ul>
+                                        <li><a href="#">Deep Drop Down 1</a></li>
+                                        <li><a href="#">Deep Drop Down 2</a></li>
+                                        <li><a href="#">Deep Drop Down 3</a></li>
+                                        <li><a href="#">Deep Drop Down 4</a></li>
+                                        <li><a href="#">Deep Drop Down 5</a></li>
+                                    </ul>
+                                </li>
+
+
+
+                                <li><a href="#">Drop Down 2</a></li>
+                                <li><a href="#">Drop Down 3</a></li>
+                                <li><a href="#">Drop Down 4</a></li>
+                            </ul>
+                        </li>
+
+
+
+                        <li><a href="/Home/ContactUs">Contact</a></li>
+                    </ul>
+                    <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav>
+            <a class="get-started-btn" asp-area="Identity" asp-page="/Account/Login">Get Started</a>
 
         </div>
-        @* <partial name="_Loginpartial" /> *@
+       
+        <div class="container d-flex align-items-center">
+
+
+         
+
+        </div>
     </header>
 
+
+   
+
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-Content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="~/Content/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="~/Content/assets/vendor/aos/aos.js"></script>
+    <script src="~/Content/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="~/Content/assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="~/Content/assets/js/main.js"></script>
 
 </body>
 @RenderSection( "Scripts",required:false)

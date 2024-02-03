@@ -34,46 +34,33 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.CourseName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CourseCode)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CourseDescription)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CoursePrice)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CourseDuration)
-            </td>
-            <td>
-                @* <a asp-action="Edit" asp-route-id="@item.CourseId">Edit</a> | *@
-
-
-                   @*  <a href="/Course/Edit/@item.CourseId" >Edit</a> | *@
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CourseName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CourseCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CourseDescription)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CoursePrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CourseDuration)
+                </td>
+                <td>
                     <a asp-controller="Course" asp-action="EditCourses" asp-route-courseid="@item.CourseId">Edit</a>|
-
-                    @* <a href="/Course/GetCourseById/@item.CourseId">Details</a> | *@
 
                     <div class="btn-group">
                         <a asp-controller="Course" asp-action="GetCourseById" asp-route-courseid="@item.CourseId" class="btn btn-sm btn-outline-secondary">View Detail</a>
                     </div>|
-@*                    
-                *@                    <a asp-controller="Course" asp-action="DeleteCourse" asp-route-courseid="@item.CourseId">
-                        Delete
-                    </a>
-                   @*  <a asp-controller="Course" asp-action="DeleteCourse" asp-route-courseid="@item?.CourseId">Delete</a> *@
-
-                  @*   <a href="/Courses/Delete/@item.CourseId">Delete</a> *@
-@*                 <a asp-action="Delete" asp-route-id="@item.CourseId">Delete</a>
-
- *@            </td>
-        </tr>
-}
+                    <a asp-controller="Course" asp-action="DeleteCourse" asp-route-courseid="@item.CourseId">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

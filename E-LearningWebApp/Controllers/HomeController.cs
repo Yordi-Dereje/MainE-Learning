@@ -19,6 +19,15 @@ namespace E_LearningWebApp.Controllers
         {
             return View();
         }
+        public IActionResult Courses()
+        {
+            return View();
+        }
+        public IActionResult ContactUs()
+        {
+            return View();
+        }
+
         [Authorize(Policy = "Adminroles")]
         public IActionResult Privacy()
         {
