@@ -19,6 +19,7 @@ public class E_LearningWebAppUser : IdentityUser
     [Required]
     public string LastName { get; set; }
 
+
     public string imagePath { get; set; }
 
     /*[Required]

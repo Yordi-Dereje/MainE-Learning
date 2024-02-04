@@ -21,6 +21,7 @@ using Microsoft.Net.Http.Headers;
 
 namespace E_LearningWebApp.Areas.Identity.Pages.Account
 {
+    [AllowAnonymous]
     public class LoginModel : PageModel
     {
         private readonly SignInManager<E_LearningWebAppUser> _signInManager;

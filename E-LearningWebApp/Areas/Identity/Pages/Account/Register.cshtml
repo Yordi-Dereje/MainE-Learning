@@ -5,154 +5,137 @@
     var roles = (List<IdentityRole>)ViewData["roles"];
 }
 
-@* <h1>@ViewData["Title"]</h1> *@
 
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>iofrm</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="~/content/iofrm-form/css/style.css">
-    <link rel="stylesheet" href="~/content/iofrm-form/css/responsive.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/content/logincss/login.css">
 </head>
-
-<section class="form-body">
-    <div class="container-fluid">
-        <!-- ----logo for small screen---- -->
-        <figure class="d-lg-none pt-3">
-            <img src="~/content/assests/logo-light.svg" alt="iofrm" class="img-fluid logo">
-        </figure>
-        <div class="row align-items-center">
-            <div class="col-lg-5 iofrm-img d-lg-block d-none">
-                <!-- ----logo for large screen--- -->
-                <figure class="iofrm-logo d-flex justify-content-center align-items-center">
-                    <img src="~/content/assests/logo-dark.svg" alt="iofrm" class="img-fluid logo">
-                </figure>
+<body>
+    <div class="container myflex">
+        <div class="row py-5 mt-4 align-items-center ">
+            <!-- For Demo Purpose -->
+            <div class="col-md-5 pr-lg-5 mb-5 mb-md-0">
+                <img src="~/content/logincss/logo.PNG" alt="" class="img" style="padding-left: 30px;">
+                <h1 style="padding-left: 20px; font-weight: bold;">Admission Portal</h1>
+                <p class="font-italic text-muted mb-0" style="padding-left: 20px;">
+                    Welcome!Start your application by creating your account, you can do this by filling out the form, or via Google or GitHub directly.
+                    If you already have an account, please click the "Log in" button to access your account.
+                </p>
             </div>
-            <div class="col-lg-7 col-12 form-content d-flex justify-content-center align-items-center">
-                <div class="form-items">
-                    <h3>Get more things done with Loggin platform.</h3>
-                    <p class="">Access to the most powerfull tool in the entire design and web industry.</p>
-                    <!-- ---tabs for login and register---- -->
-                    <ul class="nav nav-tabs d-flex justify-content-start mt-4">
-                        <li class="nav-item pt-2">
-                            <a class="nav-link active" data-bs-toggle="tab"
-                               href="Login">Login</a>
-                            @*                             <a class="nav-link active" data-bs-toggle="tab" asp-page="/Views/Shared/UserLogin">Login</a>
-                            *@
-                        </li>
-                        <li class="nav-item pt-2">
-                            <a class="nav-link" data-bs-toggle="tab"
-                               href="Register">Register</a>
-                            @*                             <a class="nav-link" data-bs-toggle="tab"  asp-area="Identity" asp-page="/Account/Register">Register</a>
-                            *@
-                        </li>
-                    </ul>
-                    <div class="tab-content">
-                        <div class="tab-pane active" id="register">
+            <!-- Registeration Form -->
+            <div class="col-md-7 col-lg-6 ml-auto" id ="register">
+                <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                    <div class="row">
+                        <h5>Sign Up</h5>
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <!-- First Name -->
+                        @*    <div class="input-group col-lg-6 mb-4">
+                        <input asp-for="Input.FirstName"  aria-required="true" />
+                        <span asp-validation-for="Input.FirstName" class="text-danger"></span>
+                        </div>
 
-
-                            <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
-
-
-
-                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-@* 
-                                <div class="form-floating">
-                                    <label asp-for="Input.UserRole"></label>
-                                    <select asp-for="Input.UserRole" class="form-control" asp-items='new SelectList(roles,"Id","Name")'>
-                                    </select>
-                                    <span asp-validation-for="Input.UserRole" class="text-danger"></span>
-                                </div>
-
- *@
-                                <div class="form-floating">
-                                    <label asp-for="Input.UserRole"></label>
-                                    <input asp-for="Input.UserRole" class="form-control" value="User" readonly />
-                                    <span asp-validation-for="Input.UserRole" class="text-danger"></span>
-                                </div>
-
-
-                                <div class="form-floating">
-                                    <input asp-for="Input.FirstName" class="form-control input-field" autocomplete="FirstName" aria-required="true" />
-                                    <label asp-for="Input.FirstName"></label>
-                                    <span asp-validation-for="Input.FirstName" class="text-danger"></span>
-                                </div>
-
-                                <div class="form-floating">
-                                    <input asp-for="Input.LastName" class="form-control input-field" autocomplete="LastName" aria-required="true" />
-                                    <label asp-for="Input.LastName"></label>
-                                    <span asp-validation-for="Input.LastName" class="text-danger"></span>
-                                </div>
-
-                                <div class="form-floating">
-                                    <input asp-for="Input.Email" class="form-control input-field" autocomplete="username" aria-required="true" />
-                                    <label asp-for="Input.Email"></label>
-                                    <span asp-validation-for="Input.Email" class="text-danger"></span>
-                                </div>
-
-
-                                <div class="form-floating">
-                                    <input asp-for="Input.Password" class="form-control input-field" autocomplete="new-password" aria-required="true" />
-                                    <label asp-for="Input.Password"></label>
-                                    <span asp-validation-for="Input.Password" class="text-danger"></span>
-                                </div>
-
-
-                                <div class="form-floating">
-                                    <input asp-for="Input.ConfirmPassword" class="form-control input-field" autocomplete="new-password" aria-required="true" />
-                                    <label asp-for="Input.ConfirmPassword"></label>
-                                    <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
-                                </div>
-
-                                <div class="form-floating">
-                                    <input asp-for="Input.imagePath" type="file" class="form-control input-field" aria-required="true" />
-                                    <label asp-for="Input.imagePath">Select Image</label>
-                                    <span asp-validation-for="Input.imagePath" class="text-danger"></span>
-                                </div>
-
-                                <button id="registerSubmit" type="submit" class="ibtn mt-2 hover-effect btn btn-lg btn-primary">Register</button>
-
-
-                            </form>
-
-
+                        *@
+                        <div class="input-group col-lg-6 mb-4" style="display: none;">
+                            <input asp-for="Input.UserRole" value="User" readonly />
+                            <span asp-validation-for="Input.UserRole" class="text-danger"></span>
+                        </div>
+                        <div class="input-group col-lg-6 mb-4">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                    <i class="fa fa-user text-muted"></i>
+                                </span>
+                            </div><input asp-for="Input.FirstName" id="firstName" placeholder="First Name" class="form-control bg-white border-left-0 border-md" aria-required="true">
 
                         </div>
+                        <!-- Last Name -->
+                        <div class="input-group col-lg-6 mb-4">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                    <i class="fa fa-user text-muted"></i>
+                                </span>
+                            </div>
+                            <input asp-for="Input.LastName" id="lastName" placeholder="Last Name" class="form-control bg-white border-left-0 border-md" aria-required="true">
+                        </div>
+                        <!-- Email Address -->
+                        <div class="input-group col-lg-12 mb-4">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                    <i class="fa fa-envelope text-muted"></i>
+                                </span>
+                            </div>
+                            <input asp-for="Input.Email" id="email" type = "email" aria-required="true" placeholder="Email Address" class="form-control bg-white border-left-0 border-md">
+                        </div>
+                        <!-- Phone Number -->
+                        <div class="input-group col-lg-12 mb-4">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                    <i class="fa fa-phone-square text-muted"></i>
+                                </span>
+                            </div>
+                            <select id="countryCode" name="countryCode" style="max-width: 80px" class="custom-select form-control bg-white border-left-0 border-md h-100 font-weight-bold text-muted">
+                                <option value="">+12</option>
+                                <option value="">+10</option>
+                                <option value="">+15</option>
+                                <option value="">+18</option>
+                            </select>
+                            <input asp-for="Input.PhoneNumber" id="phoneNumber" aria-required="true" placeholder="Phone Number" class="form-control bg-white border-md border-left-0 pl-3">
+                        </div>
+                        <!-- Password -->
+                        <div class="input-group col-lg-6 mb-4">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                    <i class="fa fa-lock text-muted"></i>
+                                </span>
+                            </div>
+                            <input asp-for="Input.Password" id="password" type="password" aria-required="true"  placeholder="Password" class="form-control bg-white border-left-0 border-md">
+                        </div>
+                        <!-- Password Confirmation -->
+                        <div class="input-group col-lg-6 mb-4">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                    <i class="fa fa-lock text-muted"></i>
+                                </span>
+                            </div>
+                            <input asp-for="Input.ConfirmPassword" id="passwordConfirmation" aria-required="true" placeholder="Confirm Password" class="form-control bg-white border-left-0 border-md">
+                        </div>
+                        <!-- Submit Button -->
+                        <div class="form-group col-lg-12 mx-auto mb-0">
+                            <button id="registerSubmit" type="submit" class="btn btn-primary btn-block py-2">
+                                <span class="font-weight-bold">Create your account</span>
+                            </button>
+
+                        </div>
+                        <!-- Divider Text -->
+                        <div class="form-group col-lg-12 mx-auto d-flex align-items-center my-4">
+                            <div class="border-bottom w-100 ml-5"></div>
+                            <span class="px-2 small text-muted font-weight-bold text-muted">OR</span>
+                            <div class="border-bottom w-100 mr-5"></div>
+                        </div>
+                        <!-- Social Login -->
+                        <div class="form-group col-lg-12 mx-auto ">
+                            <button type="button" class="login-with-google-btn">
+                                Sign in with Google
+                            </button>
+                        </div>
+                        <!-- Already Registered -->
+                        <div class="text-center w-100">
+                            <p class="text-muted font-weight-bold">Already Registered? <a href="Login" class="text-primary ml-2">Login</a></p>
+                        </div>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     </div>
-</section>
-<div class="col-md-6 col-md-offset-2">
-    <section>
-       
-        <hr />
-        @{
-            if ((Model.ExternalLogins?.Count ?? 0) == 0)
-            {
-              
-            }
-            else
-            {
-                <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
-                    <div>
-                        <p>
-                            @foreach (var provider in Model.ExternalLogins!)
-                            {
-                                <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
-                            }
-                        </p>
-                    </div>
-                </form>
-            }
-        }
-    </section>
-</div>
-</div>
+</body>
+</html>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />

@@ -1,10 +1,10 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-    Layout = null;
+﻿@using E_LearningWebApp.Areas.Identity.Data;
+@using Microsoft.AspNetCore.Identity
+@using E_LearningWebApp.Models
 
-}
+@inject SignInManager<E_LearningWebAppUser> SignInManager
+@inject UserManager<E_LearningWebAppUser> UserManager
+
 <head>
     <meta charset="utf-8">
     <meta Content="width=device-width, initial-scale=1.0" name="viewport">
@@ -20,6 +20,17 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>iofrm</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+
+
+
     <!-- Vendor CSS Files -->
     <link rel="stylesheet" href="~/Content/assets/vendor/animate.css/animate.min.css">
     <link rel="stylesheet" href="~/Content/assets/vendor/aos/aos.css" rel="stylesheet">
@@ -28,10 +39,10 @@
     <link rel="stylesheet" href="~/content/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="~/content/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="~/content/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
+    
     <!-- Template Main CSS File -->
     <link rel="stylesheet" href="~/content/assets/css/style.css">
-
+    
     <!-- =======================================================
     * Template Name: Mentor
     * Updated: Jan 09 2024 with Bootstrap v5.3.2
@@ -39,55 +50,151 @@
     * Author: BootstrapMade.com
     * License: https://bootstrapmade.com/license/
     ======================================================== -->
-</head>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            background-color: #f4f4f4;
+        }
 
+        aside {
+            background-color: #fff;
+            color: #4CAF50;
+            width: 18vw;
+            height: 100vh;
+        }
+
+            aside img {
+                width: 90%;
+                position: top;
+                top: 0;
+            }
+
+            aside nav {
+                display: flex;
+                flex-direction: column;
+                gap: 40px;
+                font-size: 1.3em;
+                /* padding: 20px; */
+            }
+
+                aside nav a {
+                    padding: 20px;
+                    text-align: center;
+                    text-decoration: none;
+                    color: #000;
+                }
+
+                    aside nav a:hover {
+                        color: #4CAF50;
+                    }
+
+        main {
+            flex: 1;
+            padding: 5px;
+        }
+
+        header {
+            color: #4CAF50;
+            background-color: white;
+            padding: 25px 15px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+            header div {
+                padding: 25px 15px;
+                font-size: 1.1em;
+            }
+
+                header div a {
+                    color: #4CAF50;
+                    text-decoration: none;
+                    border: #4CAF50 solid 1px;
+                    border-radius: 25px;
+                    padding: 15px 25px;
+                }
+
+                    header div a:hover {
+                        background-color: #4CAF50;
+                        color: #fff;
+                    }
+
+        .current_progress {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 20px;
+            margin-top: 10px;
+        }
+
+    </style>
+</head>@* 
 <body>
+     <aside>
+          <img src="~/content/logincss/logo.PNG" alt="">
+        <nav>
+            <a class="nav-link text-dark" asp-area="Identity" asp-controller="Role" asp-action="Index"> <i class="fas fa-tachometer-alt"></i> Roles</a>
+            <a class="nav-link text-dark" asp-controller="Course" asp-action="Index"><i class="fas fa-book"></i> Course</a>
+            <a class="nav-link text-dark" asp-controller="Admin" asp-action="Index"><i class="fas fa-tachometer-alt"></i>DashBoard</a>
 
-    <!-- ======= Header ======= -->
-    <header id="header" class="fixed-top">
-        <div class="container d-flex align-items-center">
+            <form id="logoutForm" class="form-inline" asp-controller="Home" asp-action="Index" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                <button id="logout" type="submit" class="nav-link btn btn-link text-dark"><i class="fas fa-sign-out-alt"></i>Logout</button>
+            </form>
+        </nav>
 
-            <h1 class="logo me-auto"><a href="index.html">Mentor</a></h1>
-            <!-- Uncomment below if you prefer to use an image logo -->
-            <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+    </aside>
 
-            <nav id="navbar" class="navbar order-last order-lg-0">
-                <ul>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="Identity" asp-controller="Role" asp-action="Index">Roles</a>
-                    </li>
-                    
-                    <li class="nav-item">
-                        <a class="nav-link text-dark"  asp-controller="Instructor" asp-action="Index">Instructor</a>
-                        
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-controller="Course" asp-action="Index">Course</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="Identity" asp-controller="Instructor" asp-action="Index">Roles</a>
-                        <a href="trainers.html">Dashboard</a></li>
-                 
-                    <i class="bi bi-list mobile-nav-toggle"></i>
-            </nav><!-- .navbar -->
-           
+    <main>
+        <header>
+            <h2>Welcome back</h2>
+            <div class="prof">
+                <a id="manage" class="nav-link text-dark"><i class="fas fa-user"></i>Hello @UserManager.GetUserName(User)!</a>
 
-            <!-- Vendor JS Files -->
-            <script src="~/content/assets/vendor/purecounter/purecounter_vanilla.js"></script>
-            <script src="~/content/assets/vendor/aos/aos.js"></script>
-            <script src="~/content/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-            <script src="~/content/assets/vendor/swiper/swiper-bundle.min.js"></script>
-            <script src="~/content/assets/vendor/php-email-form/validate.js"></script>
-
-            <!-- Template Main JS File -->
-            <script src="~/content/assets/js/main.js"></script>
-
-        </div>
-        <partial name="_Loginpartial" />
-    </header>
+            </div>
+        </header>
+            @RenderBody()
+    </main>
 
 
-</body>
+</body> *@
+
+ <body>
+
+      <aside>
+            <img src="~/content/logincss/logo.PNG" alt="">
+          <nav>
+              <a href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+              <a href="#"><i class="fas fa-book"></i> Courses</a>
+              <a href="#"><i class="fas fa-chart-bar"></i> Grades</a>
+              <a href="#"><i class="fas fa-lightbulb"></i> Concepts</a>
+      <a href="#">
+              <i class="fas fa-chart-pie"></i>
+              Statistics
+          </a>
+
+                      <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+          </nav>
+
+      </aside>
+
+      <main>
+          <header>
+              <h2>Welcome back</h2>
+              <div class="prof">
+                <a href="#"><i class="fas fa-user"></i> Yordanos</a>
+
+              </div>
+          </header>
+            <section class="current_progress">
+            @RenderBody()
+
+            </section>
+      </main>
+
+  </body>
+
+
 @RenderSection( "Scripts",required:false)
-</ul>
-@RenderBody()
+

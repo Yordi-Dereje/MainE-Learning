@@ -13,6 +13,22 @@
       "PackagePath": "staticwebassets\\Content\\Readme.txt"
     },
     {
+      "Id": "C:\\Users\\Hp\\Desktop\\E-LearningWebApp\\E-LearningWebApp\\wwwroot\\Content\\assests\\img2.jpg",
+      "PackagePath": "staticwebassets\\Content\\assests\\img2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Hp\\Desktop\\E-LearningWebApp\\E-LearningWebApp\\wwwroot\\Content\\assests\\logo-dark.svg",
+      "PackagePath": "staticwebassets\\Content\\assests\\logo-dark.svg"
+    },
+    {
+      "Id": "C:\\Users\\Hp\\Desktop\\E-LearningWebApp\\E-LearningWebApp\\wwwroot\\Content\\assests\\logo-light.svg",
+      "PackagePath": "staticwebassets\\Content\\assests\\logo-light.svg"
+    },
+    {
+      "Id": "C:\\Users\\Hp\\Desktop\\E-LearningWebApp\\E-LearningWebApp\\wwwroot\\Content\\assests\\logoblue.jpg",
+      "PackagePath": "staticwebassets\\Content\\assests\\logoblue.jpg"
+    },
+    {
       "Id": "C:\\Users\\Hp\\Desktop\\E-LearningWebApp\\E-LearningWebApp\\wwwroot\\Content\\assests\\temari.PNG",
       "PackagePath": "staticwebassets\\Content\\assests\\temari.PNG"
     },
@@ -477,20 +493,8 @@
       "PackagePath": "staticwebassets\\Content\\index.html"
     },
     {
-      "Id": "C:\\Users\\Hp\\Desktop\\E-LearningWebApp\\E-LearningWebApp\\wwwroot\\Content\\iofrm-form\\README.md",
-      "PackagePath": "staticwebassets\\Content\\iofrm-form\\README.md"
-    },
-    {
-      "Id": "C:\\Users\\Hp\\Desktop\\E-LearningWebApp\\E-LearningWebApp\\wwwroot\\Content\\iofrm-form\\css\\responsive.css",
-      "PackagePath": "staticwebassets\\Content\\iofrm-form\\css\\responsive.css"
-    },
-    {
-      "Id": "C:\\Users\\Hp\\Desktop\\E-LearningWebApp\\E-LearningWebApp\\wwwroot\\Content\\iofrm-form\\css\\style.css",
-      "PackagePath": "staticwebassets\\Content\\iofrm-form\\css\\style.css"
-    },
-    {
-      "Id": "C:\\Users\\Hp\\Desktop\\E-LearningWebApp\\E-LearningWebApp\\wwwroot\\Content\\iofrm-form\\index.html",
-      "PackagePath": "staticwebassets\\Content\\iofrm-form\\index.html"
+      "Id": "C:\\Users\\Hp\\Desktop\\E-LearningWebApp\\E-LearningWebApp\\wwwroot\\Content\\iofrm-form.zip",
+      "PackagePath": "staticwebassets\\Content\\iofrm-form.zip"
     },
     {
       "Id": "C:\\Users\\Hp\\Desktop\\E-LearningWebApp\\E-LearningWebApp\\wwwroot\\Content\\js\\demo\\chart-area-demo.js",
@@ -515,6 +519,34 @@
     {
       "Id": "C:\\Users\\Hp\\Desktop\\E-LearningWebApp\\E-LearningWebApp\\wwwroot\\Content\\js\\sb-admin.min.js",
       "PackagePath": "staticwebassets\\Content\\js\\sb-admin.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Hp\\Desktop\\E-LearningWebApp\\E-LearningWebApp\\wwwroot\\Content\\logincss\\login.css",
+      "PackagePath": "staticwebassets\\Content\\logincss\\login.css"
+    },
+    {
+      "Id": "C:\\Users\\Hp\\Desktop\\E-LearningWebApp\\E-LearningWebApp\\wwwroot\\Content\\logincss\\login.html",
+      "PackagePath": "staticwebassets\\Content\\logincss\\login.html"
+    },
+    {
+      "Id": "C:\\Users\\Hp\\Desktop\\E-LearningWebApp\\E-LearningWebApp\\wwwroot\\Content\\logincss\\login.js",
+      "PackagePath": "staticwebassets\\Content\\logincss\\login.js"
+    },
+    {
+      "Id": "C:\\Users\\Hp\\Desktop\\E-LearningWebApp\\E-LearningWebApp\\wwwroot\\Content\\logincss\\logo.PNG",
+      "PackagePath": "staticwebassets\\Content\\logincss\\logo.PNG"
+    },
+    {
+      "Id": "C:\\Users\\Hp\\Desktop\\E-LearningWebApp\\E-LearningWebApp\\wwwroot\\Content\\logincss\\nav.css",
+      "PackagePath": "staticwebassets\\Content\\logincss\\nav.css"
+    },
+    {
+      "Id": "C:\\Users\\Hp\\Desktop\\E-LearningWebApp\\E-LearningWebApp\\wwwroot\\Content\\logincss\\nav.html",
+      "PackagePath": "staticwebassets\\Content\\logincss\\nav.html"
+    },
+    {
+      "Id": "C:\\Users\\Hp\\Desktop\\E-LearningWebApp\\E-LearningWebApp\\wwwroot\\Content\\logincss\\register.html",
+      "PackagePath": "staticwebassets\\Content\\logincss\\register.html"
     },
     {
       "Id": "C:\\Users\\Hp\\Desktop\\E-LearningWebApp\\E-LearningWebApp\\wwwroot\\Content\\scss\\_cards.scss",

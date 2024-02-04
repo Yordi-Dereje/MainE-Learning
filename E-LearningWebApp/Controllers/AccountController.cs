@@ -12,6 +12,7 @@ using E_LearningWebApp.Areas.Identity.Data;
 
 namespace E_LearningWebApp.Controllers
 {
+    [Authorize]
     public class AccountController : Controller
     {
         E_LearningDbContext _context = new E_LearningDbContext();

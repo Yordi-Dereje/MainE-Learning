@@ -23,6 +23,7 @@ using Microsoft.AspNetCore.Hosting;
 
 namespace E_LearningWebApp.Areas.Identity.Pages.Account
 {
+    [AllowAnonymous]
     public class RegisterModel : PageModel
     {
         private readonly SignInManager<E_LearningWebAppUser> _signInManager;
@@ -77,6 +78,10 @@ namespace E_LearningWebApp.Areas.Identity.Pages.Account
             [EmailAddress]
             [Display(Name = "Email")]
             public string Email { get; set; }
+
+            [Required]
+            [Display (Name = "PhoneNumber")]
+            public string PhoneNumber { get; set; }
 
             [Required]
             [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
@@ -137,6 +142,7 @@ namespace E_LearningWebApp.Areas.Identity.Pages.Account
                     Email = Input.Email,
                     FirstName = Input.FirstName,
                     LastName = Input.LastName,
+                    PhoneNumber = Input.PhoneNumber,
                     imagePath = fileName == "" ? "/Images/default.jpg" : "/Images/" + fileName
                 };
                 /*  var user = CreateUser();*/
@@ -148,7 +154,7 @@ namespace E_LearningWebApp.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");
-                    await _userManager.AddToRoleAsync(user, "User");
+                    await _userManager.AddToRoleAsync(user, "Admin");
 
                     var userId = await _userManager.GetUserIdAsync(user);
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
@@ -169,7 +175,7 @@ namespace E_LearningWebApp.Areas.Identity.Pages.Account
                     else
                     {
                         await _signInManager.SignInAsync(user, isPersistent: false);
-                        return LocalRedirect(returnUrl);
+                        return LocalRedirect($"~/User/Index?id={userId}");
                     }
                 }
                 foreach (var error in result.Errors)
@@ -182,7 +188,7 @@ namespace E_LearningWebApp.Areas.Identity.Pages.Account
             return Page();
         }
 
-       private E_LearningWebAppUser CreateUser()
+        private E_LearningWebAppUser CreateUser()
         {
             try
             {

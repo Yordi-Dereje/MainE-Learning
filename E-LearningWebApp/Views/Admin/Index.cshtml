@@ -1,15 +1,15 @@
 ﻿@model Admin
 
 @{
-    Layout = "_Layout";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
     ViewData["Title"] = "Admin";
 }
 <br />
 <br />
-
+</br>
 
 <section class="form-body">
-    <!-- ======= Header ======= -->
+   @*  <!-- ======= Header ======= -->
     <header id="header" class="fixed-top">
         <div class="container d-flex align-items-center">
 
@@ -30,19 +30,25 @@
                     <li class="nav-item">
                         <a class="nav-link text-dark" asp-controller="Course" asp-action="Index">Course</a>
                     </li>
-                    <li class="nav-item">
+                    @* <li class="nav-item">
                         <a class="nav-link text-dark" asp-area="Identity" asp-controller="Instructor" asp-action="Index">Roles</a>
-                        <a href="trainers.html">Dashboard</a>
+                        
+                    </li> 
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-controller="Admin" asp-action="Index">DashBoard</a>
                     </li>
-
                     <i class="bi bi-list mobile-nav-toggle"></i>
+                </ul>
             </nav>
           
 
         </div>
-        <partial name="_Loginpartial" />
-    </header>
+    </header> *@
     <div class="container-fluid">
-        <h1>hello admin your ID is: @ViewBag.userid </h1>
+        <h1>hello admin your ID is: @ViewBag.userid </h1> @* this is user id dont get confused *@
     </div>
+    <p> for admin</p>
+    <iframe src=" https://calendar.google.com/calendar/u/0/r?cid=bb4413e32908bcbfbd0bbdcd2cb1ec88df39ecfe6efe995fd5c83bf55b4f2679@group.calendar.google.com" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+    <p>for user</p>
+    <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&bgcolor=%237CB342&ctz=Africa%2FNairobi&showPrint=0&src=YmI0NDEzZTMyOTA4YmNiZmJkMGJiZGNkMmNiMWVjODhkZjM5ZWNmZTZlZmU5OTVmZDVjODNiZjU1YjRmMjY3OUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23D50000" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
 </section>

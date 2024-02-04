@@ -25,6 +25,7 @@ namespace E_LearningWebApp.Controllers
 
         public IActionResult DashBoard() { return View(); }
 
+        [Authorize(Policy = "Adminroles")]
         public IActionResult Index()
         {
             ViewBag.userid = _userManager.GetUserId(HttpContext.User);

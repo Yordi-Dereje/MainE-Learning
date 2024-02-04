@@ -5,11 +5,12 @@ using System.Diagnostics;
 
 namespace E_LearningWebApp.Controllers
 {
-  
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
 
+        
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
