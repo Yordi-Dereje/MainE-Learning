@@ -107,6 +107,7 @@ namespace E_LearningWebApp.Areas.Identity.Pages.Account
 
 
                     return LocalRedirect($"~/User/Index?id={userId}");
+                    /*return LocalRedirect($"~/User/Index?id={userId}");*/
                 }
                 if (result.RequiresTwoFactor)
                 {

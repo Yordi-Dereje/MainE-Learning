@@ -27,6 +27,14 @@ namespace E_LearningWebApp.Controllers
         {
             return View();
         }
+        public IActionResult Courses()
+        {
+            return View();
+        }
+        public IActionResult Concepts()
+        {
+            return View();
+        }
         [HttpPost]
         public IActionResult CreateCourse(Courses course)
         {
@@ -39,6 +47,7 @@ namespace E_LearningWebApp.Controllers
             return RedirectToAction("GetAllCourses");
         }
 
+        
 
         [HttpGet("GetAllCourses")]
         public IActionResult GetAllCourses()

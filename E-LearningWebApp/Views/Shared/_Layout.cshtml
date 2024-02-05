@@ -1,4 +1,10 @@
-﻿
+﻿@using E_LearningWebApp.Areas.Identity.Data;
+@using Microsoft.AspNetCore.Identity
+@using E_LearningWebApp.Models
+
+
+@inject SignInManager<E_LearningWebAppUser> SignInManager
+@inject UserManager<E_LearningWebAppUser> UserManager
 
 <head>
     <meta charset="utf-8">
@@ -46,11 +52,11 @@
     * License: https://bootstrapmade.com/license/
     ======================================================== -->
 </head>
+
+
 <body>
 
     <!-- ======= Header ======= -->
-   
-       
 
     <header id="header" class="fixed-top">
         <div class="container d-flex align-items-center">
@@ -71,34 +77,42 @@
                     @* <li class="nav-item">
                     <a class="nav-link text-dark" asp-controller="User" asp-action="ListUsers">User</a>
                     </li> *@
-
                     <li class="nav-item">
-                        <a class="nav-link text-dark" asp-controller="Home" asp-action="Courses">Courses</a>
+                        @* <a class="nav-link text-dark" asp-controller="Home" asp-action="Courses">Courses</a> *@
+                        <a class="nav-link text-dark" asp-controller="Home" asp-action="Index">Home</a>
+                    </li>
+                    <li><a class="active" href="#about">About</a></li>
+                    <li class="nav-item">
+                        @* <a class="nav-link text-dark" asp-controller="Home" asp-action="Courses">Courses</a> *@
+                        <a class="nav-link text-dark" asp-controller="Course" asp-action="Courses">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-controller="Course" asp-action="Concepts">Concepts</a>
                     </li>
 
 
-                    <li><a class="active" href="#about">About</a></li>
+                    
 
 
-                    <li><a href="#trainers">Trainers</a></li>
+                   @*  <li><a href="#trainers">Trainers</a></li> *@
 
                     <li class="nav-item">
-                        <a class="nav-link text-dark" asp-controller="Home" asp-action="ContactUs">Contact</a>
+                        <a class="nav-link text-dark" asp-controller="Home" asp-action="Contact">Contact</a>
                     </li>
 
                     <ul>
 
 
 
-                        <li class="dropdown">
+                        @* <li class="dropdown">
                             <a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
                             <ul>
-                                <li><a href="#">Drop Down 1</a></li>
+                                <li><a href="#">Drop Down 1</a></li> *@
 
 
 
 
-                                <li class="dropdown">
+                                @* <li class="dropdown">
                                     <a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
                                     <ul>
                                         <li><a href="#">Deep Drop Down 1</a></li>
@@ -115,26 +129,24 @@
                                 <li><a href="#">Drop Down 3</a></li>
                                 <li><a href="#">Drop Down 4</a></li>
                             </ul>
-                        </li>
+                        </li> *@
 
 
 
-                        <li><a href="/Home/ContactUs">Contact</a></li>
+                        @* <li><a href="/Home/ContactUs">Contact</a></li> *@
                     </ul>
                     <i class="bi bi-list mobile-nav-toggle"></i>
             </nav>
             <a class="get-started-btn" asp-area="Identity" asp-page="/Account/Login">Get Started</a>
 
-            <a class="get-started-btn" asp-controller="Admin" asp-action="Index">Admin</a>
+            @* <a class="get-started-btn" asp-controller="Admin" asp-action="Index">Admin</a> *@
         </div>
-       
+
         <div class="container d-flex align-items-center">
-
-
-         
-
         </div>
     </header>
+
+    
 
 
    
@@ -154,8 +166,7 @@
 
 </body>
 @RenderSection( "Scripts",required:false)
-</ul>
-    @RenderBody()
+ @RenderBody()
     
 
 

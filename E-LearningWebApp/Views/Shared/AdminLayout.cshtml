@@ -50,7 +50,7 @@
     * Author: BootstrapMade.com
     * License: https://bootstrapmade.com/license/
     ======================================================== -->
-    <style>
+    @* <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
@@ -98,7 +98,7 @@
         header {
             color: #4CAF50;
             background-color: white;
-            padding: 25px 15px;
+            /* padding: 25px 15px; */
             display: flex;
             flex-direction: row;
             justify-content: space-between;
@@ -123,13 +123,13 @@
                     }
 
         .current_progress {
-            background-color: #4CAF50;
-            color: #fff;
-            padding: 20px;
-            margin-top: 10px;
+            background-color: #fff;
+            color: #4CAF50;
+            /* padding: 20px;
+            margin-top: 10px; */
         }
 
-    </style>
+    </style> *@
 </head>@* 
 <body>
      <aside>
@@ -165,28 +165,22 @@
       <aside>
             <img src="~/content/logincss/logo.PNG" alt="">
           <nav>
-              <a href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
-              <a href="#"><i class="fas fa-book"></i> Courses</a>
-              <a href="#"><i class="fas fa-chart-bar"></i> Grades</a>
-              <a href="#"><i class="fas fa-lightbulb"></i> Concepts</a>
-      <a href="#">
-              <i class="fas fa-chart-pie"></i>
-              Statistics
-          </a>
-
-                      <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            <a class="nav-link text-dark" asp-controller="Admin" asp-action="Index"><i class="fas fa-tachometer-alt"></i> Home</a>
+            <a class="nav-link text-dark" asp-controller="Course" asp-action="GetAllCourses"><i class="fas fa-book"></i> Courses</a>
+            <a class="nav-link text-dark" asp-controller="Users" asp-action="ListUsers"><i class="fas fa-users"></i> Students</a>
+            <a class="nav-link text-dark" asp-controller="Users" asp-action="ListUsers"><i class="fas fa-users"><i class="fas fa-chart-pie"></i>Statistics</a>
+            <a class="nav-link text-dark" asp-controller="Home" asp-action="Index"><i class="fas fa-sign-out-alt"></i> Logout</a>
           </nav>
 
       </aside>
-
+    <header>
+        <h2>Welcome back</h2>
+        <div class="prof">
+            <a><i class="fas fa-user"></i> Admin </a>
+        </div>
+    </header>
       <main>
-          <header>
-              <h2>Welcome back</h2>
-              <div class="prof">
-                <a href="#"><i class="fas fa-user"></i> Yordanos</a>
-
-              </div>
-          </header>
+        
             <section class="current_progress">
             @RenderBody()
 

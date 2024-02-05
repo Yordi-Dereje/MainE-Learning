@@ -1,16 +1,30 @@
 ﻿@model Admin
+@* @using E_LearningWebApp.Areas.Identity.Data;
+@using Microsoft.AspNetCore.Identity
+@using E_LearningWebApp.Models
+
+@inject SignInManager<E_LearningWebAppUser> SignInManager
+@inject UserManager<E_LearningWebAppUser> UserManager *@
 
 @{
     Layout = "~/Views/Shared/AdminLayout.cshtml";
     ViewData["Title"] = "Admin";
 }
-<br />
-<br />
-</br>
 
-<section class="form-body">
-   @*  <!-- ======= Header ======= -->
-    <header id="header" class="fixed-top">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="~/Content/css/courses.css">
+</head>
+<body>
+
+     <!-- ======= Header ======= -->
+    @* <header id="header" class="fixed-top">
         <div class="container d-flex align-items-center">
 
             <h1 class="logo me-auto"><a href="index.html">Mentor</a></h1>
@@ -22,18 +36,9 @@
                     <li class="nav-item">
                         <a class="nav-link text-dark" asp-area="Identity" asp-controller="Role" asp-action="Index">Roles</a>
                     </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-controller="Instructor" asp-action="Index">Instructor</a>
-
-                    </li>
                     <li class="nav-item">
                         <a class="nav-link text-dark" asp-controller="Course" asp-action="Index">Course</a>
                     </li>
-                    @* <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="Identity" asp-controller="Instructor" asp-action="Index">Roles</a>
-                        
-                    </li> 
                     <li class="nav-item">
                         <a class="nav-link text-dark" asp-controller="Admin" asp-action="Index">DashBoard</a>
                     </li>
@@ -44,11 +49,19 @@
 
         </div>
     </header> *@
-    <div class="container-fluid">
-        <h1>hello admin your ID is: @ViewBag.userid </h1> @* this is user id dont get confused *@
+    <div id="partitions">
+        <div class="partition">
+            <h2>Hey there admin</h2>
+            <p>Wazzzzzzzzup with you?</p>
+        </div>
+
+        <div class="partition">
+            <p> for admin</p>
+            <iframe src=" https://calendar.google.com/calendar/u/0/r?cid=bb4413e32908bcbfbd0bbdcd2cb1ec88df39ecfe6efe995fd5c83bf55b4f2679@group.calendar.google.com" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+            <p>for user</p>
+            <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&bgcolor=%237CB342&ctz=Africa%2FNairobi&showPrint=0&src=YmI0NDEzZTMyOTA4YmNiZmJkMGJiZGNkMmNiMWVjODhkZjM5ZWNmZTZlZmU5OTVmZDVjODNiZjU1YjRmMjY3OUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23D50000" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+        </div>
+
     </div>
-    <p> for admin</p>
-    <iframe src=" https://calendar.google.com/calendar/u/0/r?cid=bb4413e32908bcbfbd0bbdcd2cb1ec88df39ecfe6efe995fd5c83bf55b4f2679@group.calendar.google.com" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-    <p>for user</p>
-    <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&bgcolor=%237CB342&ctz=Africa%2FNairobi&showPrint=0&src=YmI0NDEzZTMyOTA4YmNiZmJkMGJiZGNkMmNiMWVjODhkZjM5ZWNmZTZlZmU5OTVmZDVjODNiZjU1YjRmMjY3OUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23D50000" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-</section>
+</body>
+</html>
