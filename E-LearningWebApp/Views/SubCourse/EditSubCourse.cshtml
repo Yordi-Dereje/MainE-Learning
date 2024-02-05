@@ -1,12 +1,23 @@
 ﻿@model E_LearningWebApp.Models.SubCourses
 
 @{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
     ViewData["Title"] = "EditSubCourse";
 }
 
 <h1>EditSubCourse</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
 
-<h4>SubCourses</h4>
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="~/Content/css/courses.css">
+</head>
+<body>
+
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -24,14 +35,9 @@
                 <span asp-validation-for="SubCourseDescription" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="StartDate" class="control-label"></label>
-                <input asp-for="StartDate" class="form-control" />
-                <span asp-validation-for="StartDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="EndDate" class="control-label"></label>
-                <input asp-for="EndDate" class="form-control" />
-                <span asp-validation-for="EndDate" class="text-danger"></span>
+                <label asp-for="SubCourseDuration" class="control-label"></label>
+                <input asp-for="SubCourseDuration" class="form-control" />
+                <span asp-validation-for="SubCourseDuration" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="CourseId" class="control-label"></label>
@@ -50,9 +56,9 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="GetAllSubCourses">Back to List</a>
 </div>
-
+</body>
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

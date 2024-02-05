@@ -1,66 +1,75 @@
 ﻿@model IEnumerable<E_LearningWebApp.Models.Courses>
 
 @{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
     ViewData["Title"] = "GetAllCourses";
 }
-<br />
-<br />
-<br />
 
-<h1>GetAllCourses</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
 
-<p>
-    <a asp-controller="Course" asp-action="CreateCourse">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.CourseName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CourseCode)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CourseDescription)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CoursePrice)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CourseDuration)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="~/Content/css/courses.css">
+</head>
+
+<body>
+    <h1>GetAllCourses</h1>
+
+    <p>
+        <a asp-controller="Course" asp-action="CreateCourse">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CourseName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CourseCode)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CourseDescription)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CoursePrice)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CourseDuration)
-                </td>
-                <td>
-                    <a asp-controller="Course" asp-action="EditCourses" asp-route-courseid="@item.CourseId">Edit</a>|
-
-                    <div class="btn-group">
-                        <a asp-controller="Course" asp-action="GetCourseById" asp-route-courseid="@item.CourseId" class="btn btn-sm btn-outline-secondary">View Detail</a>
-                    </div>|
-                    <a asp-controller="Course" asp-action="DeleteCourse" asp-route-courseid="@item.CourseId">Delete</a>
-                </td>
+                <th>
+                    @Html.DisplayNameFor(model => model.CourseName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CourseCode)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CourseDescription)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CoursePrice)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CourseDuration)
+                </th>
+                <th></th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CourseName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CourseCode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CourseDescription)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CoursePrice)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CourseDuration)
+                    </td>
+                    <td>
+                        <a asp-controller="Course" asp-action="EditCourses" asp-route-courseid="@item.CourseId">Edit</a>|
+                        <a asp-controller="Course" asp-action="GetCourseById" asp-route-courseid="@item.CourseId">View Detail</a>|                    
+                        <a asp-controller="Course" asp-action="DeleteCourse" asp-route-courseid="@item.CourseId">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+

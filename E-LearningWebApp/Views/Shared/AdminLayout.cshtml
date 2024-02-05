@@ -1,4 +1,38 @@
-﻿@using E_LearningWebApp.Areas.Identity.Data;
+﻿
+    @*
+    <body>
+     <aside>
+          <img src="~/content/logincss/logo.PNG" alt="">
+        <nav>
+            <a class="nav-link text-dark" asp-area="Identity" asp-controller="Role" asp-action="Index"> <i class="fas fa-tachometer-alt"></i> Roles</a>
+            <a class="nav-link text-dark" asp-controller="Course" asp-action="Index"><i class="fas fa-book"></i> Course</a>
+            <a class="nav-link text-dark" asp-controller="Admin" asp-action="Index"><i class="fas fa-tachometer-alt"></i>DashBoard</a>
+
+            <form id="logoutForm" class="form-inline" asp-controller="Home" asp-action="Index" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                <button id="logout" type="submit" class="nav-link btn btn-link text-dark"><i class="fas fa-sign-out-alt"></i>Logout</button>
+            </form>
+        </nav>
+
+    </aside>
+
+    <main>
+        <header>
+            <h2>Welcome back</h2>
+            <div class="prof">
+                <a id="manage" class="nav-link text-dark"><i class="fas fa-user"></i>Hello @UserManager.GetUserName(User)!</a>
+
+            </div>
+        </header>
+            @RenderBody()
+    </main>
+
+
+</body> *@
+   
+
+
+
+@using E_LearningWebApp.Areas.Identity.Data;
 @using Microsoft.AspNetCore.Identity
 @using E_LearningWebApp.Models
 
@@ -39,155 +73,44 @@
     <link rel="stylesheet" href="~/content/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="~/content/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="~/content/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-    
+
     <!-- Template Main CSS File -->
-    <link rel="stylesheet" href="~/content/assets/css/style.css">
-    
-    <!-- =======================================================
-    * Template Name: Mentor
-    * Updated: Jan 09 2024 with Bootstrap v5.3.2
-    * Template URL: https://bootstrapmade.com/mentor-free-education-bootstrap-theme/
-    * Author: BootstrapMade.com
-    * License: https://bootstrapmade.com/license/
-    ======================================================== -->
-    @* <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            display: flex;
-            background-color: #f4f4f4;
-        }
+    <link rel="stylesheet" href="~/content/assets/css/style.css" />
 
-        aside {
-            background-color: #fff;
-            color: #4CAF50;
-            width: 18vw;
-            height: 100vh;
-        }
+</head>
 
-            aside img {
-                width: 90%;
-                position: top;
-                top: 0;
-            }
-
-            aside nav {
-                display: flex;
-                flex-direction: column;
-                gap: 40px;
-                font-size: 1.3em;
-                /* padding: 20px; */
-            }
-
-                aside nav a {
-                    padding: 20px;
-                    text-align: center;
-                    text-decoration: none;
-                    color: #000;
-                }
-
-                    aside nav a:hover {
-                        color: #4CAF50;
-                    }
-
-        main {
-            flex: 1;
-            padding: 5px;
-        }
-
-        header {
-            color: #4CAF50;
-            background-color: white;
-            /* padding: 25px 15px; */
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-        }
-
-            header div {
-                padding: 25px 15px;
-                font-size: 1.1em;
-            }
-
-                header div a {
-                    color: #4CAF50;
-                    text-decoration: none;
-                    border: #4CAF50 solid 1px;
-                    border-radius: 25px;
-                    padding: 15px 25px;
-                }
-
-                    header div a:hover {
-                        background-color: #4CAF50;
-                        color: #fff;
-                    }
-
-        .current_progress {
-            background-color: #fff;
-            color: #4CAF50;
-            /* padding: 20px;
-            margin-top: 10px; */
-        }
-
-    </style> *@
-</head>@* 
 <body>
-     <aside>
-          <img src="~/content/logincss/logo.PNG" alt="">
-        <nav>
-            <a class="nav-link text-dark" asp-area="Identity" asp-controller="Role" asp-action="Index"> <i class="fas fa-tachometer-alt"></i> Roles</a>
-            <a class="nav-link text-dark" asp-controller="Course" asp-action="Index"><i class="fas fa-book"></i> Course</a>
-            <a class="nav-link text-dark" asp-controller="Admin" asp-action="Index"><i class="fas fa-tachometer-alt"></i>DashBoard</a>
 
-            <form id="logoutForm" class="form-inline" asp-controller="Home" asp-action="Index" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-                <button id="logout" type="submit" class="nav-link btn btn-link text-dark"><i class="fas fa-sign-out-alt"></i>Logout</button>
-            </form>
+    <aside>
+        <img src="~/content/logincss/logo.PNG" alt="">
+        <nav>
+            <a class="nav-link text-dark" asp-controller="User" asp-action="Index"><i class="fas fa-house"></i> Home</a>
+            <a class="nav-link text-dark" asp-controller="Course" asp-action="GetAllCourses"><i class="fas fa-book"></i> Courses</a>
+            <a class="nav-link text-dark" asp-controller="User" asp-action="ListUsers"><i class="fas fa-users"></i> Students</a>
+
+            <a class="nav-link text-dark" asp-controller="Home" asp-action="Index"><i class="fas fa-sign-out-alt"></i> Logout</a>
         </nav>
 
     </aside>
 
-    <main>
-        <header>
-            <h2>Welcome back</h2>
-            <div class="prof">
-                <a id="manage" class="nav-link text-dark"><i class="fas fa-user"></i>Hello @UserManager.GetUserName(User)!</a>
+   
 
-            </div>
-        </header>
-            @RenderBody()
-    </main>
-
-
-</body> *@
-
- <body>
-
-      <aside>
-            <img src="~/content/logincss/logo.PNG" alt="">
-          <nav>
-            <a class="nav-link text-dark" asp-controller="Admin" asp-action="Index"><i class="fas fa-tachometer-alt"></i> Home</a>
-            <a class="nav-link text-dark" asp-controller="Course" asp-action="GetAllCourses"><i class="fas fa-book"></i> Courses</a>
-            <a class="nav-link text-dark" asp-controller="Users" asp-action="ListUsers"><i class="fas fa-users"></i> Students</a>
-            <a class="nav-link text-dark" asp-controller="Users" asp-action="ListUsers"><i class="fas fa-users"><i class="fas fa-chart-pie"></i>Statistics</a>
-            <a class="nav-link text-dark" asp-controller="Home" asp-action="Index"><i class="fas fa-sign-out-alt"></i> Logout</a>
-          </nav>
-
-      </aside>
     <header>
         <h2>Welcome back</h2>
         <div class="prof">
-            <a><i class="fas fa-user"></i> Admin </a>
+            <a class="nav-link text-dark" asp-controller="User" asp-action="Profile"><i class="fas fa-user"></i> @UserManager.GetUserName(User) </a>
         </div>
     </header>
-      <main>
-        
-            <section class="current_progress">
+
+    <main>
+
+        <section class="current_progress">
             @RenderBody()
 
-            </section>
-      </main>
+        </section>
+    </main>
 
-  </body>
+</body>
 
 
 @RenderSection( "Scripts",required:false)

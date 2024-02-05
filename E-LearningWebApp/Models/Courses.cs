@@ -20,7 +20,10 @@ namespace E_LearningWebApp.Models
         public int CoursePrice { get; set; }
 
         [Required]
-        public DateTime CourseDuration { get; set; }
+        public string CourseDuration { get; set; }
+
+        public string imagePath { get; set; }
+
         public List<SubCourses>? SubCourses { get; set;}
 
     }

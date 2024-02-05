@@ -98,16 +98,19 @@ namespace E_LearningWebApp.Areas.Identity.Pages.Account
                    
                     _logger.LogInformation("User logged in.");
                     var resp = new HttpResponseMessage();
-
+                   
                     var user = await _userManager.FindByNameAsync(Input.Email);
-                    /*                    return LocalRedirect("Index", "User", new { Userid = userid });
-                    */
+                    var userrole = await _userManager.GetRolesAsync(user);
+                  
                     string userId = user.Id.ToString();
-                 
-
-
-                    return LocalRedirect($"~/User/Index?id={userId}");
-                    /*return LocalRedirect($"~/User/Index?id={userId}");*/
+                    if (userrole.Contains("User"))
+                    {
+                        return LocalRedirect($"~/User/Index?id={userId}");
+                    }
+                    else
+                    {
+                        return LocalRedirect($"~/Admin/Index?id={userId}");
+                    }
                 }
                 if (result.RequiresTwoFactor)
                 {

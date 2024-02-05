@@ -12,6 +12,7 @@ using E_LearningWebApp.Repository;
 
 namespace E_LearningWebApp.Controllers
 {
+    [Authorize]
     //[Authorize(Policy = "Adminroles")]
     public class AdminController : Controller
     {

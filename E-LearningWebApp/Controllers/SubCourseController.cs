@@ -1,6 +1,7 @@
 ﻿using E_LearningWebApp.Areas.Identity.Data;
 using E_LearningWebApp.Models;
 using E_LearningWebApp.Repository;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -10,8 +11,11 @@ namespace E_LearningWebApp.Controllers
     public class SubCourseController : Controller
     {
         private E_LearningDbContext _context = new E_LearningDbContext();
-        public SubCourseController()
+        //private readonly object webHostEnvironment;
+
+        public SubCourseController()/*IWebHostEnvironment webHostEnvironment*/
         {
+            //this.webHostEnvironment = webHostEnvironment;
         }
        
        /* ...works perfectly dont touch [HttpGet("GetAllSubCourses")]
@@ -48,12 +52,14 @@ namespace E_LearningWebApp.Controllers
         {
 
             SubCourseRepository scr = new SubCourseRepository(_context);
-            subcourse.CourseId = courseId;
+        subcourse.CourseId = courseId;
             scr.AddSubCourse(subcourse);
-            return RedirectToAction("CreateSubCourse", new { courseid  = courseId });
+            return RedirectToAction("CreateSubCourse", new { courseid  = courseId
+    });
         }
 
-        [HttpGet]
+
+[HttpGet]
         public async Task<IActionResult> GetSubCourseById([FromQuery] int subcourseid)
         {
             var subcourse = await _context.SubCourses.FindAsync(subcourseid);

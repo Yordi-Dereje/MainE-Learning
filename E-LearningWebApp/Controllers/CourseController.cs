@@ -6,17 +6,22 @@ using Microsoft.AspNetCore.Identity;
 using E_LearningWebApp.Areas.Identity.Data;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Hosting;
+using NuGet.Protocol;
 
 namespace E_LearningWebApp.Controllers
 {
     public class CourseController : Controller
+
     {
+        private IWebHostEnvironment webHostEnvironment;
         private E_LearningDbContext _context = new E_LearningDbContext();
 
         private readonly UserManager<E_LearningWebAppUser> _userManager;
-        public CourseController(UserManager<E_LearningWebAppUser> _userManager)
+        public CourseController(UserManager<E_LearningWebAppUser> _userManager, IWebHostEnvironment webHostEnvironment)
         {
             this._userManager = _userManager;
+            this.webHostEnvironment = webHostEnvironment;
         }
         public IActionResult Index()
         {
@@ -36,8 +41,36 @@ namespace E_LearningWebApp.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult CreateCourse(Courses course)
+        /*  public IActionResult CreateCourse(Courses course)--it works perfectly i commented it coz i updated the model
+          {
+              CourseRepository cr = new CourseRepository(_context);
+
+              if (!ModelState.IsValid)
+                  return View("CreateCourse");
+
+              cr.AddCourse(course);
+              return RedirectToAction("GetAllCourses");
+          }*/
+        public IActionResult CreateCourse(CourseViewModel cvm)
         {
+            string fileName = "";
+            string uniqueCFileName = "";
+            string uploadFolder = Path.Combine(webHostEnvironment.WebRootPath, "Images");//url it combines the root url path with the folder name images--- wwwroot/Images
+            if (cvm.imagePath != null)
+            {
+                fileName = Guid.NewGuid().ToString() + "-" + cvm.imagePath.FileName;
+                uniqueCFileName = Path.Combine(uploadFolder, fileName);//wwwroot/Images/filename(guid+actual file name)
+                cvm.imagePath.CopyTo(new FileStream(uniqueCFileName, FileMode.Create));//creates uniqueCFileName on server and copies the items
+            }
+            var course = new Courses()
+            {
+                CourseName = cvm.CourseName,
+                CourseCode = cvm.CourseCode,
+                CourseDescription = cvm.CourseDescription,
+                CourseDuration = cvm.CourseDuration,
+                CoursePrice = cvm.CoursePrice,
+                imagePath = "/Images/" + fileName
+            };   
             CourseRepository cr = new CourseRepository(_context);
 
             if (!ModelState.IsValid)
@@ -47,7 +80,6 @@ namespace E_LearningWebApp.Controllers
             return RedirectToAction("GetAllCourses");
         }
 
-        
 
         [HttpGet("GetAllCourses")]
         public IActionResult GetAllCourses()
@@ -65,18 +97,23 @@ namespace E_LearningWebApp.Controllers
 
         }
         [HttpGet("editCourses/{courseid}")]
-        public async Task<IActionResult> EditCourses( int courseid)
+        public async Task<IActionResult> EditCourses(int courseid)
         {
             var course = await _context.Courses.FindAsync(courseid);
             return View(course);
         }
-     
 
+      /*  public IActionResult GetImage(string imageName)
+        {
+            var imagePath = Path.Combine(webHostEnvironment.WebRootPath, "Images", imageName);
+            var imageBytes = System.IO.File.ReadAllBytes(imagePath);
+            return File(imageBytes, "image/PNG"); // Adjust the content type based on the image type
+        }*/
 
         [HttpPost("editCourses/{courseid}")]
         public IActionResult EditCourses(int courseid, Courses UpdatedCourse)
         {
-            var courses = _context.Courses.AsNoTracking().FirstOrDefaultAsync(course => course.CourseId ==courseid);
+            var courses = _context.Courses.AsNoTracking().FirstOrDefaultAsync(course => course.CourseId == courseid);
 
             if (courses != null)
             {
@@ -93,11 +130,11 @@ namespace E_LearningWebApp.Controllers
             var course = await _context.Courses.FindAsync(courseid);
             return View(course);
         }
-        
+
         [HttpPost("deleteCourse/{courseid}")]
         public IActionResult DeleteCourse(int courseid, Courses deletedcourse)
         {
-            var courses =_context.Courses.AsNoTracking().FirstOrDefaultAsync(course => course.CourseId == courseid);
+            var courses = _context.Courses.AsNoTracking().FirstOrDefaultAsync(course => course.CourseId == courseid);
 
             if (courses != null)
             {
@@ -110,5 +147,5 @@ namespace E_LearningWebApp.Controllers
         /*all above are working i dare you to touch it and die*/
     }
 
-} 
+}
 

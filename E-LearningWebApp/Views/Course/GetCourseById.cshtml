@@ -1,8 +1,21 @@
 ﻿@model E_LearningWebApp.Models.Courses
 
 @{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
     ViewData["Title"] = "GetCourseById";
 }
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="~/Content/css/courses.css">
+</head>
+<body>
 
 <h1>GetCourseById</h1>
 
@@ -41,11 +54,18 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.CourseDuration)
         </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.imagePath)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.imagePath)
+        </dd>
     </dl>
 </div>
 <div>
 @*  ..works perfectly dont touch   <a class="nav-link text-dark" asp-controller="Subcourse" asp-action="CreateSubCourse" asp-route-courseid="@ViewBag.CourseId">AllSubCourse</a>|
  *@
-     <a class="nav-link text-dark" asp-controller="Subcourse" asp-action="GetAllSubCourses" asp-route-courseid="@ViewBag.CourseId">AllSubCourse</a>|
-     <a asp-action="Index">Back to List</a>
+     <a class="nav-link text-dark" asp-controller="Subcourse" asp-action="GetAllSubCourses" asp-route-courseid="@ViewBag.CourseId">Add SubCourse</a>|
+     <a asp-action="GetAllCourses">Back to List</a>
 </div>
+</body>

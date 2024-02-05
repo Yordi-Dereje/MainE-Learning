@@ -19,11 +19,9 @@
                 @Html.DisplayNameFor(model => model.SubCourseDescription)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.StartDate)
+                @Html.DisplayNameFor(model => model.SubCourseDuration)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.EndDate)
-            </th>
+
             <th>
                 @Html.DisplayNameFor(model => model.Course)
             </th>
@@ -39,12 +37,9 @@
             <td>
                 @Html.DisplayFor(modelItem => item.SubCourseDescription)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.StartDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EndDate)
-            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SubCourseDuration)
+                </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Course.CourseCode)
             </td>

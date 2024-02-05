@@ -1,73 +1,73 @@
-﻿@model IEnumerable<E_LearningWebApp.Models.SubCourses> 
+﻿@model IEnumerable<E_LearningWebApp.Models.SubCourses>
 
-@* 
+@*
 @using E_LearningWebApp.Models;
 @model List<SubCourses>
  *@
 @{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
     ViewData["Title"] = "GetAllSubCourses";
 }
-</br>
-</br>
-</br>
-</br>
-<h2>GetAllSubCourses</h2>
-<p>
-  <a class="nav-link text-dark" asp-controller="Subcourse" asp-action="CreateSubCourse" asp-route-courseid="@ViewBag.CourseId">Create New</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
 
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.SubCourseName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.SubCourseDescription)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.StartDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.EndDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Course)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.SubCourseName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SubCourseDescription)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.StartDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EndDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Course.CourseCode)
-            </td>
-            <td>
-                   @*  <a asp-controller="Subcourse" asp-action="CreateSubCourse" asp-route-courseid="@item?.CourseId">SubCourse</a> *@
-                    @*<a asp-controller="Course" asp-action="EditCourses" asp-route-courseid="@item.CourseId">Edit</a>|
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="~/Content/css/courses.css">
+</head>
+<body>
 
- *@
-                    <a asp-controller="SubCourse" asp-action="EditSubCourse" asp-route-courseid ="@item.CourseId" asp-route-subcourseid="@item.SubCourseId">Edit</a>|
-                   @*  <a asp-action="Edit" asp-route-id="@item.SubCourseId">Edit</a> | *@
-                <a asp-action="Details" asp-route-id="@item.SubCourseId">Details</a> |
-                    <a asp-controller="SubCourse" asp-action="DeleteSubCourse" asp-route-courseid="@item.CourseId" asp-route-subcourseid="@item.SubCourseId">Delete</a>|
+    <h4>GetAllSubCourses</h4>
+    <p>
+        <a class="nav-link text-dark" asp-controller="Subcourse" asp-action="CreateSubCourse" asp-route-courseid="@ViewBag.CourseId">Create New</a>
 
-@*                     <a asp-controller="SubCourse" asp-action="DeleteSubCourse" asp-route-courseid="@item.CourseId" asp-route-id="@item.SubCourseId">Delete</a>
- *@            </td>
-        </tr>
-}
-    </tbody>
-</table>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.SubCourseName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SubCourseDescription)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SubCourseDuration)
+                </th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.Course)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SubCourseName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SubCourseDescription)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SubCourseDuration)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Course.CourseCode)
+                    </td>
+                    <td>
+                        <a asp-controller="SubCourse" asp-action="EditSubCourse" asp-route-courseid="@item.CourseId" asp-route-subcourseid="@item.SubCourseId">Edit</a>|
+                        <a asp-action="Details" asp-route-id="@item.SubCourseId">Details</a> |
+                        <a asp-controller="SubCourse" asp-action="DeleteSubCourse" asp-route-courseid="@item.CourseId" asp-route-subcourseid="@item.SubCourseId">Delete</a>|
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>

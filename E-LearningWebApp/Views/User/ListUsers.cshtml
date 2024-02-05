@@ -3,6 +3,7 @@
 
 
 @{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
     ViewData["Title"] = "ListUsers";
 }
 <br/>
@@ -15,7 +16,7 @@
     <a asp-action="Create">Create New</a>
 </p>
 <table class="table">
-@*     <thead>
+    @* <thead>
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.FirstName)
@@ -38,8 +39,8 @@
             </th>
             <th></th>
         </tr>
-    </thead> *@
-    <tbody>
+    </thead>
+    <tbody> *@
 @foreach (var item in Model) {
         <tr>
             <td>
