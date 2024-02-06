@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "SfV3gvBDuyzIHkpJPFsCfg2MJx8ed7wgrPX2BjUreww=",
+  "Hash": "2fEWs1WcuJHvbiI9OGXcn1e8KVzbb+0O/1RCTt5UgAI=",
   "Source": "E-LearningWebApp",
   "BasePath": "_content/E-LearningWebApp",
   "Mode": "Default",
@@ -32893,6 +32893,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\3c3fab6f-92e9-4966-b915-b3d579d135c7-Screenshot 2023-08-17 210910.png"
+    },
+    {
+      "Identity": "C:\\Users\\Hp\\Desktop\\Maine\\MainE-Learning\\E-LearningWebApp\\wwwroot\\Images\\8bf08284-2296-4dec-a4b2-da5d54ac8db1-Screenshot (12).png",
+      "SourceId": "E-LearningWebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Hp\\Desktop\\Maine\\MainE-Learning\\E-LearningWebApp\\wwwroot\\",
+      "BasePath": "_content/E-LearningWebApp",
+      "RelativePath": "Images/8bf08284-2296-4dec-a4b2-da5d54ac8db1-Screenshot (12).png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\8bf08284-2296-4dec-a4b2-da5d54ac8db1-Screenshot (12).png"
     },
     {
       "Identity": "C:\\Users\\Hp\\Desktop\\Maine\\MainE-Learning\\E-LearningWebApp\\wwwroot\\Images\\f4d061ab-fd16-4127-8dba-e9b739f1c05b-Screenshot 2023-08-17 210910.png",

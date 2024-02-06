@@ -1,10 +1,20 @@
-﻿@model E_LearningWebApp.Models.Courses
+﻿@using E_LearningWebApp.Areas.Identity.Data;
+@using Microsoft.AspNetCore.Identity;
+@model E_LearningWebApp.Models.MultipleViewModel
+
 
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<br />
-<br />
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
 
 <body>
     <main id="main">
@@ -13,135 +23,96 @@
         <div class="breadcrumbs" data-aos="fade-in">
             <div class="container">
                 <h2>Course Details</h2>
-                <p>Est dolorum ut non facere possimus quibusdam eligendi voluptatem. Quia id aut similique quia voluptas sit quaerat debitis. Rerum omnis ipsam aperiam consequatur laboriosam nemo harum praesentium. </p>
             </div>
         </div><!-- End Breadcrumbs -->
-       
-<!-- Course Details Section -->
-<section id="course-details" class="course-details">
-    <div class="container" data-aos="fade-up">
-        <div class="row">
-            <div class="col-lg-8">
-                <!-- Display the course image -->
-                <img src="@Model.imagePath" class="img-fluid" alt="Course Image">
-                <h3>@Model.CourseName</h3>
-                <p>@Model.CourseDescription</p>
+        <!-- Course Details Section -->
+        @* notif *@
+
+
+
+            <div class="container">
+                <button type="button" class="btn btn-success">Success <span class="badge">@Model.courseview.</span></button>
+            </div>
+
+      
+
+
+    <section id="course-details" class="course-details">
+        <div class="container" data-aos="fade-up">
+            <div class="row">
+                <div class="col-lg-8" style="width: 50%">
+                    <!-- Display the course image -->
+                    <img src="@Model.courseview.imagePath" class="img-fluid" alt="Course Image" style="width: 80%">
+                </div>
+                <div class="col-lg-4">
+                    <!-- Course Info -->
+                    <div class="course-info d-flex justify-content-between align-items-center">
+                        <h3>@Model.courseview.CourseName</h3>
+
+                    </div>
+                    <div class="course-info d-flex justify-content-between align-items-center">
+                        <p>@Model.courseview.CourseDescription</p>
+                    </div>
+                    <div class="course-info d-flex justify-content-between align-items-center">
+                        <h5>Duration</h5>
+                        <p>@Model.courseview.CourseDuration Weeks</p>
+                    </div>
+                    <div class="course-info d-flex justify-content-between align-items-center">
+                        <h5>Price</h5>
+                        <p>$@Model.courseview.CoursePrice</p>
+                    </div>
+                </div>
+
+
+                    @*
+                    <div class="form-group">
+                        <input type="submit" value="Enroll" class="btn btn-primary" style="background-color: green" />
+
+                        <button class="get-started-btn align-items-right" asp-controller="Payment" asp-action="UserPayment" asp-route-userid="@ViewBag.userid">Pay Now</button>
+                         <form method="POST" class="form" action="https://api.chapa.co/v1/hosted/pay">
+                            <input type="hidden" name="public_key" value="CHAPUBK_TEST-iuDgvUTK7jeeGEcNxPMy9Wuf73IdVKYC" />
+                            <input type="hidden" name="tx_ref" value="negade-tx-123332334456778sss9" />
+                            <input type="hidden" name="amount" value=@Model.courseview.CoursePrice />
+                            <input type="hidden" name="currency" value="ETB" />
+                            <input type="hidden" name="email" value="israel@negade.et" />
+                            <input type="hidden" name="first_name" value="Israel" />
+                            <input type="hidden" name="last_name" value="Goytom" />
+                            <input type="hidden" name="title" value="Let us do this" />
+                            <input type="hidden" name="description" value="Paying with Confidence with cha" />
+                            <input type="hidden" name="logo" value="https://chapa.link/asset/images/chapa_swirl.svg" />
+                            <input type="hidden" name="callback_url" value="https://localhost:7059"  />
+                            <input type="hidden" name="return_url" value="https://localhost:7059/" />
+                            <input type="hidden" name="meta[title]" value="test" />
+                            <button type="submit" class="get-started-btn align-items-right">Pay Now</button>
+                        </form> 
+                    </div>*@
+
+                    
+
             </div>
             <div class="col-lg-4">
-                <!-- Course Info -->
-                <div class="course-info d-flex justify-content-between align-items-center">
-                    <h5>Duration</h5>
-                    <p>@Model.CourseDuration</p>
-                </div>
-                <div class="course-info d-flex justify-content-between align-items-center">
-                    <h5>Price</h5>
-                    <p>@Model.CoursePrice</p>
-                </div>
                 <!-- SubCourses List -->
                 <div class="subcourses-list">
                     <h3>SubCourses</h3>
                     <ul>
-                        @foreach (var subCourse in Model.SubCourses)
-                        {
-                            <li>@subCourse.SubCourseName - @subCourse.SubCourseDescription</li>
-                        }
+                            @if (Model.subcourseview != null)
+                            {
+                                foreach (var subs in Model.subcourseview)
+                                {
+                                <li>@subs.SubCourseName - @subs.SubCourseDescription </li>
+                                }
+
+                            }
                     </ul>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-<!-- End Cource Details Section -->
-    </main><!-- End #main -->
-    <!-- ======= Footer ======= -->
-    <footer id="footer">
 
-        <div class="footer-top">
-            <div class="container">
-                <div class="row">
+    </section>
+    <!-- End Cource Details Section -->
+</main><!-- End #main -->
 
-                    <div class="col-lg-3 col-md-6 footer-contact">
-                        <h3>Mentor</h3>
-                        <p>
-                            A108 Adam Street <br>
-                            New York, NY 535022<br>
-                            United States <br><br>
-                            <strong>Phone:</strong> +1 5589 55488 55<br>
-                            <strong>Email:</strong> info@example.com<br>
-                        </p>
-                    </div>
 
-                    <div class="col-lg-2 col-md-6 footer-links">
-                        <h4>Useful Links</h4>
-                        <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 footer-links">
-                        <h4>Our Services</h4>
-                        <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 footer-newsletter">
-                        <h4>Join Our Newsletter</h4>
-                        <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-                        <form action="" method="post">
-                            <input type="email" name="email"><input type="submit" value="Subscribe">
-                        </form>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="container d-md-flex py-4">
-
-            <div class="me-md-auto text-center text-md-start">
-                <div class="copyright">
-                    &copy; Copyright <strong><span>Mentor</span></strong>. All Rights Reserved
-                </div>
-                <div class="credits">
-                    <!-- All the links in the footer should remain intact. -->
-                    <!-- You can delete the links only if you purchased the pro version. -->
-                    <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                    <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/mentor-free-education-bootstrap-theme/ -->
-                    Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-                </div>
-            </div>
-            <div class="social-links text-center text-md-right pt-3 pt-md-0">
-                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-            </div>
-        </div>
-    </footer><!-- End Footer -->
-
-    <div id="preloader"></div>
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-    <!-- Vendor JS Files -->
-    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-    <script src="assets/vendor/aos/aos.js"></script>
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
-
-    <!-- Template Main JS File -->
-    <script src="assets/js/main.js"></script>
 
 </body>
 
-</html>

@@ -1042,3 +1042,6 @@ C:\Users\Hp\Desktop\Maine\MainE-Learning\E-LearningWebApp\obj\Debug\net6.0\scope
 C:\Users\Hp\Desktop\Maine\MainE-Learning\E-LearningWebApp\obj\Debug\net6.0\E-LearningWebApp.csproj.CopyComplete
 C:\Users\Hp\Desktop\Maine\MainE-Learning\E-LearningWebApp\obj\Debug\net6.0\E-LearningWebApp.genruntimeconfig.cache
 C:\Users\Hp\Desktop\Maine\MainE-Learning\E-LearningWebApp\obj\Debug\net6.0\ref\E-LearningWebApp.dll
+C:\Users\Hp\Desktop\Maine\MainE-Learning\E-LearningWebApp\bin\Debug\net6.0\Chapa.NET.dll
+C:\Users\Hp\Desktop\Maine\MainE-Learning\E-LearningWebApp\bin\Debug\net6.0\Flurl.dll
+C:\Users\Hp\Desktop\Maine\MainE-Learning\E-LearningWebApp\bin\Debug\net6.0\Flurl.Http.dll

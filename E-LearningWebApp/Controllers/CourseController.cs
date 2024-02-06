@@ -8,7 +8,7 @@ using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Hosting;
 using NuGet.Protocol;
-
+using System;
 namespace E_LearningWebApp.Controllers
 {
     public class CourseController : Controller
@@ -18,10 +18,13 @@ namespace E_LearningWebApp.Controllers
         private E_LearningDbContext _context = new E_LearningDbContext();
 
         private readonly UserManager<E_LearningWebAppUser> _userManager;
-        public CourseController(UserManager<E_LearningWebAppUser> _userManager, IWebHostEnvironment webHostEnvironment)
+        private readonly SignInManager<E_LearningWebAppUser> _signInManager;
+
+        public CourseController(UserManager<E_LearningWebAppUser> _userManager, IWebHostEnvironment webHostEnvironment, SignInManager<E_LearningWebAppUser> _signInManager)
         {
             this._userManager = _userManager;
             this.webHostEnvironment = webHostEnvironment;
+            this._signInManager = _signInManager;
         }
         public IActionResult Index()
         {
@@ -32,9 +35,81 @@ namespace E_LearningWebApp.Controllers
         {
             return View();
         }
+        public IActionResult Payement()
+        {
+            return View();
+        }
         public IActionResult Courses()
         {
             return View();
+        }
+     
+        [HttpGet("CourseDisplay")]
+        public IActionResult CourseDisplay()
+        {
+            CourseRepository pr = new CourseRepository(_context);
+            List<Courses> courses = pr.GetAllCourses();
+
+            return View(courses);
+        }
+        [HttpGet]
+        public IActionResult CourseDisplayUser()
+        {
+            CourseRepository pr = new CourseRepository(_context);
+            List<Courses> courses = pr.GetAllCourses();
+
+            return View(courses);
+        }
+
+        [HttpGet]
+
+        public async Task<IActionResult> CourseDetail([FromQuery] int courseId)
+        {
+            // Find the course asynchronously
+            var course = await _context.Courses.FindAsync(courseId);
+            if (course == null)
+            {
+                return NotFound(); // Return a  404 Not Found if the course is not found
+            }
+
+            // Initialize the repository and get the subcourses
+            SubCourseRepository scr = new SubCourseRepository(_context);
+            List<SubCourses> subcourses = scr.GetAllSubCourse(courseId);
+
+            // Use the course and subcourses to construct the view model
+            var multiplViewCourseSubCourseModel = from app in new[] { course } // Wrap the course object in an array to create a sequence
+                                                  join subcourse in subcourses on app.CourseId equals subcourse.CourseId into table1
+                                                  from subcourse in table1.DefaultIfEmpty() // Corrected spelling: DefaultIfEmpty
+                                                  select new MultipleViewModel { courseview = app, subcourseview = subcourses };
+
+           
+            // Pass the view model to the view
+            return View(multiplViewCourseSubCourseModel.FirstOrDefault()); // FirstOrDefault ensures a null is handled gracefully if no matching subcourses
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> CourseDetailUser([FromQuery] int courseId)
+        {
+            // Find the course asynchronously
+            var course = await _context.Courses.FindAsync(courseId);
+            if (course == null)
+            {
+                return NotFound(); // Return a  404 Not Found if the course is not found
+            }
+
+            // Initialize the repository and get the subcourses
+            SubCourseRepository scr = new SubCourseRepository(_context);
+            List<SubCourses> subcourses = scr.GetAllSubCourse(courseId);
+
+            // Use the course and subcourses to construct the view model
+            var multiplViewCourseSubCourseModeluser = from app in new[] { course } // Wrap the course object in an array to create a sequence
+                                                  join subcourse in subcourses on app.CourseId equals subcourse.CourseId into table2
+                                                  from subcourse in table2.DefaultIfEmpty() // Corrected spelling: DefaultIfEmpty
+                                                  select new MultipleViewModel { courseview = app, subcourseview = subcourses };
+
+
+            // Pass the view model to the view
+            return View(multiplViewCourseSubCourseModeluser.FirstOrDefault()); // FirstOrDefault ensures a null is handled gracefully if no matching subcourses
         }
         public IActionResult Concepts()
         {
@@ -97,21 +172,23 @@ namespace E_LearningWebApp.Controllers
 
         }
         [HttpGet("editCourses/{courseid}")]
-        public async Task<IActionResult> EditCourses(int courseid)
+         public async Task<IActionResult> EditCourses(int courseid)
         {
             var course = await _context.Courses.FindAsync(courseid);
             return View(course);
         }
 
-      /*  public IActionResult GetImage(string imageName)
-        {
-            var imagePath = Path.Combine(webHostEnvironment.WebRootPath, "Images", imageName);
-            var imageBytes = System.IO.File.ReadAllBytes(imagePath);
-            return File(imageBytes, "image/PNG"); // Adjust the content type based on the image type
-        }*/
+
+
+        /*  public IActionResult GetImage(string imageName)
+          {
+              var imagePath = Path.Combine(webHostEnvironment.WebRootPath, "Images", imageName);
+              var imageBytes = System.IO.File.ReadAllBytes(imagePath);
+              return File(imageBytes, "image/PNG"); // Adjust the content type based on the image type
+          }*/
 
         [HttpPost("editCourses/{courseid}")]
-        public IActionResult EditCourses(int courseid, Courses UpdatedCourse)
+         public IActionResult EditCourses(int courseid, Courses UpdatedCourse)
         {
             var courses = _context.Courses.AsNoTracking().FirstOrDefaultAsync(course => course.CourseId == courseid);
 
@@ -123,6 +200,8 @@ namespace E_LearningWebApp.Controllers
 
             return RedirectToAction("GetAllCourses", "Course");
         }
+
+
 
         [HttpGet("deleteCourse/{courseid}")]
         public async Task<IActionResult> DeleteCourse(int courseid)

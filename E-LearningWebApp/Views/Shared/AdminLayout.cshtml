@@ -87,9 +87,24 @@
             <a class="nav-link text-dark" asp-controller="User" asp-action="Index"><i class="fas fa-house"></i> Home</a>
             <a class="nav-link text-dark" asp-controller="Course" asp-action="GetAllCourses"><i class="fas fa-book"></i> Courses</a>
             <a class="nav-link text-dark" asp-controller="User" asp-action="ListUsers"><i class="fas fa-users"></i> Students</a>
+            <a class="nav-link text-dark" asp-controller="Role" asp-action="Index"><i class="fas fa-users"></i> Roles</a>
 
-            <a class="nav-link text-dark" asp-controller="Home" asp-action="Index"><i class="fas fa-sign-out-alt"></i> Logout</a>
-        </nav>
+
+            @if (SignInManager.IsSignedIn(User))
+            {
+
+                <form id="logoutForm" class="form-inline" asp-area="Identity" asp-route-returnUrl="@Url.Action("Login", "Account", new { area = "" })">
+
+
+                    <button id="logout" class="nav-link btn btn-link text-dark" type="submit"><i class="fas fa-sign-out-alt"></i> Logout</button>
+
+                    </form>
+               
+            }
+
+
+@*             <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login"><i class="fas fa-sign-out-alt"></i> Logout</a>
+ *@        </nav>
 
     </aside>
 

@@ -17,14 +17,17 @@ namespace E_LearningWebApp.Controllers
         {
             //this.webHostEnvironment = webHostEnvironment;
         }
+
+        /* ...works perfectly dont touch [HttpGet("GetAllSubCourses")]
+         public IActionResult GetAllSubCourses()
+         {
+             SubCourseRepository scr = new SubCourseRepository(_context);
+             List<SubCourses> subcourses = scr.GetAllSubCourse();
+             return View(subcourses);
+         }*/
+
        
-       /* ...works perfectly dont touch [HttpGet("GetAllSubCourses")]
-        public IActionResult GetAllSubCourses()
-        {
-            SubCourseRepository scr = new SubCourseRepository(_context);
-            List<SubCourses> subcourses = scr.GetAllSubCourse();
-            return View(subcourses);
-        }*/
+
         [HttpGet("GetAllSubCourses/{courseid}")]
         public IActionResult GetAllSubCourses(int courseid)
         {
