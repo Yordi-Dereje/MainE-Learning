@@ -120,7 +120,23 @@ namespace E_LearningWebApp.Areas.Identity.Pages.Account
 
             if (ModelState.IsValid)
             {
-                
+
+                string fileName = "";
+                string uniqueCFileName = "";
+                string uploadFolder = Path.Combine(webHostEnvironment.WebRootPath, "Images");
+
+                if (!Directory.Exists(uploadFolder))
+                {
+                    Directory.CreateDirectory(uploadFolder);
+                }
+
+                if (Input.imagePath != null)
+                {
+                    fileName = Guid.NewGuid().ToString() + "-" + Input.imagePath.FileName;
+                    uniqueCFileName = Path.Combine(uploadFolder, fileName);
+                    Input.imagePath.CopyTo(new FileStream(uniqueCFileName, FileMode.Create));
+                }
+
                 var user = new E_LearningWebAppUser
                 {
                     UserName = Input.Email,
@@ -128,6 +144,7 @@ namespace E_LearningWebApp.Areas.Identity.Pages.Account
                     FirstName = Input.FirstName,
                     LastName = Input.LastName,
                     PhoneNumber = Input.PhoneNumber,
+                    imagePath = fileName == "" ? "/Images/default.jpg" : "/Images/" + fileName
                 };
                 /*  var user = CreateUser();*/
 

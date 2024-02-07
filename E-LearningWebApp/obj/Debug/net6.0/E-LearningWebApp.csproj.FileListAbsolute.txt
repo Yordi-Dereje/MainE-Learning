@@ -1045,3 +1045,9 @@ C:\Users\Hp\Desktop\Maine\MainE-Learning\E-LearningWebApp\obj\Debug\net6.0\ref\E
 C:\Users\Hp\Desktop\Maine\MainE-Learning\E-LearningWebApp\bin\Debug\net6.0\Chapa.NET.dll
 C:\Users\Hp\Desktop\Maine\MainE-Learning\E-LearningWebApp\bin\Debug\net6.0\Flurl.dll
 C:\Users\Hp\Desktop\Maine\MainE-Learning\E-LearningWebApp\bin\Debug\net6.0\Flurl.Http.dll
+C:\Users\Hp\Desktop\MainElearningAppSubmit\MainE-Learning\E-LearningWebApp\bin\Debug\net6.0\Content\assets\vendor\bootstrap-icons\bootstrap-icons.json
+C:\Users\Hp\Desktop\MainElearningAppSubmit\MainE-Learning\E-LearningWebApp\bin\Debug\net6.0\Content\assets\vendor\remixicon\remixicon.glyph.json
+C:\Users\Hp\Desktop\MainElearningAppSubmit\MainE-Learning\E-LearningWebApp\bin\Debug\net6.0\Content\vendor\fontawesome-free\package.json
+C:\Users\Hp\Desktop\MainElearningAppSubmit\MainE-Learning\E-LearningWebApp\bin\Debug\net6.0\Chapa.NET.dll
+C:\Users\Hp\Desktop\MainElearningAppSubmit\MainE-Learning\E-LearningWebApp\bin\Debug\net6.0\Flurl.dll
+C:\Users\Hp\Desktop\MainElearningAppSubmit\MainE-Learning\E-LearningWebApp\bin\Debug\net6.0\Flurl.Http.dll

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Hp\\Desktop\\Maine\\MainE-Learning\\E-LearningWebApp\\E-LearningWebApp.csproj": {}
+    "C:\\Users\\Hp\\Desktop\\MainElearningAppSubmit\\MainE-Learning\\E-LearningWebApp\\E-LearningWebApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Hp\\Desktop\\Maine\\MainE-Learning\\E-LearningWebApp\\E-LearningWebApp.csproj": {
+    "C:\\Users\\Hp\\Desktop\\MainElearningAppSubmit\\MainE-Learning\\E-LearningWebApp\\E-LearningWebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Hp\\Desktop\\Maine\\MainE-Learning\\E-LearningWebApp\\E-LearningWebApp.csproj",
+        "projectUniqueName": "C:\\Users\\Hp\\Desktop\\MainElearningAppSubmit\\MainE-Learning\\E-LearningWebApp\\E-LearningWebApp.csproj",
         "projectName": "E-LearningWebApp",
-        "projectPath": "C:\\Users\\Hp\\Desktop\\Maine\\MainE-Learning\\E-LearningWebApp\\E-LearningWebApp.csproj",
+        "projectPath": "C:\\Users\\Hp\\Desktop\\MainElearningAppSubmit\\MainE-Learning\\E-LearningWebApp\\E-LearningWebApp.csproj",
         "packagesPath": "C:\\Users\\Hp\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Hp\\Desktop\\Maine\\MainE-Learning\\E-LearningWebApp\\obj\\",
+        "outputPath": "C:\\Users\\Hp\\Desktop\\MainElearningAppSubmit\\MainE-Learning\\E-LearningWebApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Hp\\AppData\\Roaming\\NuGet\\NuGet.Config",

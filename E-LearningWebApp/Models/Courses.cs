@@ -25,6 +25,7 @@ namespace E_LearningWebApp.Models
         public string imagePath { get; set; }
 
         public List<SubCourses>? SubCourses { get; set;}
+        public Payment Payment { get; set; } // Renamed to match singular form of Payment
 
     }
 }
