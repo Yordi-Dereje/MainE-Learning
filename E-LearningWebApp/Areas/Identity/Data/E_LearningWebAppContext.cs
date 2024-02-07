@@ -9,6 +9,10 @@ namespace E_LearningWebApp.Data;
 
 public class E_LearningWebAppContext : IdentityDbContext<E_LearningWebAppUser>
 {
+    public E_LearningWebAppContext()
+    {
+    }
+
     public E_LearningWebAppContext(DbContextOptions<E_LearningWebAppContext> options)
         : base(options)
     {

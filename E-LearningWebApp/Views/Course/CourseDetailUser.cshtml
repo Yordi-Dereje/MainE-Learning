@@ -1,10 +1,20 @@
 ﻿@using E_LearningWebApp.Areas.Identity.Data;
 @using Microsoft.AspNetCore.Identity;
-@model E_LearningWebApp.Models.MultipleViewModel
+@using E_LearningWebApp.Models;
 
+@inject SignInManager<E_LearningWebAppUser> SignInManager
+@inject UserManager<E_LearningWebAppUser> UserManager
 
 @{
     Layout = "~/Views/Shared/UserLayout.cshtml";
+    string GenerateTxRef()
+    {
+        // Generate a unique identifier for tx_ref
+        string txRef = "negade-tx-" + Guid.NewGuid().ToString("N");
+        return txRef;
+    }
+   
+
 }
 
 <head>
@@ -25,10 +35,6 @@
                 <h2>Course Details</h2>
             </div>
         </div><!-- End Breadcrumbs -->
-        <!-- Course Details Section -->
-        @* notif *@
-
-
 
         <div class="container">
             <button type="button" class="btn btn-success">Success <span class="badge">@Model.courseview.</span></button>
@@ -65,13 +71,17 @@
 
 
 
-                    <div class="form-group">
-@*                         <input type="submit" value="Enroll" class="btn btn-primary" style="background-color: green" />
- *@
-                        @* chapa *@
-                         <form method="POST" class="form" action="https://api.chapa.co/v1/hosted/pay">
+                   <div class="form-group">
+
+                        @ViewBag.userid
+
+                    @* chapa *@
+
+
+
+                    <form method="POST" class="form" action="https://api.chapa.co/v1/hosted/pay">
                         <input type="hidden" name="public_key" value="CHAPUBK_TEST-iuDgvUTK7jeeGEcNxPMy9Wuf73IdVKYC" />
-                        <input type="hidden" name="tx_ref" value="negade-tx-123332334456778sss9" />
+                        <input type="hidden" name="tx_ref" value="@GenerateTxRef()" />
                         <input type="hidden" name="amount" value=@Model.courseview.CoursePrice />
                         <input type="hidden" name="currency" value="ETB" />
                         <input type="hidden" name="email" value="israel@negade.et" />
@@ -80,33 +90,46 @@
                         <input type="hidden" name="title" value="Let us do this" />
                         <input type="hidden" name="description" value="Paying with Confidence with cha" />
                         <input type="hidden" name="logo" value="https://chapa.link/asset/images/chapa_swirl.svg" />
-                        <input type="hidden" name="callback_url" value="https://localhost:7059"  />
-                        <input type="hidden" name="return_url" value="https://localhost:7059/" />
+                        <input type="hidden" name="callback_url" value="https://localhost:7059" />
+                       @*  <input type="hidden" name="return_url" value="@Url.Action("Payment", "User", new { userId = @ViewBag.userid, courseId =  @Model.courseview.CourseId })" />
+                                <input type="hidden" name="return_url" value="https://localhost:7059/User/Payment?userId=@ViewBag.userid&amp;courseId=@Model.courseview.CourseId" />
+                             <input type="hidden" name="return_url" value="@Url.Action("Payment", "User", new { userId = @ViewBag.userid, courseId = @Model.courseview.CourseId })" />
+                            *@<input type="hidden" name="return_url" value="https://localhost:7059/User/Payment?userId=@ViewBag.userid&courseId=@Model.courseview.CourseId" />
+
                         <input type="hidden" name="meta[title]" value="test" />
                         <button type="submit" class="get-started-btn align-items-right">Enroll</button>
-                        </form>
+                    </form>
+
+
+
                         @*  end chapa *@
                     </div>
 
 
 
-                </div>
-                <div class="col-lg-4">
-                    <!-- SubCourses List -->
-                    <div class="subcourses-list">
-                        <h3>SubCourses</h3>
-                        <ul>
-                            @if (Model.subcourseview != null)
-                            {
-                                foreach (var subs in Model.subcourseview)
-                                {
-                                    <li>@subs.SubCourseName - @subs.SubCourseDescription </li>
-                                }
 
+
+
+
+
+
+            </div>
+            <div class="col-lg-4">
+                <!-- SubCourses List -->
+                <div class="subcourses-list">
+                    <h3>SubCourses</h3>
+                    <ul>
+                        @if (Model.subcourseview != null)
+                        {
+                            foreach (var subs in Model.subcourseview)
+                            {
+                                <li>@subs.SubCourseName - @subs.SubCourseDescription </li>
                             }
-                        </ul>
-                    </div>
+
+                        }
+                    </ul>
                 </div>
+            </div>
             </div>
 
         </section>

@@ -73,7 +73,36 @@ namespace E_LearningWebApp.Controllers
                 return View(user);
             }
         }
-        //[HttpPost]
+        [HttpGet]
+        public async Task<IActionResult> Payment([FromQuery] string userId, [FromQuery] int courseId)
+        {
+            try
+            {
+                var user = await _userManager.FindByIdAsync(userId);
+                var course = await _context.Courses.FindAsync(courseId);
+               /* if (user != null || course != null)
+                {*/
+                    var pay = new Payment
+                    {
+                        User = user,
+                        CourseId = courseId,
+                        PaymentStatus = "Paid"
+                    };
+                    _context.Payments.Add(pay); // Assuming Payments is the DbSet for Payment entities
+                    await _context.SaveChangesAsync(); // Save changes to the database
+                    return RedirectToAction("Payment"); // Redirect to an index page or similar
+              /*  }
+                else
+                {
+                    return NotFound($"Unable to find '{userId}'.");
+                }*/
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions appropriately, logging or displaying an error message
+                return StatusCode(500, $"Internal server error: {ex}");
+            }
+        }
 
 
     }

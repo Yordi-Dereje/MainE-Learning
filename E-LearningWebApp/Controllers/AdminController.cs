@@ -10,6 +10,8 @@ using Microsoft.EntityFrameworkCore;
 using E_LearningWebApp.Models;
 using E_LearningWebApp.Repository;
 using ChapaNET;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using E_LearningWebApp.Data;
 
 namespace E_LearningWebApp.Controllers
 {
@@ -17,6 +19,7 @@ namespace E_LearningWebApp.Controllers
   //  [Authorize(Policy = "Adminroles")]
     public class AdminController : Controller
     {
+
         private E_LearningDbContext _context = new E_LearningDbContext();
 
         private readonly UserManager<E_LearningWebAppUser> _userManager;
@@ -64,12 +67,37 @@ namespace E_LearningWebApp.Controllers
 
 
 
-        public IActionResult DashBoard() { return View(); }
+      /*  public IActionResult DashBoard() {
+           
+               *//* int countPayment = _context.Payments.Count();
+                ViewBag.ItemCountPayment = countPayment;*//*
+
+                int countCourse = _context.Courses.Count();
+                ViewBag.ItemCountCourse = countCourse;
+          
+            int countSubCourse = _context.SubCourses.Count();
+                ViewBag.ItemCountSubCourse = countSubCourse;
+*//*
+         
+                IdentityRole myRole = E_LearningWebAppContext.Roles.First(r => r.Name == ro);
+                int count = db.Set<IdentityUserRole>().Count(r => r.RoleId == myRole.Id);
+                *//*
+            
+
+
+            return View();
+        }*/
 
        // [Authorize(Policy = "Adminroles")]
         public IActionResult Index()
         {
-            ViewBag.userid = _userManager.GetUserId(HttpContext.User);
+            int countCourse = _context.Courses.Count();
+            ViewBag.ItemCountCourse = countCourse;
+
+            int countSubCourse = _context.SubCourses.Count();
+            ViewBag.ItemCountSubCourse = countSubCourse;
+            /*            ViewBag.userid = _userManager.GetUserId(HttpContext.User);
+            */
             return View();
         }
         

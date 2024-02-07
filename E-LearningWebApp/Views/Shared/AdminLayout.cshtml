@@ -1,49 +1,14 @@
-﻿
-    @*
-    <body>
-     <aside>
-          <img src="~/content/logincss/logo.PNG" alt="">
-        <nav>
-            <a class="nav-link text-dark" asp-area="Identity" asp-controller="Role" asp-action="Index"> <i class="fas fa-tachometer-alt"></i> Roles</a>
-            <a class="nav-link text-dark" asp-controller="Course" asp-action="Index"><i class="fas fa-book"></i> Course</a>
-            <a class="nav-link text-dark" asp-controller="Admin" asp-action="Index"><i class="fas fa-tachometer-alt"></i>DashBoard</a>
-
-            <form id="logoutForm" class="form-inline" asp-controller="Home" asp-action="Index" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-                <button id="logout" type="submit" class="nav-link btn btn-link text-dark"><i class="fas fa-sign-out-alt"></i>Logout</button>
-            </form>
-        </nav>
-
-    </aside>
-
-    <main>
-        <header>
-            <h2>Welcome back</h2>
-            <div class="prof">
-                <a id="manage" class="nav-link text-dark"><i class="fas fa-user"></i>Hello @UserManager.GetUserName(User)!</a>
-
-            </div>
-        </header>
-            @RenderBody()
-    </main>
-
-
-</body> *@
-   
-
-
-
-@using E_LearningWebApp.Areas.Identity.Data;
+﻿@using E_LearningWebApp.Areas.Identity.Data;
 @using Microsoft.AspNetCore.Identity
 @using E_LearningWebApp.Models
 
 @inject SignInManager<E_LearningWebAppUser> SignInManager
 @inject UserManager<E_LearningWebAppUser> UserManager
-
 <head>
     <meta charset="utf-8">
     <meta Content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Mentor Bootstrap Template - Index</title>
+    <title>TEMARI</title>
     <meta Content="" name="description">
     <meta Content="" name="keywords">
 
@@ -61,8 +26,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
-
+    <link rel="stylesheet" href="~/content/iofrm-form/css/style.css">
+    <link rel="stylesheet" href="~/content/iofrm-form/css/responsive.css">
 
 
     <!-- Vendor CSS Files -->
@@ -75,16 +40,19 @@
     <link rel="stylesheet" href="~/content/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
     <!-- Template Main CSS File -->
-    <link rel="stylesheet" href="~/content/assets/css/style.css" />
+    <link rel="stylesheet" href="~/content/assets/css/style.css">
+    <link rel="stylesheet" href="~/Content/css/courses.css">
+
 
 </head>
 
 <body>
 
+
     <aside>
         <img src="~/content/logincss/logo.PNG" alt="">
         <nav>
-            <a class="nav-link text-dark" asp-controller="User" asp-action="Index"><i class="fas fa-house"></i> Home</a>
+            <a class="nav-link text-dark" asp-controller="Admin" asp-action="Index"><i class="fas fa-house"></i> Home</a>
             <a class="nav-link text-dark" asp-controller="Course" asp-action="GetAllCourses"><i class="fas fa-book"></i> Courses</a>
             <a class="nav-link text-dark" asp-controller="User" asp-action="ListUsers"><i class="fas fa-users"></i> Students</a>
             <a class="nav-link text-dark" asp-controller="Role" asp-action="Index"><i class="fas fa-users"></i> Roles</a>
@@ -98,17 +66,19 @@
 
                     <button id="logout" class="nav-link btn btn-link text-dark" type="submit"><i class="fas fa-sign-out-alt"></i> Logout</button>
 
-                    </form>
-               
+                </form>
+
             }
 
 
-@*             <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login"><i class="fas fa-sign-out-alt"></i> Logout</a>
- *@        </nav>
+            @*             <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            *@
+        </nav>
 
     </aside>
 
-   
+
+
 
     <header>
         <h2>Welcome back</h2>
@@ -116,7 +86,6 @@
             <a class="nav-link text-dark" asp-controller="User" asp-action="Profile"><i class="fas fa-user"></i> @UserManager.GetUserName(User) </a>
         </div>
     </header>
-
     <main>
 
         <section class="current_progress">
@@ -125,8 +94,21 @@
         </section>
     </main>
 
+
+
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-Content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="~/Content/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="~/Content/assets/vendor/aos/aos.js"></script>
+    <script src="~/Content/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="~/Content/assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="~/Content/assets/js/main.js"></script>
 </body>
 
 
 @RenderSection( "Scripts",required:false)
-

@@ -18,6 +18,7 @@ using Microsoft.Extensions.Logging;
 using RestSharp;
 using System.Web;
 using Microsoft.Net.Http.Headers;
+using E_LearningWebApp.Models;
 
 namespace E_LearningWebApp.Areas.Identity.Pages.Account
 {
@@ -109,6 +110,7 @@ namespace E_LearningWebApp.Areas.Identity.Pages.Account
                     }
                     else
                     {
+                        
                         return LocalRedirect($"~/Admin/Index?id={userId}");
                     }
                 }

@@ -106,7 +106,7 @@ namespace E_LearningWebApp.Controllers
                                                   join subcourse in subcourses on app.CourseId equals subcourse.CourseId into table2
                                                   from subcourse in table2.DefaultIfEmpty() // Corrected spelling: DefaultIfEmpty
                                                   select new MultipleViewModel { courseview = app, subcourseview = subcourses };
-
+            ViewBag.userid = _userManager.GetUserId(HttpContext.User);
 
             // Pass the view model to the view
             return View(multiplViewCourseSubCourseModeluser.FirstOrDefault()); // FirstOrDefault ensures a null is handled gracefully if no matching subcourses

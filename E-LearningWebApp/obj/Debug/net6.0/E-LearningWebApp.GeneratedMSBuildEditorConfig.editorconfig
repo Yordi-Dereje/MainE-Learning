@@ -188,10 +188,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Hp/Desktop/MainElearningAppSubmit/MainE-Learning/E-LearningWebApp/Views/Instructor/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvclxJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Hp/Desktop/MainElearningAppSubmit/MainE-Learning/E-LearningWebApp/Views/Landing/About.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGFuZGluZ1xBYm91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -254,6 +250,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Hp/Desktop/MainElearningAppSubmit/MainE-Learning/E-LearningWebApp/Views/User/ListUsers.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxMaXN0VXNlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hp/Desktop/MainElearningAppSubmit/MainE-Learning/E-LearningWebApp/Views/User/Payment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxQYXltZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Hp/Desktop/MainElearningAppSubmit/MainE-Learning/E-LearningWebApp/Views/User/Profile.cshtml]
