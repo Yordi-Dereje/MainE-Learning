@@ -24,7 +24,7 @@ namespace E_LearningWebApp.Controllers
         {
             return View();
         }
-        public IActionResult ContactUs()
+        public IActionResult ContactUss()
         {
             return View();
         }

@@ -1,0 +1,576 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "UserLayout";
+}
+
+<main>
+
+    <div id="partitions">
+        <h1>HTML - Elements of a web page </h1>
+        <div class="partition">
+            <h2>Doctype</h2>
+            <p>The <code>&lt;!DOCTYPE html&gt;</code> declaration is necessary at the top of every HTML page to force the browser to render the page according to relevant specifications.</p>
+            <p>
+                Resources:
+                <a href="https://developer.mozilla.org/en-US/docs/Glossary/Doctype">MDN Web Docs Glossary: Definitions of Web-related terms</a>
+                |
+                <a href="https://developer.mozilla.org/en-US/docs/Guide/html/Introduction#the_head_metadata_in_html">A free guide to head elements</a>
+            </p>
+        </div>
+
+        <div class="partition">
+            <h2>HTML Tag</h2>
+            <p>The <code>&lt;html&gt;</code> tag tells the browser that the document is an HTML webpage. It is used as a container for all the HTML elements.</p>
+            <p><strong>Warning!</strong> The doctype is the only element living outside the html tag.</p>
+            <pre>
+            <code>
+                    &lt;html lang="fr" dir="ltr"&gt;
+                </code>
+            </pre>
+            <p>
+                Language and reading direction:
+                <a href="https://developer.mozilla.org/en-US/docs/Web/International/RTLWeb">Building RTL-Aware Web Apps & Websites: Part 1</a>
+            </p>
+        </div>
+
+        <div class="partition">
+            <h2>Head Tag</h2>
+            <p>The head tag contains metadata related to your page, such as the title, asynchronous script calls, metadata, CSS code embed, and JavaScript code embed.</p>
+            <p>
+                Usage:
+                <pre>
+                <code>
+                        &lt;head&gt;
+                            &lt;!-- Set character encoding for the document --&gt;
+                            &lt;meta charset="value"&gt;
+                        &lt;/head&gt;
+                    </code>
+                </pre>
+            </p>
+            <p>
+                Resources:
+                <a href="https://developer.mozilla.org/en-US/docs/Guide/html/Introduction#the_head_metadata_in_html">A free guide to head elements</a>
+            </p>
+        </div>
+
+        <div class="partition">
+            <h2>Doctype</h2>
+            <p>The <code>&lt;!DOCTYPE html&gt;</code> declaration is necessary at the top of every HTML page to force the browser to render the page according to relevant specifications.</p>
+            <p>
+                Resources:
+                <a href="https://developer.mozilla.org/en-US/docs/Glossary/Doctype">MDN Web Docs Glossary: Definitions of Web-related terms</a>
+                |
+                <a href="https://developer.mozilla.org/en-US/docs/Guide/html/Introduction#the_head_metadata_in_html">A free guide to head elements</a>
+            </p>
+        </div>
+
+        <div class="partition">
+            <h2>HTML Tag</h2>
+            <p>The <code>&lt;html&gt;</code> tag tells the browser that the document is an HTML webpage. It is used as a container for all the HTML elements.</p>
+            <p><strong>Warning!</strong> The doctype is the only element living outside the html tag.</p>
+            <pre>
+            <code>
+                    &lt;html lang="fr" dir="ltr"&gt;
+                </code>
+            </pre>
+            <p>
+                Language and reading direction:
+                <a href="https://developer.mozilla.org/en-US/docs/Web/International/RTLWeb">Building RTL-Aware Web Apps & Websites: Part 1</a>
+            </p>
+        </div>
+
+        <div class="partition">
+            <h2>Head Tag</h2>
+            <p>The head tag contains metadata related to your page, such as the title, asynchronous script calls, metadata, CSS code embed, and JavaScript code embed.</p>
+            <p>
+                Usage:
+                <pre>
+                <code>
+                        &lt;head&gt;
+                            &lt;!-- Set character encoding for the document --&gt;
+                            &lt;meta charset="value"&gt;
+                        &lt;/head&gt;
+                    </code>
+                </pre>
+            </p>
+            <p>
+                Resources:
+                <a href="https://developer.mozilla.org/en-US/docs/Guide/html/Introduction#the_head_metadata_in_html">A free guide to head elements</a>
+            </p>
+        </div>
+
+        <div class="partition">
+            <h2>Meta Charset</h2>
+            <p>The meta charset declares the page’s character encoding.</p>
+            <pre>
+            <code>
+                    &lt;head&gt;
+                        &lt;!-- Set character encoding for the document --&gt;
+                        &lt;meta charset="value"&gt;
+                    &lt;/head&gt;
+                </code>
+            </pre>
+            <p>
+                Resources:
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta">The Document-level Metadata element - HTML: Hypertext Markup Language | MDN</a>
+            </p>
+        </div>
+        <div class="partition">
+            <h2>Viewport</h2>
+            <p>The meta viewport gives information about the initial size of the viewport. It is used by mobile devices only.</p>
+            <p><strong>Accessibility tip:</strong> Never use <code>maximum-scale=1.0</code>. It prevents the user from zooming in on the website, causing an accessibility issue.</p>
+            <pre>
+            <code>
+            &lt;head&gt;
+                ...
+                &lt;!-- Viewport for responsive web design --&gt;
+                &lt;meta name="viewport" content="key=value, key=value"&gt;
+            &lt;/head&gt;
+        </code>
+    </pre>
+            <p>
+                Resources:
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag">Responsive Design With Viewport Control</a>
+            </p>
+        </div>
+
+        <div class="partition">
+            <h2>Title</h2>
+            <p>The title meta tag defines the title of the web page. The title is only visible on the tab/window of your browser.</p>
+            <p><strong>Warning!</strong> The title should always have less than 56 characters.</p>
+            <pre>
+            <code>
+            &lt;head&gt;
+                ...
+                &lt;!-- Document Title --&gt;
+                &lt;title&gt;Page title&lt;/title&gt;
+            &lt;/head&gt;
+        </code>
+    </pre>
+            <p>
+                Resources:
+                <a href="https://yoast.com/seo-title-width/">The ideal width of the SEO title • Yoast</a>
+            </p>
+        </div>
+
+        <div class="partition">
+            <h2>Meta Description</h2>
+            <pre>
+            <code>
+            &lt;head&gt;
+                ...
+                &lt;!-- Meta Description --&gt;
+                &lt;meta name="description" content="Description of the page less than 150 characters"&gt;
+            &lt;/head&gt;
+        </code>
+    </pre>
+            <p>
+                Resources:
+                <a href="https://yoast.com/meta-descriptions/">The ideal length of a meta description • Yoast</a>
+            </p>
+        </div>
+
+        <div class="partition">
+            <h2>Favicons</h2>
+            <pre>
+            <code>
+            &lt;head&gt;
+                ...
+                &lt;!-- Standard favicon --&gt;
+                &lt;link rel="icon" type="image/x-icon" href="https://example.com/favicon.ico"&gt;
+                &lt;!-- Recommended favicon format --&gt;
+                &lt;link rel="icon" type="image/png" href="https://example.com/favicon.png"&gt;
+                ...
+            &lt;/head&gt;
+        </code>
+    </pre>
+            <p>
+                Resources:
+                <a href="https://www.favicon-generator.org/">Favicon & App Icon Generator</a>
+            </p>
+        </div>
+        <div class="partition">
+            <h2>Tag Attributes</h2>
+            <p>Attributes provide additional information or instruction for an HTML element. It is always included inside the opening tag.</p>
+            <p><strong>Data-* attribute:</strong> It is possible to declare any attribute using the <code>data-</code> prefix</p>
+            <pre>
+            <code>
+            &lt;tag data-extra-attr="value"&gt;some content&lt;/tag&gt;
+        </code>
+    </pre>
+            <p>
+                Resources:
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes">HTML attribute reference - HTML: Hypertext Markup Language | MDN</a>
+            </p>
+        </div>
+
+        <div class="partition">
+            <h2>Header Tag</h2>
+            <p>The <code>&lt;header&gt;</code> HTML tag element is used to identify the top of a webpage, article, section, or other segment of a page. The header is normally always the same across all pages of your website.</p>
+            <p>
+                Usage:
+                <ul>
+                    <li>Logo of the website</li>
+                    <li>Navigation</li>
+                    <li>Search form</li>
+                </ul>
+            </p>
+            <pre>
+            <code>
+            &lt;body&gt;
+                &lt;header&gt;This is my header&lt;header/&gt;
+            &lt;/body&gt;
+        </code>
+    </pre>
+            <p><strong>Warning!</strong> The <code>main</code> element should never be a descendant of an <code>article</code>, <code>aside</code>, <code>header</code>, <code>footer</code>, or <code>nav</code> element.</p>
+            <p>
+                Resources:
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header">header - HTML: Hypertext Markup Language | MDN</a>
+            </p>
+        </div>
+
+        <div class="partition">
+            <h2>Main Tag</h2>
+            <p>The <code>&lt;main&gt;</code> HTML tag is a structural element located generally between the <code>&lt;header&gt;</code> and the <code>&lt;footer&gt;</code> and contains the content of your web page.</p>
+            <pre>
+            <code>
+            &lt;body&gt;
+                &lt;header&gt;This is my header&lt;/header&gt;
+                &lt;main&gt;
+                    This is where I put my content
+                &lt;/main&gt;
+            &lt;/body&gt;
+        </code>
+    </pre>
+            <p>
+                Resources:
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main">main - HTML: Hypertext Markup Language | MDN</a>
+            </p>
+        </div>
+        <div class="partition">
+            <h2>Footer Tag</h2>
+            <p>The <code>&lt;footer&gt;</code> HTML tag is a structural element used to identify the footer of a page, article, or section.</p>
+            <p>
+                Usage:
+                <ul>
+                    <li>Copyright information</li>
+                    <li>Authorship information</li>
+                    <li>Navigation elements</li>
+                    <li>Social icons or links</li>
+                </ul>
+            </p>
+            <pre>
+            <code>
+            &lt;body&gt;
+                &lt;header&gt;This is my header&lt;header/&gt;
+                &lt;main&gt;
+                    This is where I put my content
+                &lt;/main&gt;
+                &lt;footer&gt;This is the footer of my page&lt;/footer&gt;
+            &lt;/body&gt;
+        </code>
+    </pre>
+            <p>
+                Resources:
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/footer">footer - HTML: Hypertext Markup Language | MDN</a>
+            </p>
+        </div>
+
+        <div class="partition">
+            <h2>Aside Tag</h2>
+            <p>The <code>&lt;aside&gt;</code> HTML tag contains additional information related to the main content.</p>
+            <p>
+                Usage:
+                <ul>
+                    <li>Monthly archives</li>
+                    <li>List of categories</li>
+                </ul>
+            </p>
+            <pre>
+            <code>
+            &lt;body&gt;
+                ...
+                &lt;main&gt;
+                    &lt;section&gt;
+                        &lt;article&gt;This is my article 1&lt;/article&gt;
+                        &lt;article&gt;This is my article 2&lt;/article&gt;
+                        &lt;article&gt;This is my article 3&lt;/article&gt;
+                    &lt;/section&gt;
+                    &lt;aside&gt;
+                        <!-- Additional information goes here -->
+                    &lt;/aside&gt;
+                &lt;/main&gt;
+                ...
+            &lt;/body&gt;
+        </code>
+    </pre>
+            <p>
+                Resources:
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/aside">aside - HTML: Hypertext Markup Language | MDN</a>
+            </p>
+        </div>
+
+        <div class="partition">
+            <h2>Section Tag</h2>
+            <p>The <code>&lt;section&gt;</code> tag element allows the grouping of related elements. You can usually find a <code>&lt;header&gt;</code> and <code>&lt;footer&gt;</code> attached to a section.</p>
+            <p>
+                Usage:
+                <ul>
+                    <li>Grouping related elements</li>
+                </ul>
+            </p>
+            <pre>
+            <code>
+            &lt;body&gt;
+                ...
+                &lt;main&gt;
+                    &lt;section&gt;This is my section 1&lt;/section&gt;
+                    &lt;section&gt;This is my section 2&lt;/section&gt;
+                    &lt;section&gt;This is my section 3&lt;/section&gt;
+                &lt;/main&gt;
+                ...
+            &lt;/body&gt;
+        </code>
+    </pre>
+            <p>
+                Resources:
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/section">section - HTML: Hypertext Markup Language | MDN</a>
+            </p>
+        </div>
+
+        <div class="partition">
+            <h2>Article Tag</h2>
+            <p>An <code>&lt;article&gt;</code> HTML tag represents a self-contained piece of content which could theoretically be distributed to other websites and platforms as a stand-alone unit.</p>
+            <p>
+                Usage:
+                <ul>
+                    <li>Blog posts</li>
+                    <li>News articles</li>
+                    <li>Product cards</li>
+                    <li>Forum posts</li>
+                </ul>
+            </p>
+            <pre>
+            <code>
+            &lt;body&gt;
+                ...
+                &lt;main&gt;
+                    &lt;section&gt;
+                        &lt;article&gt;This is article 1&lt;/article&gt;
+                        &lt;article&gt;This is article 2&lt;/article&gt;
+                    &lt;/section&gt;
+                &lt;/main&gt;
+                ...
+            &lt;/body&gt;
+        </code>
+    </pre>
+            <p>
+                Resources:
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article">article - HTML: Hypertext Markup Language | MDN</a>
+            </p>
+        </div>
+
+        <div class="partition">
+            <h2>Nav Tag</h2>
+            <p>The <code>&lt;nav&gt;</code> HTML tag is used to define a set of navigation links.</p>
+            <p>
+                Usage:
+                <ul>
+                    <li>Main navigation menu</li>
+                    <li>Subnavigation menu</li>
+                </ul>
+            </p>
+            <pre>
+            <code>
+            &lt;body&gt;
+                &lt;header&gt;
+                    &lt;nav&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;&lt;a href="#home"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href="#about"&gt;About&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href="#services"&gt;Services&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href="#contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/nav&gt;
+                &lt;/header&gt;
+                ...
+            &lt;/body&gt;
+        </code>
+    </pre>
+            <p>
+                Resources:
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav">nav - HTML: Hypertext Markup Language | MDN</a>
+            </p>
+        </div>
+
+    </div>
+
+
+    <div id="partitions">
+
+
+        <div class="partition">
+            <h2>HTML Quiz</h2>
+
+            <div class="quiz-question" id="question1">
+                <p>1. What does HTML stand for?</p>
+
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q1" value="a">Hypertext Markup Language</li>
+                    <li class="quiz-option"><input type="radio" name="q1" value="b">Hyperlink and Text Markup Language</li>
+                    <li class="quiz-option"><input type="radio" name="q1" value="c">High-Level Text Management Language</li>
+                    <li class="quiz-option"><input type="radio" name="q1" value="d">None of the above</li>
+                </ul>
+            </div>
+
+            <div class="quiz-question" id="question2">
+                <p>2. Which tag is used to create an unordered list in HTML?</p>
+
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q2" value="a">&lt;ul&gt;</li>
+                    <li class="quiz-option"><input type="radio" name="q2" value="b">&lt;ol&gt;</li>
+                    <li class="quiz-option"><input type="radio" name="q2" value="c">&lt;li&gt;</li>
+                    <li class="quiz-option"><input type="radio" name="q2" value="d">&lt;ul&gt;&lt;/ul&gt;</li>
+                </ul>
+            </div>
+
+            <div class="quiz-question" id="question3">
+                <p>3. What is the purpose of the HTML &lt;head&gt; tag?</p>
+
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q3" value="a">Define the main content of the page</li>
+                    <li class="quiz-option"><input type="radio" name="q3" value="b">Include metadata about the document</li>
+                    <li class="quiz-option"><input type="radio" name="q3" value="c">Create a hyperlink</li>
+                    <li class="quiz-option"><input type="radio" name="q3" value="d">None of the above</li>
+                </ul>
+            </div>
+
+            <div class="quiz-question" id="question4">
+                <p>4. Which tag is used to create a hyperlink in HTML?</p>
+
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q4" value="a">&lt;a&gt;</li>
+                    <li class="quiz-option"><input type="radio" name="q4" value="b">&lt;link&gt;</li>
+                    <li class="quiz-option"><input type="radio" name="q4" value="c">&lt;url&gt;</li>
+                    <li class="quiz-option"><input type="radio" name="q4" value="d">&lt;hyper&gt;</li>
+                </ul>
+            </div>
+
+            <div class="quiz-question" id="question5">
+                <p>5. What is the purpose of the HTML &lt;img&gt; tag?</p>
+
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q5" value="a">Define a paragraph</li>
+                    <li class="quiz-option"><input type="radio" name="q5" value="b">Embed an image in the document</li>
+                    <li class="quiz-option"><input type="radio" name="q5" value="c">Create a list</li>
+                    <li class="quiz-option"><input type="radio" name="q5" value="d">None of the above</li>
+                </ul>
+            </div>
+
+            <div class="quiz-question" id="question6">
+                <p>6. Which HTML tag is used for creating a table?</p>
+
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q6" value="a">&lt;table&gt;</li>
+                    <li class="quiz-option"><input type="radio" name="q6" value="b">&lt;tab&gt;</li>
+                    <li class="quiz-option"><input type="radio" name="q6" value="c">&lt;tr&gt;</li>
+                    <li class="quiz-option"><input type="radio" name="q6" value="d">&lt;td&gt;</li>
+                </ul>
+            </div>
+
+            <div class="quiz-question" id="question7">
+                <p>7. What is the purpose of the HTML &lt;body&gt; tag?</p>
+
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q7" value="a">Define the main content of the page</li>
+                    <li class="quiz-option"><input type="radio" name="q7" value="b">Include metadata about the document</li>
+                    <li class="quiz-option"><input type="radio" name="q7" value="c">Create a hyperlink</li>
+                    <li class="quiz-option"><input type="radio" name="q7" value="d">None of the above</li>
+                </ul>
+            </div>
+
+            <div class="quiz-question" id="question8">
+                <p>8. Which tag is used to create an ordered list in HTML?</p>
+
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q8" value="a">&lt;ol&gt;</li>
+                    <li class="quiz-option"><input type="radio" name="q8" value="b">&lt;ul&gt;</li>
+                    <li class="quiz-option"><input type="radio" name="q8" value="c">&lt;li&gt;</li>
+                    <li class="quiz-option"><input type="radio" name="q8" value="d">&lt;list&gt;</li>
+                </ul>
+            </div>
+
+            <div class="quiz-question" id="question9">
+                <p>9. Which tag is used to create a line break in HTML?</p>
+
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q9" value="a">&lt;br&gt;</li>
+                    <li class="quiz-option"><input type="radio" name="q9" value="b">&lt;lb&gt;</li>
+                    <li class="quiz-option"><input type="radio" name="q9" value="c">&lt;newline&gt;</li>
+                    <li class="quiz-option"><input type="radio" name="q9" value="d">&lt;break&gt;</li>
+                </ul>
+            </div>
+
+            <div class="quiz-question" id="question10">
+                <p>10. What is the purpose of the HTML &lt;meta&gt; tag?</p>
+
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q10" value="a">Define the main content of the page</li>
+                    <li class="quiz-option"><input type="radio" name="q10" value="b">Include metadata about the document</li>
+                    <li class="quiz-option"><input type="radio" name="q10" value="c">Create a hyperlink</li>
+                    <li class="quiz-option"><input type="radio" name="q10" value="d">None of the above</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="result-container">
+        <button id="submit-btn" onclick="calculateScore()">Submit Answers</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function calculateScore() {
+            // Array of correct answers
+            const correctAnswers = ["a", "a", "b", "a", "b", "a", "a", "a", "b", "b"];
+
+            // Get all radio groups
+            const radioGroups = document.querySelectorAll('.radio-group');
+
+            let score = 0;
+
+            // Loop through each radio group
+            radioGroups.forEach((group, index) => {
+                // Get the selected answer
+                const selectedAnswer = group.querySelector('input:checked');
+
+
+                // Check if an answer is selected
+                if (selectedAnswer) {
+                    // Check if the selected answer is correct
+                    if (selectedAnswer.value === correctAnswers[index]) {
+                        score++;
+                        // Highlight correct choice in green
+                        selectedAnswer.parentNode.classList.add('correct-answer');
+                    } else {
+                        // Highlight incorrect choice in red
+                        selectedAnswer.parentNode.classList.add('incorrect-answer');
+
+                        // Find and highlight the correct choice in green
+                        const correctChoice = group.querySelector(`input[value="${correctAnswers[index]}"]`);
+                        if (correctChoice) {
+                            correctChoice.parentNode.classList.add('correct-answer');
+                        }
+                    }
+                }
+            });
+
+            // Display the result
+            score *= 10;
+            document.getElementById('result').innerText = `You scored ${score}%`;
+        }
+    </script>
+</main>

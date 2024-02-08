@@ -43,7 +43,15 @@ namespace E_LearningWebApp.Controllers
         {
             return View();
         }
-     
+        public IActionResult ConceptsAdmin()
+        {
+            return View();
+        }
+        public IActionResult ConceptsUser()
+        {
+            return View();
+        }
+
         [HttpGet("CourseDisplay")]
         public IActionResult CourseDisplay()
         {

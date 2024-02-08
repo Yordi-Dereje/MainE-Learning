@@ -60,9 +60,10 @@
             <nav id="navbar" class="navbar order-last order-lg-0">
                 <ul>
                     <!--use the below commented li on admin layout-->
-                     <li class="nav-item">
+                     @* <li class="nav-item">
                     <a class="nav-link text-dark" asp-area="Identity" asp-controller="Role" asp-action="Index">Roles</a>
-                    </li>
+                    </li> *@
+                    <a class="nav-link text-dark" asp-controller="Admin" asp-action="Index">Admin</a>
                     @* <li class="nav-item">
                     <a class="nav-link text-dark" asp-controller="Admin" asp-action="Index">Admin</a>
                     </li> *@
@@ -89,7 +90,7 @@
                    @*  <li><a href="#trainers">Trainers</a></li> *@
 
                     <li class="nav-item">
-                        <a class="nav-link text-dark" asp-controller="Home" asp-action="Contact">Contact</a>
+                        <a class="nav-link text-dark" asp-controller="Home" asp-action="ContactUss">Contact</a>
                     </li>
 
                     <i class="bi bi-list mobile-nav-toggle"></i>

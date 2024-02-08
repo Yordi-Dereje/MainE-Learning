@@ -40,6 +40,62 @@ namespace E_LearningWebApp.Controllers
         {
             return View();
         }
+        public IActionResult Git()
+        {
+            return View();
+        }
+        public IActionResult Flowchart()
+        {
+            return View();
+        }
+        public IActionResult Job()
+        {
+            return View();
+        }
+        public IActionResult Html()
+        {
+            return View();
+        }
+        public IActionResult Css()
+        {
+            return View();
+        }
+        public IActionResult Js()
+        {
+            return View();
+        }
+        public IActionResult Database()
+        {
+            return View();
+        }
+        public IActionResult Debug()
+        {
+            return View();
+        }
+        public IActionResult Mysql()
+        {
+            return View();
+        }
+        public IActionResult Py()
+        {
+            return View();
+        }
+        public IActionResult React()
+        {
+            return View();
+        }
+        public IActionResult Rust()
+        {
+            return View();
+        }
+        public IActionResult Shell()
+        {
+            return View();
+        }
+        public IActionResult WebSubcourses()
+        {
+            return View();
+        }
         [HttpGet]
         public IActionResult CreateSubCourse(int courseid)
         {

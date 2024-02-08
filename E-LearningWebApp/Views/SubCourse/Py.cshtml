@@ -1,0 +1,426 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "UserLayout";
+}
+
+<main>
+
+    <div id="partitions">
+        <div class="partition">
+            <h2>Introduction</h2>
+            <p>
+                Python is a high-level, interpreted programming language known for its simplicity, readability, and
+                versatility. Created by Guido van Rossum and first released in 1991, Python has become one of the most
+                popular languages for various applications, including web development, data science, artificial
+                intelligence, automation, and more.
+            </p>
+        </div>
+
+        <div class="partition">
+            <h2>Key Features</h2>
+            <ol>
+                <li>
+                    <strong>Readable and Expressive Syntax:</strong> Python emphasizes code readability and uses a clean
+                    and straightforward syntax, making it easy for developers to write and maintain code.
+                </li>
+                <li>
+                    <strong>Interpreted Language:</strong> Python is an interpreted language, allowing code to be
+                    executed line by line, facilitating rapid development and debugging.
+                </li>
+                <li>
+                    <strong>Dynamic Typing:</strong> Python uses dynamic typing, enabling variables to change their data
+                    types during runtime.
+                </li>
+                <li>
+                    <strong>Extensive Standard Library:</strong> Python comes with a comprehensive standard library that
+                    includes modules and packages for various functionalities, reducing the need for external
+                    dependencies.
+                </li>
+                <li>
+                    <strong>Cross-platform Compatibility:</strong> Python is cross-platform, supporting major operating
+                    systems like Windows, macOS, and Linux.
+                </li>
+            </ol>
+        </div>
+
+        <div class="partition">
+            <h2>Introduction to Python Code:</h2>
+            <p>Let's explore some basic Python code snippets:</p>
+            <code>print("Hello, World!")</code>
+            <code>
+                # Example of a simple function
+                def greet(name):
+                return "Hello, " + name + "!"
+
+                # Calling the function
+                result = greet("John")
+                print(result)
+            </code>
+        </div>
+
+        <!-- New Partition 2 -->
+        <div class="partition">
+            <h2>Data Types and Variables (Code Examples):</h2>
+            <p>Python supports various data types. Here are some examples:</p>
+            <code>
+                # Numeric Types
+                num_int = 42
+                num_float = 3.14
+                num_complex = 2 + 3j
+
+                # Sequence Types
+                string_var = "Python"
+                list_var = [1, 2, 3]
+                tuple_var = (4, 5, 6)
+            </code>
+        </div>
+
+        <div class="partition">
+            <h2>Data Types and Variables</h2>
+            <ol>
+                <li>
+                    <strong>Numeric Types:</strong> Python supports various numeric types, including integers (`int`),
+                    floating-point numbers (`float`), and complex numbers (`complex`).
+                </li>
+                <li>
+                    <strong>Sequence Types:</strong> Python includes versatile sequence types such as strings (`str`),
+                    lists (`list`), and tuples (`tuple`), offering different ways to organize and manipulate data.
+                </li>
+                <li>
+                    <strong>Mapping Type:</strong> The dictionary (`dict`) type provides a flexible and efficient way
+                    to store key-value pairs.
+                </li>
+                <li>
+                    <strong>Set Types:</strong> Sets (`set`) are unordered collections of unique elements, useful for
+                    tasks involving distinct items.
+                </li>
+            </ol>
+        </div>
+
+        <div class="partition">
+            <h2>Control Flow</h2>
+            <ol>
+                <li>
+                    <strong>Conditional Statements:</strong> Python uses `if`, `elif`, and `else` for constructing
+                    conditional statements, allowing the execution of specific code blocks based on different
+                    conditions.
+                </li>
+                <li>
+                    <strong>Loops:</strong> `for` and `while` loops provide iterative capabilities, enabling the
+                    repetition of code blocks based on specified conditions.
+                </li>
+                <li>
+                    <strong>Control Statements:</strong> Control statements like `break`, `continue`, and `pass` allow
+                    developers to manipulate the flow of execution within loops and conditional structures.
+                </li>
+            </ol>
+        </div>
+
+        <div class="partition">
+            <h2>Functions</h2>
+            <ol>
+                <li>
+                    <strong>Defining Functions:</strong> Functions are defined using the `def` keyword, encapsulating
+                    reusable blocks of code.
+                </li>
+                <li>
+                    <strong>Arguments and Return Values:</strong> Python functions support positional arguments,
+                    keyword arguments, default values, and variable-length argument lists (`*args`, `**kwargs`). They
+                    can also return values using the `return` keyword.
+                </li>
+                <li>
+                    <strong>Lambda Functions:</strong> Lambda functions, created with the `lambda` keyword, provide a
+                    concise way to define small, anonymous functions.
+                </li>
+            </ol>
+        </div>
+
+        <div class="partition">
+            <h2>Object-Oriented Programming (OOP)</h2>
+            <ol>
+                <li>
+                    <strong>Classes and Objects:</strong> Python supports object-oriented programming, allowing the
+                    creation of classes and objects. Constructors, defined by the `__init__` method, initialize object
+                    attributes.
+                </li>
+                <li>
+                    <strong>Inheritance:</strong> Inheritance enables the creation of a hierarchy of classes, allowing
+                    child classes to inherit attributes and methods from parent classes.
+                </li>
+                <li>
+                    <strong>Polymorphism:</strong> Polymorphism allows the use of a single interface for different types
+                    of objects. This includes method overloading and operator overloading.
+                </li>
+            </ol>
+        </div>
+
+        <div class="partition">
+            <h2>File Handling</h2>
+            <ol>
+                <li>
+                    <strong>Reading and Writing Files:</strong> Python provides the `open()` function for reading from
+                    and writing to files. File handling is crucial for tasks involving data input and output.
+                </li>
+                <li>
+                    <strong>Exception Handling:</strong> Exception handling with `try`, `except`, and `finally` blocks
+                    allows developers to gracefully manage and recover from errors in their code.
+                </li>
+            </ol>
+        </div>
+
+        <div class="partition">
+            <h2>Modules and Packages</h2>
+            <ol>
+                <li>
+                    <strong>Creating Modules:</strong> Modules help organize code into separate files, promoting code
+                    reusability and maintainability.
+                </li>
+                <li>
+                    <strong>Importing Modules:</strong> The `import` statement allows the integration of external
+                    modules into Python scripts, and aliasing can simplify the module namespace.
+                </li>
+                <li>
+                    <strong>Packages:</strong> Packages provide a way to organize modules into a hierarchical structure,
+                    facilitating the management of larger codebases.
+                </li>
+            </ol>
+        </div>
+
+        <div class="partition">
+            <h2>Advanced Topics</h2>
+            <ol>
+                <li>
+                    <strong>Decorators:</strong> Decorators allow the modification or extension of the behavior of
+                    functions. They are commonly used for tasks such as logging, memoization, and access control.
+                </li>
+                <li>
+                    <strong>Generators:</strong> Generators, created using functions with the `yield` keyword, provide an
+                    efficient way to generate sequences of values without loading them all into memory simultaneously.
+                </li>
+                <li>
+                    <strong>Concurrency:</strong> Python supports threading and multiprocessing for concurrent
+                    execution, enabling efficient handling of parallel tasks.
+                </li>
+                <li>
+                    <strong>Regular Expressions:</strong> The `re` module facilitates pattern matching using regular
+                    expressions, a powerful tool for text processing and manipulation.
+                </li>
+            </ol>
+        </div>
+
+        <div class="partition">
+            <h2>Popular Libraries and Frameworks</h2>
+            <ol>
+                <li>
+                    <strong>NumPy:</strong> NumPy is a numerical computing library that provides support for large,
+                    multi-dimensional arrays and matrices, along with mathematical functions to operate on these
+                    arrays.
+                </li>
+                <li>
+                    <strong>Pandas:</strong> Pandas is a data manipulation and analysis library, offering data
+                    structures like DataFrames for efficient handling and analysis of structured data.
+                </li>
+                <li>
+                    <strong>Django:</strong> Django is a high-level web framework that simplifies the process of building
+                    robust and scalable web applications by providing a clean and pragmatic design.
+                </li>
+                <li>
+                    <strong>Flask:</strong> Flask is a lightweight web framework suitable for smaller-scale web
+                    applications. It follows the WSGI (Web Server Gateway Interface) standard and is known for its
+                    simplicity and flexibility.
+                </li>
+                <li>
+                    <strong>Matplotlib and Seaborn:</strong> Matplotlib and Seaborn are data visualization libraries
+                    used for creating a wide range of plots and charts, helping analysts and scientists to visually
+                    explore and communicate their findings.
+                </li>
+            </ol>
+        </div>
+
+        <div class="partition">
+            <h2>Conclusion</h2>
+            <p>
+                Python's versatility, readability, and vast ecosystem of libraries make it an excellent choice for both
+                beginners and experienced developers. Whether you're interested in web development, data science,
+                machine learning, or automation, Python provides the tools and resources needed to excel in these
+                fields. The language's ongoing development, active community support, and cross-industry adoption
+                ensure its continued relevance and growth in the world of programming.
+            </p>
+        </div>
+
+    </div>
+    <div id="partitions">
+        <h1>Python Quiz</h1>
+
+        <div class="partition">
+
+            <!-- Quiz Question 1 -->
+            <div class="quiz-question" id="question1">
+                <p>1. What is the primary emphasis of Python's syntax, contributing to its readability and clarity?</p>
+
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q1" value="a">Parentheses usage</li>
+                    <li class="quiz-option"><input type="radio" name="q1" value="b">Indentation</li>
+                    <li class="quiz-option"><input type="radio" name="q1" value="c">Braces placement</li>
+                    <li class="quiz-option"><input type="radio" name="q1" value="d">Quotation marks selection</li>
+                </ul>
+            </div>
+
+            <!-- Quiz Question 2 -->
+            <div class="quiz-question" id="question2">
+                <p>2. Which numeric types does Python support?</p>
+
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q2" value="a">Integers, Floats, Decimals</li>
+                    <li class="quiz-option"><input type="radio" name="q2" value="b">Floats, Complex Numbers, Booleans</li>
+                    <li class="quiz-option"><input type="radio" name="q2" value="c">Integers, Complex Numbers, Fractions</li>
+                    <li class="quiz-option"><input type="radio" name="q2" value="d">Integers, Floats, Complex Numbers</li>
+                </ul>
+            </div>
+
+            <!-- Quiz Question 3 -->
+            <div class="quiz-question" id="question3">
+                <p>3. In Python, what keyword is used to define a function?</p>
+
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q3" value="a">function</li>
+                    <li class="quiz-option"><input type="radio" name="q3" value="b">define</li>
+                    <li class="quiz-option"><input type="radio" name="q3" value="c">func</li>
+                    <li class="quiz-option"><input type="radio" name="q3" value="d">def</li>
+                </ul>
+            </div>
+
+            <!-- Quiz Question 4 -->
+            <div class="quiz-question" id="question4">
+                <p>4. What is the purpose of the 'yield' keyword in Python?</p>
+
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q4" value="a">Indicate the end of a function</li>
+                    <li class="quiz-option"><input type="radio" name="q4" value="b">Generate a sequence of values lazily</li>
+                    <li class="quiz-option"><input type="radio" name="q4" value="c">Trigger an exception</li>
+                    <li class="quiz-option"><input type="radio" name="q4" value="d">Implement a recursive function</li>
+                </ul>
+            </div>
+
+            <!-- Quiz Question 5 -->
+            <div class="quiz-question" id="question5">
+                <p>5. Which Python construct is used for handling errors and exceptions?</p>
+
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q5" value="a">error</li>
+                    <li class="quiz-option"><input type="radio" name="q5" value="b">catch</li>
+                    <li class="quiz-option"><input type="radio" name="q5" value="c">try, except, finally</li>
+                    <li class="quiz-option"><input type="radio" name="q5" value="d">throw</li>
+                </ul>
+            </div>
+
+            <!-- Quiz Question 6 -->
+            <div class="quiz-question" id="question6">
+                <p>6. What does OOP stand for in Python?</p>
+
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q6" value="a">Object-Oriented Processing</li>
+                    <li class="quiz-option"><input type="radio" name="q6" value="b">Object-Oriented Protocol</li>
+                    <li class="quiz-option"><input type="radio" name="q6" value="c">Object-Oriented Programming</li>
+                    <li class="quiz-option"><input type="radio" name="q6" value="d">Object-Oriented Python</li>
+                </ul>
+            </div>
+
+            <!-- Quiz Question 7 -->
+            <div class="quiz-question" id="question7">
+                <p>7. In Python, what is the purpose of the 'open()' function?</p>
+
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q7" value="a">Open a new window in the browser</li>
+                    <li class="quiz-option"><input type="radio" name="q7" value="b">Open a file for reading or writing</li>
+                    <li class="quiz-option"><input type="radio" name="q7" value="c">Open a new terminal session</li>
+                    <li class="quiz-option"><input type="radio" name="q7" value="d">Open a network connection</li>
+                </ul>
+            </div>
+
+            <!-- Quiz Question 8 -->
+            <div class="quiz-question" id="question8">
+                <p>8. Which module in Python is commonly used for pattern matching using regular expressions?</p>
+
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q8" value="a">regex</li>
+                    <li class="quiz-option"><input type="radio" name="q8" value="b">re</li>
+                    <li class="quiz-option"><input type="radio" name="q8" value="c">pattern</li>
+                    <li class="quiz-option"><input type="radio" name="q8" value="d">match</li>
+                </ul>
+            </div>
+
+            <!-- Quiz Question 9 -->
+            <div class="quiz-question" id="question9">
+                <p>9. What is the purpose of the 'else' clause in Python's 'try...except' statement?</p>
+
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q9" value="a">Execute the code inside 'else' if an exception occurs</li>
+                    <li class="quiz-option"><input type="radio" name="q9" value="b">Execute the code inside 'else' if no exception occurs</li>
+                    <li class="quiz-option"><input type="radio" name="q9" value="c">Indicate the end of the 'try...except' block</li>
+                    <li class="quiz-option"><input type="radio" name="q9" value="d">Handle multiple exceptions simultaneously</li>
+                </ul>
+            </div>
+
+            <!-- Quiz Question 10 -->
+            <div class="quiz-question" id="question10">
+                <p>10. Which method is used to initialize object attributes in a Python class?</p>
+
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q10" value="a">init()</li>
+                    <li class="quiz-option"><input type="radio" name="q10" value="b">constructor()</li>
+                    <li class="quiz-option"><input type="radio" name="q10" value="c">initialize()</li>
+                    <li class="quiz-option"><input type="radio" name="q10" value="d">create()</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="result-container">
+        <button id="submit-btn" onclick="calculateScore()">Submit Answers</button>
+        <p id="result"></p>
+    </div>
+
+
+    <script>
+        function calculateScore() {
+            // Array of correct answers
+            const correctAnswers = ['b', 'd', 'd', 'b', 'c', 'c', 'b', 'b', 'b', 'a'];
+            // Get all radio groups
+            const radioGroups = document.querySelectorAll('.radio-group');
+
+            let score = 0;
+
+            // Loop through each radio group
+            radioGroups.forEach((group, index) => {
+                // Get the selected answer
+                const selectedAnswer = group.querySelector('input:checked');
+
+                // Check if an answer is selected
+                if (selectedAnswer) {
+                    // Check if the selected answer is correct
+                    if (selectedAnswer.value === correctAnswers[index]) {
+                        score++;
+                        // Highlight correct choice in green
+                        selectedAnswer.parentNode.classList.add('correct-answer');
+                    } else {
+                        // Highlight incorrect choice in red
+                        selectedAnswer.parentNode.classList.add('incorrect-answer');
+
+                        // Find and highlight the correct choice in green
+                        const correctChoice = group.querySelector(`input[value="${correctAnswers[index]}"]`);
+                        if (correctChoice) {
+                            correctChoice.parentNode.classList.add('correct-answer');
+                        }
+                    }
+                }
+            });
+
+            // Display the result
+            document.getElementById('result').innerText = `You scored ${score} out of ${correctAnswers.length}!`;
+        }
+    </script>
+
+</main>

@@ -1,0 +1,163 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "UserLayout";
+}
+
+<main>
+    <div id="partitions">
+
+        <div class="partition">
+            <h2>Key Concepts</h2>
+            <p>React is a JavaScript library for building user interfaces. It utilizes components, state, and props to create reusable and dynamic UI elements. Components are the building blocks, and the virtual DOM ensures efficient updates for better performance.</p>
+        </div>
+
+        <div class="partition">
+            <h2>Components and Props</h2>
+            <p>Components are modular, self-contained pieces of UI. They can have props (properties) to receive data. This makes it easy to reuse and compose components, enhancing code maintainability and reusability.</p>
+        </div>
+
+        <div class="partition">
+            <h2>State Management</h2>
+            <p>React components can have state, representing the current state of the UI. When state changes, React efficiently updates only the necessary parts of the DOM. State management is crucial for creating interactive and dynamic applications.</p>
+        </div>
+
+        <div class="partition">
+            <h2>Virtual DOM</h2>
+            <p>The virtual DOM is a lightweight copy of the actual DOM. React uses it to perform efficient updates. When state changes, React calculates the minimal required changes in the virtual DOM before applying them to the real DOM, improving performance.</p>
+        </div>
+
+        <div class="partition">
+            <h2>Declarative UI</h2>
+            <p>React follows a declarative programming paradigm, where you describe the desired UI and React takes care of updating the DOM to match that state. This simplifies development and makes it easier to understand and maintain code.</p>
+        </div>
+
+        <div class="partition">
+            <h2>JSX Syntax</h2>
+            <p>JSX is a syntax extension for JavaScript that looks similar to XML or HTML. It allows you to write HTML elements and components in a more concise and readable way within your JavaScript code. React elements are created using JSX.</p>
+        </div>
+
+        <div class="partition">
+            <h2>Component Lifecycle</h2>
+            <p>React components have a lifecycle with various phases like mounting, updating, and unmounting. Developers can hook into these lifecycle methods to execute code at specific points, enabling better control over component behavior.</p>
+        </div>
+
+        <div class="partition">
+            <h2>Event Handling</h2>
+            <p>React handles events using a synthetic event system that normalizes browser differences. Event handlers are defined using camelCase in JSX, and you can capture and handle events like onClick, onChange, etc.</p>
+        </div>
+
+        <div class="partition">
+            <h2>React Router</h2>
+            <p>For single-page applications, React Router is commonly used for navigation. It allows you to define routes in your application, enabling seamless navigation between different components without a full page reload.</p>
+        </div>
+    </div>
+
+    <div id="partitions">
+        <h1>React Quiz</h1>
+
+        <div class="partition">
+            <h2>Test Your React Knowledge</h2>
+
+
+            <div class="quiz-question" id="question1">
+                <p>1. What is the primary purpose of React in web development?</p>
+
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q1" value="a">To execute server-side code</li>
+                    <li class="quiz-option"><input type="radio" name="q1" value="b">To build user interfaces efficiently</li>
+                    <li class="quiz-option"><input type="radio" name="q1" value="c">To manage server configurations</li>
+                    <li class="quiz-option"><input type="radio" name="q1" value="d">None of the above</li>
+                </ul>
+            </div>
+
+            <div class="quiz-question" id="question2">
+                <p>2. What are the core concepts in React for building user interfaces?</p>
+
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q2" value="a">Components, State, and Props</li>
+                    <li class="quiz-option"><input type="radio" name="q2" value="b">Variables, Functions, and Loops</li>
+                    <li class="quiz-option"><input type="radio" name="q2" value="c">CSS, HTML, and JavaScript</li>
+                    <li class="quiz-option"><input type="radio" name="q2" value="d">None of the above</li>
+                </ul>
+            </div>
+
+            <div class="quiz-question" id="question3">
+                <p>3. How does React ensure efficient updates in the user interface?</p>
+
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q3" value="a">By using server-side rendering</li>
+                    <li class="quiz-option"><input type="radio" name="q3" value="b">Through the use of virtual DOM</li>
+                    <li class="quiz-option"><input type="radio" name="q3" value="c">By optimizing CSS stylesheets</li>
+                    <li class="quiz-option"><input type="radio" name="q3" value="d">None of the above</li>
+                </ul>
+            </div>
+
+            <div class="quiz-question" id="question4">
+                <p>4. What are the building blocks of React applications?</p>
+
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q4" value="a">Variables and Functions</li>
+                    <li class="quiz-option"><input type="radio" name="q4" value="b">Classes and Objects</li>
+                    <li class="quiz-option"><input type="radio" name="q4" value="c">Components and JSX</li>
+                    <li class="quiz-option"><input type="radio" name="q4" value="d">None of the above</li>
+                </ul>
+            </div>
+
+            <div class="quiz-question" id="question5">
+                <p>5. How can you pass data between React components?</p>
+
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q5" value="a">Using global variables</li>
+                    <li class="quiz-option"><input type="radio" name="q5" value="b">Through direct function calls</li>
+                    <li class="quiz-option"><input type="radio" name="q5" value="c">By utilizing state and props</li>
+                    <li class="quiz-option"><input type="radio" name="q5" value="d">None of the above</li>
+                </ul>
+            </div>
+        </div>
+        <div id="result-container">
+            <button id="submit-btn" onclick="calculateScore()">Submit Answers</button>
+            <p id="result"></p>
+        </div>
+
+        <script>
+            function calculateScore() {
+                // Array of correct answers
+                const correctAnswers = ['b', 'a', 'b', 'c', 'c'];
+
+                // Get all radio groups
+                const radioGroups = document.querySelectorAll('.radio-group');
+
+                let score = 0;
+
+                // Loop through each radio group
+                radioGroups.forEach((group, index) => {
+                    // Get the selected answer
+                    const selectedAnswer = group.querySelector('input:checked');
+
+                    // Check if an answer is selected
+                    if (selectedAnswer) {
+                        // Check if the selected answer is correct
+                        if (selectedAnswer.value === correctAnswers[index]) {
+                            score++;
+                            // Highlight correct choice in green
+                            selectedAnswer.parentNode.classList.add('correct-answer');
+                        } else {
+                            // Highlight incorrect choice in red
+                            selectedAnswer.parentNode.classList.add('incorrect-answer');
+
+                            // Find and highlight the correct choice in green
+                            const correctChoice = group.querySelector(`input[value="${correctAnswers[index]}"]`);
+                            if (correctChoice) {
+                                correctChoice.parentNode.classList.add('correct-answer');
+                            }
+                        }
+                    }
+                });
+
+                // Display the result
+                document.getElementById('result').innerText = `You scored ${score} out of ${correctAnswers.length}!`;
+            }
+        </script>
+</main>
