@@ -135,6 +135,31 @@ namespace E_LearningWebApp.Migrations
                     b.ToTable("Courses");
                 });
 
+            modelBuilder.Entity("E_LearningWebApp.Models.Grade", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("SCId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Userid")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("Value")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Userid");
+
+                    b.ToTable("Grade");
+                });
+
             modelBuilder.Entity("E_LearningWebApp.Models.Payment", b =>
                 {
                     b.Property<int>("PaymentId")
@@ -331,6 +356,17 @@ namespace E_LearningWebApp.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("E_LearningWebApp.Models.Grade", b =>
+                {
+                    b.HasOne("E_LearningWebApp.Areas.Identity.Data.E_LearningWebAppUser", "User")
+                        .WithMany("grades")
+                        .HasForeignKey("Userid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("E_LearningWebApp.Models.Payment", b =>
                 {
                     b.HasOne("E_LearningWebApp.Models.Courses", "Course")
@@ -414,6 +450,8 @@ namespace E_LearningWebApp.Migrations
 
             modelBuilder.Entity("E_LearningWebApp.Areas.Identity.Data.E_LearningWebAppUser", b =>
                 {
+                    b.Navigation("grades");
+
                     b.Navigation("payments");
                 });
 

@@ -12,7 +12,7 @@ namespace E_LearningWebApp.Models
 
         public int CourseId { get; set; } // Renamed to CourseId
 
-        public int UserId { get; set; }
+        public string UserId { get; set; }
         public virtual E_LearningWebAppUser User { get; set; }
 
         public virtual Courses Course { get; set; } // Renamed to Course to match singular form of Courses

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "phHvAMgY51J+70TmxuFV5FK7m7jlSj023uH/27Pq2Zw=",
+  "Hash": "ufF42gKqEArVaWxJMDEFVb1Ra0sBesoyt20jt6bj3MI=",
   "Source": "E-LearningWebApp",
   "BasePath": "_content/E-LearningWebApp",
   "Mode": "Default",
@@ -33031,6 +33031,23 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
+      "Identity": "C:\\Users\\Hp\\Desktop\\MainElearningAppSubmit\\MainE-Learning\\E-LearningWebApp\\wwwroot\\Images\\0ab362d9-841c-4e79-af2d-a60873937def-Screenshot 2023-09-06 095358.png",
+      "SourceId": "E-LearningWebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Hp\\Desktop\\MainElearningAppSubmit\\MainE-Learning\\E-LearningWebApp\\wwwroot\\",
+      "BasePath": "_content/E-LearningWebApp",
+      "RelativePath": "Images/0ab362d9-841c-4e79-af2d-a60873937def-Screenshot 2023-09-06 095358.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\0ab362d9-841c-4e79-af2d-a60873937def-Screenshot 2023-09-06 095358.png"
+    },
+    {
       "Identity": "C:\\Users\\Hp\\Desktop\\MainElearningAppSubmit\\MainE-Learning\\E-LearningWebApp\\wwwroot\\Images\\108dea20-8472-4ebe-a663-0cf691c935a2-Screenshot (3).png",
       "SourceId": "E-LearningWebApp",
       "SourceType": "Discovered",
@@ -33046,6 +33063,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\108dea20-8472-4ebe-a663-0cf691c935a2-Screenshot (3).png"
+    },
+    {
+      "Identity": "C:\\Users\\Hp\\Desktop\\MainElearningAppSubmit\\MainE-Learning\\E-LearningWebApp\\wwwroot\\Images\\2af2324c-f617-4227-b712-80e4da9ee25e-Screenshot (18).png",
+      "SourceId": "E-LearningWebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Hp\\Desktop\\MainElearningAppSubmit\\MainE-Learning\\E-LearningWebApp\\wwwroot\\",
+      "BasePath": "_content/E-LearningWebApp",
+      "RelativePath": "Images/2af2324c-f617-4227-b712-80e4da9ee25e-Screenshot (18).png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\2af2324c-f617-4227-b712-80e4da9ee25e-Screenshot (18).png"
     },
     {
       "Identity": "C:\\Users\\Hp\\Desktop\\MainElearningAppSubmit\\MainE-Learning\\E-LearningWebApp\\wwwroot\\Images\\3b78cf46-1336-4939-8cc3-7121263eeaaa-course-2.jpg",
