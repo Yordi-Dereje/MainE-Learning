@@ -14,47 +14,56 @@
 
     <title>User Dashboard</title>
     <link rel="stylesheet" href="~/Content/css/courses.css">
+    <style>
+        dl{
+            width: 80vw;
+            padding-left: 10vw;
+        }
+    </style>
 </head>
 <body>
 
-<h1>GetCourseById</h1>
-
+<h1>
+    <dd class="col-sm-10" style="padding-left: 5vw">
+        @Html.DisplayFor(model => model.CourseName)
+    </dd>
+   
+    </h1>
 <div>
-    <h4>Courses</h4>
     <hr />
-    <dl class="row">
+        <dl class="row table table-striped table-bordered">
         
-        <dt class = "col-sm-2">
+        <dt class = "col-sm-2" style="color: black;">
             @Html.DisplayNameFor(model => model.CourseName)
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.CourseName)
         </dd>
-        <dt class = "col-sm-2">
+            <dt class="col-sm-2" style="color: black;">
             @Html.DisplayNameFor(model => model.CourseCode)
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.CourseCode)
         </dd>
-        <dt class = "col-sm-2">
+            <dt class="col-sm-2" style="color: black;">
             @Html.DisplayNameFor(model => model.CourseDescription)
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.CourseDescription)
         </dd>
-        <dt class = "col-sm-2">
+            <dt class="col-sm-2" style="color: black;">
             @Html.DisplayNameFor(model => model.CoursePrice)
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.CoursePrice)
         </dd>
-        <dt class = "col-sm-2">
+            <dt class="col-sm-2" style="color: black;">
             @Html.DisplayNameFor(model => model.CourseDuration)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CourseDuration)
+            @Html.DisplayFor(model => model.CourseDuration) Weeks
         </dd>
-        <dt class="col-sm-2">
+            <dt class="col-sm-2" style="color: black;">
             @Html.DisplayNameFor(model => model.imagePath)
         </dt>
         <dd class="col-sm-10">
@@ -65,7 +74,11 @@
 <div>
 @*  ..works perfectly dont touch   <a class="nav-link text-dark" asp-controller="Subcourse" asp-action="CreateSubCourse" asp-route-courseid="@ViewBag.CourseId">AllSubCourse</a>|
  *@
-     <a class="nav-link text-dark" asp-controller="Subcourse" asp-action="GetAllSubCourses" asp-route-courseid="@ViewBag.CourseId">Add SubCourse</a>|
+        <a class="form-group col-lg-12 mx-auto " style="padding-left: 10vw" asp-controller="Subcourse" asp-action="GetAllSubCourses" asp-route-courseid="@ViewBag.CourseId">Add SubCourse</a>|
+
+
+       
+
      <a asp-action="GetAllCourses">Back to List</a>
 </div>
 </body>

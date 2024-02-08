@@ -179,36 +179,86 @@ namespace E_LearningWebApp.Controllers
             return View(course);
 
         }
+        /*     [HttpGet("editCourses/{courseid}")]-- replace if the view and crud arent working
+              public async Task<IActionResult> EditCourses(int courseid)
+             {
+                 var course = await _context.Courses.FindAsync(courseid);
+                 return View(course);
+             }
+
+             [HttpPost("editCourses/{courseid}")]
+              public IActionResult EditCourses(int courseid, Courses UpdatedCourse)
+             {
+                 var courses = _context.Courses.AsNoTracking().FirstOrDefaultAsync(course => course.CourseId == courseid);
+
+                 if (courses != null)
+                 {
+                     _context.Update(UpdatedCourse);
+                     _context.SaveChanges();
+                 }
+
+                 return RedirectToAction("GetAllCourses", "Course");
+             }
+     */
         [HttpGet("editCourses/{courseid}")]
-         public async Task<IActionResult> EditCourses(int courseid)
+        public async Task<IActionResult> EditCourses(int courseid)
         {
             var course = await _context.Courses.FindAsync(courseid);
-            return View(course);
-        }
-
-
-
-        /*  public IActionResult GetImage(string imageName)
-          {
-              var imagePath = Path.Combine(webHostEnvironment.WebRootPath, "Images", imageName);
-              var imageBytes = System.IO.File.ReadAllBytes(imagePath);
-              return File(imageBytes, "image/PNG"); // Adjust the content type based on the image type
-          }*/
-
-        [HttpPost("editCourses/{courseid}")]
-         public IActionResult EditCourses(int courseid, Courses UpdatedCourse)
-        {
-            var courses = _context.Courses.AsNoTracking().FirstOrDefaultAsync(course => course.CourseId == courseid);
-
-            if (courses != null)
+            if (course == null)
             {
-                _context.Update(UpdatedCourse);
-                _context.SaveChanges();
+                return NotFound();
             }
+
+            // Map the course entity to your view model
+            var courses = new Courses
+            {
+                CourseId = course.CourseId,
+                CourseName = course.CourseName,
+                CourseCode = course.CourseCode,
+                CourseDescription = course.CourseDescription,
+                CourseDuration = course.CourseDuration,
+                CoursePrice = course.CoursePrice,
+                imagePath = course.imagePath
+            };
+
+            return View(courses);
+        }
+        [HttpPost("editCourses/{courseid}")]
+        public async Task<IActionResult> EditCourses(int courseid, CourseViewModel updatedCourseViewModel)
+        {
+            var course = await _context.Courses.FindAsync(courseid);
+            if (course == null)
+            {
+                return NotFound();
+            }
+
+            if (updatedCourseViewModel.imagePath != null)
+            {
+                // Delete the old image file if a new one is uploaded
+                System.IO.File.Delete(Path.Combine(webHostEnvironment.WebRootPath, "Images", course.imagePath));
+
+                // Save the new image file
+                string fileName = Guid.NewGuid().ToString() + "-" + updatedCourseViewModel.imagePath.FileName;
+                string uniqueCFileName = Path.Combine(webHostEnvironment.WebRootPath, "Images", fileName);
+                updatedCourseViewModel.imagePath.CopyTo(new FileStream(uniqueCFileName, FileMode.Create));
+
+                // Update the image path in the course entity
+                course.imagePath = "/Images/" + fileName;
+            }
+
+            // Update the other fields
+            course.CourseName = updatedCourseViewModel.CourseName;
+            course.CourseCode = updatedCourseViewModel.CourseCode;
+            course.CourseDescription = updatedCourseViewModel.CourseDescription;
+            course.CourseDuration = updatedCourseViewModel.CourseDuration;
+            course.CoursePrice = updatedCourseViewModel.CoursePrice;
+
+            // Save changes to the database
+            _context.Update(course);
+            await _context.SaveChangesAsync();
 
             return RedirectToAction("GetAllCourses", "Course");
         }
-
 
 
         [HttpGet("deleteCourse/{courseid}")]

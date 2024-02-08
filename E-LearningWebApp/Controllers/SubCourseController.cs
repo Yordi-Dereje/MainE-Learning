@@ -116,13 +116,17 @@ namespace E_LearningWebApp.Controllers
             return RedirectToAction("CreateSubCourse", new { courseid  = courseId
     });
         }
+      
+        
 
-
-[HttpGet]
-        public async Task<IActionResult> GetSubCourseById([FromQuery] int subcourseid)
+        [HttpGet]
+        public async Task<IActionResult> GetSubCourseById([FromQuery] int subcourseid, [FromQuery] int courseid)
         {
             var subcourse = await _context.SubCourses.FindAsync(subcourseid);
-            ViewBag.CourseId = subcourseid;
+            var course = await _context.Courses.FindAsync(courseid);
+
+            ViewBag.CourseId = courseid;
+            ViewBag.CourseName = course.CourseName;
             return View(subcourse);
 
         }
@@ -139,8 +143,10 @@ namespace E_LearningWebApp.Controllers
         [HttpPost("editSubCourse/{courseid}/{subcourseid}")]
         public IActionResult EditSubCourseAsync(int courseid,int subcourseid, SubCourses UpdatedSubCourse)
         {
-             var subcourses = _context.SubCourses.AsNoTracking().FirstOrDefaultAsync(subcourse => subcourse.SubCourseId == subcourseid);
-             if (subcourses != null)
+
+            var subcourses = _context.SubCourses.AsNoTracking().FirstOrDefaultAsync(subcourse => subcourse.SubCourseId == subcourseid && courseid == subcourse.CourseId);
+
+            if (subcourses != null)
             {
                 _context.Update(UpdatedSubCourse);
             }

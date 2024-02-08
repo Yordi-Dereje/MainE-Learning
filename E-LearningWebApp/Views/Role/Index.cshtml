@@ -1,11 +1,10 @@
 ﻿@model IEnumerable<Microsoft.AspNetCore.Identity.IdentityRole>
 @{
+    Layout = "AdminLayout";
     ViewData["Title"] = "Index";
 }
 
-<br />
-<br />
-<br />
+
 <body>
 
   
@@ -22,7 +21,7 @@
 
 <a asp-action="Create">Create</a>
 
-<table class="table table-striped table-bordered">
+<table class="table table-striped table-bordered" style="width: 75vw">
 
     <thead>
         <tr>

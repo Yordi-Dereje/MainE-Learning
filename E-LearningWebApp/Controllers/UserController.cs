@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Security.Principal;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace E_LearningWebApp.Controllers
 {
@@ -61,17 +62,29 @@ namespace E_LearningWebApp.Controllers
             }
         }
         [HttpGet]
-        public async Task<IActionResult> Profile([FromQuery] string userId)
+        public async Task<IActionResult> ProfileAsync([FromQuery] string userid)
         {
-            var user = await _userManager.FindByIdAsync(userId);
+            var user = await _userManager.FindByIdAsync(userid);
             if (user == null)
             {
-                return NotFound($"Unable to find '{userId}'.");
+                return NotFound($"Unable to find '{userid}'.");
             }
             else
             {
                 return View(user);
             }
+        }
+        [HttpPost]
+        public async Task<IActionResult> Profile([FromQuery] string userid, E_LearningWebAppContext userdata)
+        {
+
+            var user = await _userManager.FindByIdAsync(userid);
+            if (user == null)
+            {
+                _appContext.Update(userdata);
+                _appContext.SaveChanges();
+            }
+            return RedirectToAction("Profile", "User");
         }
         [HttpGet]
         public async Task<IActionResult> Payment([FromQuery] string userId, [FromQuery] int courseId)

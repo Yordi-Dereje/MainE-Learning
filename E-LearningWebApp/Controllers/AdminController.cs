@@ -96,6 +96,9 @@ namespace E_LearningWebApp.Controllers
 
             int countSubCourse = _context.SubCourses.Count();
             ViewBag.ItemCountSubCourse = countSubCourse;
+
+            var userCount = _userManager.Users.Count();
+            ViewBag.UserCount = userCount;
             /*            ViewBag.userid = _userManager.GetUserId(HttpContext.User);
             */
             return View();

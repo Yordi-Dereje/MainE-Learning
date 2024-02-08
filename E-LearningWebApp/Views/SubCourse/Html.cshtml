@@ -1,9 +1,12 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@using E_LearningWebApp.Areas.Identity.Data;
+@using Microsoft.AspNetCore.Identity
+@using E_LearningWebApp.Models
+@model E_LearningWebApp.Models.SubCourses;
 @{
     Layout = "UserLayout";
 }
+@inject SignInManager<E_LearningWebAppUser> SignInManager
+@inject UserManager<E_LearningWebAppUser> UserManager
 
 <main>
 
@@ -528,11 +531,27 @@
     </div>
 
     <div id="result-container">
-        <button id="submit-btn" onclick="calculateScore()">Submit Answers</button>
+        <!-- For each subcourse -->
+        <button id="submit-btn" class="track-button" data-subcourse-id="@Model.SubCourseId" onclick="calculateScore()">Submit Answers</button>
         <p id="result"></p>
     </div>
 
     <script>
+       
+        // Global variable to store the total score
+        let totalScore = 0;
+
+          // Attach event listeners to all buttons with the class 'track-button'
+        document.querySelectorAll('.track-button').forEach(function (button) {
+            button.addEventListener('click', function (event) {
+                // Get the subcourse ID from the data attribute
+                let subcourseId = event.target.getAttribute('data-subcourse-id');
+                console.log('Button clicked for subcourse ID:', subcourseId);
+                // Perform any actions needed when the button is clicked
+                // For example, sending the subcourse ID to a server
+            });
+        });
+
         function calculateScore() {
             // Array of correct answers
             const correctAnswers = ["a", "a", "b", "a", "b", "a", "a", "a", "b", "b"];
@@ -546,7 +565,6 @@
             radioGroups.forEach((group, index) => {
                 // Get the selected answer
                 const selectedAnswer = group.querySelector('input:checked');
-
 
                 // Check if an answer is selected
                 if (selectedAnswer) {
@@ -568,9 +586,17 @@
                 }
             });
 
+            // Add the current score to the total score
+            totalScore += score;
+
+            // Calculate the percentage score
+            let percentageScore = (totalScore / correctAnswers.length) * 100;
+
             // Display the result
-            score *= 10;
-            document.getElementById('result').innerText = `You scored ${score}%`;
+            document.getElementById('result').innerText = `You scored ${percentageScore.toFixed(2)}%`;
         }
+
+      
+
     </script>
 </main>

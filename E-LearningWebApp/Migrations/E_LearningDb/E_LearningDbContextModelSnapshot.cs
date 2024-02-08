@@ -122,6 +122,34 @@ namespace E_LearningWebApp.Migrations.E_LearningDb
                     b.ToTable("Courses");
                 });
 
+            modelBuilder.Entity("E_LearningWebApp.Models.Grade", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("SCId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("Userid")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Value")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Grades");
+                });
+
             modelBuilder.Entity("E_LearningWebApp.Models.MyProjects", b =>
                 {
                     b.Property<int>("MyProjectId")
@@ -197,45 +225,15 @@ namespace E_LearningWebApp.Migrations.E_LearningDb
                     b.ToTable("SubCourses");
                 });
 
-            modelBuilder.Entity("E_LearningWebApp.Models.User", b =>
+            modelBuilder.Entity("E_LearningWebApp.Models.Grade", b =>
                 {
-                    b.Property<int>("UserId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                    b.HasOne("E_LearningWebApp.Areas.Identity.Data.E_LearningWebAppUser", "User")
+                        .WithMany("grades")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserId"), 1L, 1);
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ReturnUrl")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UserName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("imagePath")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("UserId");
-
-                    b.ToTable("User");
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("E_LearningWebApp.Models.Payment", b =>
@@ -268,6 +266,8 @@ namespace E_LearningWebApp.Migrations.E_LearningDb
 
             modelBuilder.Entity("E_LearningWebApp.Areas.Identity.Data.E_LearningWebAppUser", b =>
                 {
+                    b.Navigation("grades");
+
                     b.Navigation("payments");
                 });
 

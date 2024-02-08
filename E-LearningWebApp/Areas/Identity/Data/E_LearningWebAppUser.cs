@@ -22,6 +22,7 @@ public class E_LearningWebAppUser : IdentityUser
 
     public string imagePath { get; set; }
     public List<Payment>? payments { get; set; }
+    public List<Grade>? grades { get; set;}
 
     /*[Required]
     [Display(Name = "User Role")]

@@ -11,18 +11,22 @@
     ViewData["Title"] = "Admin";
 }
 
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
-
-    <link rel="stylesheet" href="~/Content/css/courses.css">
-
-    <title>Toaster Example</title>
-    <!-- Include Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="~/Content/css/courses.css">
+    <style>
+    
+        section{
+            padding: 0px;
+        }
+        #partitions{
+            width: 85vw;
+        }
+    </style>
     <script>
         window.addEventListener('DOMContentLoaded', (event) => {
             showToast();
@@ -37,73 +41,24 @@
                 toaster.classList.remove('show');
             }, 3000);
         }
-    </script>
-
-
-
-    <br />
-
-    <br />
-
-
-
-  
-
+    </script> <br /><br />
 </head>
-<body>
-    <!-- Toaster element -->
-    <!-- Include Bootstrap JS -->
-    @* ===== *@
 
-
-    <!-- ======= Header ======= -->
-    @* <header id="header" class="fixed-top">
-    <div class="container d-flex align-items-center">
-
-    <h1 class="logo me-auto"><a href="index.html">Mentor</a></h1>
-    <!-- Uncomment below if you prefer to use an image logo -->
-    <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
-    <nav id="navbar" class="navbar order-last order-lg-0">
-    <ul>
-    <li class="nav-item">
-    <a class="nav-link text-dark" asp-area="Identity" asp-controller="Role" asp-action="Index">Roles</a>
-    </li>
-    <li class="nav-item">
-    <a class="nav-link text-dark" asp-controller="Course" asp-action="Index">Course</a>
-    </li>
-    <li class="nav-item">
-    <a class="nav-link text-dark" asp-controller="Admin" asp-action="Index">DashBoard</a>
-    </li>
-    <i class="bi bi-list mobile-nav-toggle"></i>
-    </ul>
-    </nav>
-
-
-    </div>
-    </header> *@
-
-
-
-    
- @*    <div id="toaster" class="toast alert-success top-50" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false">
+    <div id="toaster" class="toast alert-success top-50" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false">
         @*  <div class="toast-header">
         <strong class="mr-auto">Registered</strong>
         <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
         <span aria-hidden="true">&times;</span>
         </button>
-        </div>  
+        </div>  *@
         <br /><br /><br />
         <div class="toast-body alert-success">
             Welcome Back!
         </div>
-    </div> *@
+    </div>
 
     <div id="partitions">
-        <div class="partition">
-            <h2>Hey there admin</h2>
-            <p>Wazzzzzzzzup with you?</p>
-        </div>
+       
 
 
         <section id="counts" class="counts section-bg">
@@ -112,7 +67,7 @@
                 <div class="row counters">
 
                     <div class="col-lg-3 col-6 text-center">
-                        <span data-purecounter-start="0" data-purecounter-end="1232" data-purecounter-duration="1" class="purecounter"></span>
+                        <span data-purecounter-start="0" data-purecounter-end="@ViewBag.UserCount" data-purecounter-duration="1" class="purecounter"></span>
                         <p>Students</p>
                     </div>
 
@@ -140,7 +95,7 @@
         </div>
 
     </div>
-</body>
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="~/Content/assets/vendor/purecounter/purecounter_vanilla.js"></script>
@@ -151,4 +106,3 @@
 
 <!-- Template Main JS File -->
 <script src="~/Content/assets/js/main.js"></script>
-</html>
