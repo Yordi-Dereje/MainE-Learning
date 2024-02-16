@@ -119,6 +119,44 @@ namespace E_LearningWebApp.Controllers
             // Pass the view model to the view
             return View(multiplViewCourseSubCourseModeluser.FirstOrDefault()); // FirstOrDefault ensures a null is handled gracefully if no matching subcourses
         }
+
+        public async Task<IActionResult> CourseDetailUserpay()
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                HttpResponseMessage response = await client.GetAsync("https://40d1-104-234-212-140.ngrok-free.app/data");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string returnUrl = "https://40d1-104-234-212-140.ngrok-free.app/Home/Privacy";
+                    // Pass the return URL to the view
+                    ViewBag.ReturnUrl = returnUrl;
+
+                    // Parse the response body
+                    return View();
+
+                    // Process the response data
+                    // Update UI or do other operations
+                }
+                else
+                {
+                    // Handle error response
+                    // Display error message or log the error
+                    string returnUrl = "https://40d1-104-234-212-140.ngrok-free.app/Home/Index";
+
+                    // Pass the return URL to the view
+                    ViewBag.ReturnUrl = returnUrl;
+
+                    // Parse the response body
+                    return View();
+
+
+                }
+            }
+
+            //   return View();
+        }
+
         public IActionResult Concepts()
         {
             return View();

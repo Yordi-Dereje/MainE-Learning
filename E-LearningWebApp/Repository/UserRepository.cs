@@ -7,20 +7,26 @@ namespace E_LearningWebApp.Repository
 {
     public class UserRepository
     {
-        private E_LearningWebAppContext _appcontext;
-        public UserRepository(E_LearningWebAppContext _appcontext)
+        private E_LearningDbContext _context;
+        public UserRepository(E_LearningDbContext _context)
         {
-            this._appcontext = _appcontext;
+            this._context = _context;
             
         }
-       /* public void Updateuser(E_LearningWebAppUser updateuser)
+      /*  public Payment AddPayment(Payment payments)
         {
-            var updated = _appcontext.E_LearningWebAppUser.Find(p => p.id == updatedCourse.CourseId);
-            if (updated != null)
-            {
-                _context.Courses.Update(updated);
-                _context.SaveChanges();
-            }
+            _context.Payment.Add(payments);
+            _context.SaveChanges();
+            return payments;
         }*/
+        /* public void Updateuser(E_LearningWebAppUser updateuser)
+         {
+             var updated = _appcontext.E_LearningWebAppUser.Find(p => p.id == updatedCourse.CourseId);
+             if (updated != null)
+             {
+                 _context.Courses.Update(updated);
+                 _context.SaveChanges();
+             }
+         }*/
     }
 }

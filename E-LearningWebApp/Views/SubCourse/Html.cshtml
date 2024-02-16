@@ -538,20 +538,6 @@
 
     <script>
        
-        // Global variable to store the total score
-        let totalScore = 0;
-
-          // Attach event listeners to all buttons with the class 'track-button'
-        document.querySelectorAll('.track-button').forEach(function (button) {
-            button.addEventListener('click', function (event) {
-                // Get the subcourse ID from the data attribute
-                let subcourseId = event.target.getAttribute('data-subcourse-id');
-                console.log('Button clicked for subcourse ID:', subcourseId);
-                // Perform any actions needed when the button is clicked
-                // For example, sending the subcourse ID to a server
-            });
-        });
-
         function calculateScore() {
             // Array of correct answers
             const correctAnswers = ["a", "a", "b", "a", "b", "a", "a", "a", "b", "b"];
@@ -593,7 +579,7 @@
             let percentageScore = (totalScore / correctAnswers.length) * 100;
 
             // Display the result
-            document.getElementById('result').innerText = `You scored ${percentageScore.toFixed(2)}%`;
+            document.getElementById('result').innerText = `You scored ${score} out of ${correctAnswers.length}!`;
         }
 
       

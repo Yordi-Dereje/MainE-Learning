@@ -14,7 +14,35 @@
         return txRef;
     }
    
+    using (HttpClient client = new HttpClient())
+    {
+        HttpResponseMessage response = await client.GetAsync("https://40d1-104-234-212-140.ngrok-free.app/data");
 
+        if (response.IsSuccessStatusCode)
+        {
+            string returnUrl = "https://40d1-104-234-212-140.ngrok-free.app/Home/Privacy";
+            // Pass the return URL to the view
+            ViewBag.ReturnUrl = returnUrl;
+
+            // Parse the response body
+
+            // Process the response data
+            // Update UI or do other operations
+        }
+        else
+        {
+            // Handle error response
+            // Display error message or log the error
+            string returnUrl = "https://40d1-104-234-212-140.ngrok-free.app/Home/Index";
+
+            // Pass the return URL to the view
+            ViewBag.ReturnUrl = returnUrl;
+
+            // Parse the response body
+
+
+        }
+    }
 }
 
 <head>
@@ -24,6 +52,30 @@
 
     <title>User Dashboard</title>
     <link rel="stylesheet" href="~/Content/css/courses.css">
+  
+      @*   <script>
+            document.addEventListener('DOMContentLoaded', function () {
+            var userId = '@ViewBag.userid'; // Replace with the actual user ID
+
+                fetch(`api/Pays/${userId}`)
+                    .then(function (response) {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.json();
+                    })
+                    .then(function (data) {
+                        console.log(data);
+                        // Process the data received from the API
+                        // For example, display the checkout URL
+                        window.location.href = data.checkoutUrl;
+                    })
+                    .catch(function (error) {
+                        console.error('There has been a problem with your fetch operation:', error);
+                    });
+            });
+        </script> *@
+
 </head>
 
 <body>
@@ -80,7 +132,7 @@
 
 
                     <form method="POST" class="form" action="https://api.chapa.co/v1/hosted/pay">
-                        <input type="hidden" name="public_key" value="CHAPUBK_TEST-iuDgvUTK7jeeGEcNxPMy9Wuf73IdVKYC" />
+                            <input type="hidden" name="public_key" value="CHAPUBK_TEST-nZgZI5lxfdJJu1hriKT3UdnKaRz4LqMA" />
                         <input type="hidden" name="tx_ref" value="@GenerateTxRef()" />
                         <input type="hidden" name="amount" value=@Model.courseview.CoursePrice />
                         <input type="hidden" name="currency" value="ETB" />
@@ -90,16 +142,12 @@
                         <input type="hidden" name="title" value="Let us do this" />
                         <input type="hidden" name="description" value="Paying with Confidence with cha" />
                         <input type="hidden" name="logo" value="https://chapa.link/asset/images/chapa_swirl.svg" />
-                        <input type="hidden" name="callback_url" value="https://localhost:7059" />
-                       @*  <input type="hidden" name="return_url" value="@Url.Action("Payment", "User", new { userId = @ViewBag.userid, courseId =  @Model.courseview.CourseId })" />
-                                <input type="hidden" name="return_url" value="https://localhost:7059/User/Payment?userId=@ViewBag.userid&amp;courseId=@Model.courseview.CourseId" />
-                             <input type="hidden" name="return_url" value="@Url.Action("Payment", "User", new { userId = @ViewBag.userid, courseId = @Model.courseview.CourseId })" />
-                            *@<input type="hidden" name="return_url" value="https://localhost:7059/User/Payment?userId=@ViewBag.userid&courseId=@Model.courseview.CourseId" />
+                            <input type="hidden" name="callback_url" value="https://40d1-104-234-212-140.ngrok-free.app" />
+                            <input type="hidden" name="return_url" value="@ViewBag.ReturnUrl" />
 
                         <input type="hidden" name="meta[title]" value="test" />
-                        <button type="submit" class="get-started-btn align-items-right">Enroll</button>
+                            <button type="submit" class="get-started-btn align-items-right">Enroll</button>
                     </form>
-
 
 
                         @*  end chapa *@

@@ -1,348 +1,293 @@
-﻿@*
+﻿@using E_LearningWebApp.Areas.Identity.Data;
+@using Microsoft.AspNetCore.Identity;
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
     Layout = "UserLayout";
 }
+@inject UserManager<E_LearningWebAppUser> UserManager
+
 <main>
     <div id="partitions">
 
         <div class="partition">
-            <h2>CSS Fundamentals</h2>
-            <p>CSS (Cascading Style Sheets) is a powerful styling language used for designing and layout purposes in web development. Learn the basics of selectors, properties, and values to style HTML documents.</p>
-            <p>CSS works by:</p>
+            <h2>Introduction to JavaScript</h2>
+            <p>JavaScript is a versatile programming language that empowers web development. In this module, you will learn:</p>
 
             <ul>
-                <li>selecting an HTML element</li>
-                <li>choosing a property to alter</li>
-                <li>applying a certain value</li>
+                <li><strong>History of JavaScript:</strong> Understand the origins and evolution of JavaScript.</li>
+                <li><strong>Setting Up Development Environment:</strong> Configure your environment for JavaScript development.</li>
+                <li><strong>Basic Syntax:</strong> Explore the fundamental syntax and structure of JavaScript code.</li>
+                <li><strong>Data Types:</strong> Learn about various data types like strings, numbers, and booleans.</li>
+                <li><strong>Variables and Constants:</strong> Understand how to declare and use variables and constants.</li>
             </ul>
-
-
-            <h3>Syntax</h3>
-
-<pre><code>element-selector {
- one-style-property: value;
- another-style-property: value;
-}
-</code></pre>
-
-            <p>A property + value is known as a &ldquo;declaration&rdquo;. Like this: <code>text-align: center;</code></p>
-
-            <p>In general, and for readability purposes, we tend to put each declaration on separate lines like the example above. Some people argue that is better to put everything (element, property and value) in one line (when it has a single declaration), but you might need to add more declarations in the future. Also, placing each declaration on dedicated lines makes the code a lot easier to read and follow.</p>
         </div>
 
         <div class="partition">
-            <h2>Applying CSS to HTML</h2>
+            <h2>Control Flow and Functions</h2>
+            <p>Mastering control flow and functions is essential for effective JavaScript programming. In this module, you will cover:</p>
 
-            <p>There are a couple of ways to apply CSS to a HTML project. Let&rsquo;s review them.</p>
-
-            <h4>External stylesheet</h4>
-
-            <p>An external stylesheet contains CSS in a separate file with a <code>.css</code> extension. This is the most commonly used method of adding CSS to a document. You can also link a single CSS file to multiple web pages, styling all of them with the same CSS stylesheet.</p>
-
-            <p>Example of an external stylesheet file linked to the HTML:</p>
-
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;meta charset=&quot;utf-8&quot;&gt;
-    &lt;title&gt;Adding Styles&lt;/title&gt;
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;h1&gt;Hello CSS!&lt;/h1&gt;
-  &lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-
-            <p>The external file could look something like this:</p>
-
-<pre><code>h1 {
-  color: deepskyblue;
-  text-align: center;
-}
-</code></pre>
-
-            <h4>Internal stylesheet</h4>
-
-            <p>An internal stylesheet resides within an HTML document. To create an internal stylesheet, just place CSS code inside a <code>&lt;style&gt;</code> element contained inside <code>&lt;head&gt;</code> element of the HTML.</p>
-
-            <p>Example of an internal stylesheet file linked to the HTML:</p>
-
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-
-&lt;head&gt;
-  &lt;meta charset=&quot;utf-8&quot;&gt;
-  &lt;title&gt;Adding Styles&lt;/title&gt;
-  &lt;style&gt;
-    h1 {
-      color: deepskyblue;
-      text-align: center;
-    }
-  &lt;/style&gt;
-&lt;/head&gt;
-
-&lt;body&gt;
-  &lt;h1&gt;Hello CSS!&lt;/h1&gt;
-&lt;/body&gt;
-
-&lt;/html&gt;
-</code></pre>
-
-            <h4>Inline styles</h4>
-
-            <p>Inline styles are CSS declarations that affect a single HTML element, contained within a <code>style</code> attribute. </p>
-
-            <p>Example of an inline style in an HTML document:</p>
-
-<pre><code>&lt;h1 style=&quot;color: deepskyblue; text-align: center;&quot;&gt;Hello CSS!&lt;/h1&gt;
-</code></pre>
-
-            <p><strong>Note</strong>: Inline styles take precedence over stylesheets, so a inline style will always prevail over any other.</p>
-        </div>
-
-
-        <div class="partition">
-            <h2>Box Model</h2>
-            <p>The CSS Box Model is a fundamental concept that defines how elements are rendered on a web page. It consists of four main components:</p>
-
-            <ol>
-                <li><strong>Content:</strong> The actual content of the element, defined by width and height properties.</li>
-                <li><strong>Padding:</strong> Space between content and border, controlled by the padding property.</li>
-                <li><strong>Border:</strong> Surrounds padding and content, with properties for style, width, and color.</li>
-                <li><strong>Margin:</strong> The space outside the border, providing separation between elements.</li>
-            </ol>
-
-            <p><strong>Illustration of the Box Model:</strong></p>
-            <pre>
-+-------------------+
-|      Margin       |
-|                   |
-|  +---------------+|
-|  |    Border     ||
-|  |               ||
-|  |  +---------+  ||
-|  |  | Padding |  ||
-|  |  |         |  ||
-|  |  | Content |  ||
-|  |  |         |  ||
-|  |  +---------+  ||
-|  |               ||
-|  +---------------+|
-|                   |
-+-------------------+
-            </pre>
-
-            <h2>Key Concepts</h2>
             <ul>
-                <li><strong>Width and Height:</strong> Controlled by the width and height properties.</li>
-                <li><strong>Box Sizing:</strong> Determines how the total width and height are calculated (content-box, border-box).</li>
-                <li><strong>Margin Collapse:</strong> Margins of adjacent elements can collapse.</li>
-                <li><strong>Overflow:</strong> Determines how content behaves when it's larger than the allocated space.</li>
+                <li><strong>Conditional Statements:</strong> Implement decision-making with if, else, and switch statements.</li>
+                <li><strong>Loops:</strong> Iterate through data using for, while, and do-while loops.</li>
+                <li><strong>Functions:</strong> Understand the concept of functions and how to define and call them.</li>
+                <li><strong>Scope and Closures:</strong> Dive into variable scope and closures for better code organization.</li>
+                <li><strong>Error Handling:</strong> Learn to handle errors using try, catch, and finally blocks.</li>
             </ul>
-
-            <p>Understanding and mastering the Box Model is crucial for effective web layout and design. It enables developers to control spacing, dimensions, and overall positioning of elements on a webpage.</p>
         </div>
 
         <div class="partition">
-            <h2>Understanding Flexbox</h2>
-            <p>Flexbox is a one-dimensional layout method for laying out items in rows or columns. It offers an efficient way to distribute space and align items in a container, even when their size is unknown or dynamic. Key concepts include:</p>
+            <h2>Object-Oriented JavaScript</h2>
+            <p>JavaScript's object-oriented features allow for robust and scalable code. In this module, you will explore:</p>
 
             <ul>
-                <li><strong>Flex Container:</strong> The parent element with <code>display: flex;</code> or <code>display: inline-flex;</code>.</li>
-                <li><strong>Flex Items:</strong> The children of the flex container.</li>
-                <li><strong>Main Axis:</strong> The primary axis along which flex items are distributed.</li>
-                <li><strong>Cross Axis:</strong> The perpendicular axis to the main axis.</li>
-                <li><strong>Flex Properties:</strong> Properties like <code>flex-grow</code>, <code>flex-shrink</code>, and <code>flex-basis</code>.</li>
+                <li><strong>Objects and Properties:</strong> Create and manipulate objects with properties and methods.</li>
+                <li><strong>Prototypes and Inheritance:</strong> Understand the prototype chain and inheritance in JavaScript.</li>
+                <li><strong>ES6 Classes:</strong> Explore the modern class syntax introduced in ECMAScript 2015.</li>
+                <li><strong>Modules:</strong> Organize code using modules for better maintainability.</li>
+                <li><strong>Asynchronous Programming:</strong> Dive into asynchronous concepts using callbacks, promises, and async/await.</li>
             </ul>
-
-            <p>Flexbox is particularly useful for creating responsive and dynamic layouts, especially in scenarios where the size of your items is unknown or varies.</p>
+        </div>
+        <div class="partition">
+            <h2>Variables and Data Types</h2>
+            <p>JavaScript variables are containers for storing data values. They can hold various data types, including numbers, strings, and booleans. Learn the different data types and how to effectively use variables in your code.</p>
         </div>
 
         <div class="partition">
-            <h2>Understanding Grid</h2>
-            <p>CSS Grid Layout is a two-dimensional layout system for the web. It lets you design layouts in terms of rows and columns, providing precise control over the placement and sizing of items. Key concepts include:</p>
+            <h2>Control Flow and Loops</h2>
+            <p>Control flow statements like if-else and switch help in making decisions in your code. Loops, such as for and while, allow you to repeat tasks efficiently, making your code more dynamic. Mastering control flow and loops is essential for creating logic and managing program flow.</p>
+        </div>
 
-            <ul>
-                <li><strong>Grid Container:</strong> The parent element with <code>display: grid;</code>.</li>
-                <li><strong>Grid Items:</strong> The children of the grid container.</li>
-                <li><strong>Grid Lines:</strong> Horizontal and vertical lines that define the grid structure.</li>
-                <li><strong>Grid Tracks:</strong> The space between two adjacent grid lines, creating rows or columns.</li>
-                <li><strong>Grid Areas:</strong> Named regions of the grid.</li>
-            </ul>
+        <div class="partition">
+            <h2>Functions and Scope</h2>
+            <p>Functions are reusable blocks of code. JavaScript has function scope, and understanding how scope works is essential for writing maintainable and bug-free code. Explore function declarations, expressions, and the concept of closures.</p>
+        </div>
 
-            <p>CSS Grid is powerful for creating complex and responsive layouts with precise control over both the rows and columns, making it an excellent choice for overall page structure.</p>
+        <div class="partition">
+            <h2>Objects and Arrays</h2>
+            <p>Objects and arrays are fundamental data structures in JavaScript. Objects store key-value pairs, while arrays hold ordered collections. Mastery of these structures is key to efficient data manipulation. Dive into object-oriented programming (OOP) principles in JavaScript.</p>
+        </div>
+
+        <div class="partition">
+            <h2>DOM Manipulation</h2>
+            <p>JavaScript allows you to interact with the DOM, enabling dynamic updates to web pages. Learn how to select elements, modify content, and respond to user events for an interactive user experience. Understand event delegation and efficient DOM manipulation techniques.</p>
+        </div>
+
+        <div class="partition">
+            <h2>AJAX and Fetch API</h2>
+            <p>Asynchronous JavaScript and XML (AJAX) and the Fetch API enable you to make asynchronous requests to servers. This is crucial for building responsive and dynamic web applications. Explore the principles of asynchronous programming and handling API requests.</p>
+        </div>
+
+        <div class="partition">
+            <h2>ES6+ Features</h2>
+            <p>Explore the features introduced in ECMAScript 6 (ES6) and later versions. Features like arrow functions, destructuring, and template literals enhance the readability and functionality of your code. Stay up-to-date with modern JavaScript syntax and best practices.</p>
+        </div>
+
+        <div class="partition">
+            <h2>Closures and Promises</h2>
+            <p>Understand the concepts of closures and promises in JavaScript. Closures help manage scope, while promises provide a cleaner way to handle asynchronous operations, improving code maintainability. Learn how to use closures effectively and work with promises for asynchronous programming.</p>
         </div>
 
         <div class="partition">
             <h2>Resources</h2>
-            <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps" target="_blank">CSS first steps - Learn web development | MDN</a>
+            <p><a href="/rltoken/d0GP590l7m32KsLrm_L83A" title="Modern JS" target="_blank">Modern JS</a></p>
+            <p><a href="/rltoken/8__nCEF90j673yWewdKe4A" title="JavaScript Fundamentals" target="_blank">JavaScript Fundamentals</a></p>
+            <p><a href="/rltoken/Z3LGQrtEuxxFEUw8E2LaUA" title="Module patterns" target="_blank">Module patterns</a></p>
+            <p><a href="/rltoken/fAnI7g4Vy3mShm9J3fkZig" title="var, let and const" target="_blank">var, let and const</a></p>
+            <p><a href="/rltoken/TiU5VUjQ4KD0oA4OCs3Zlg" title="Javascript Tutorial" target="_blank">Javascript Tutorial</a></p>
+            <p><a href="/rltoken/X_YgjEN6_0d85_neoa1kTw" title="JavaScript object basics" target="_blank">JavaScript object basics</a></p>
+            <p><a href="/rltoken/4LU54FWEMd-0YK5K8N8Xrw" title="Object-oriented JavaScript" target="_blank">Object-oriented JavaScript</a></p>
+            <p><a href="/rltoken/M-t1bDqKDRCW6fmfxUOFmQ" title="Object prototypes" target="_blank">Object prototypes</a></p>
+            <p><a href="/rltoken/XPe-Uhv1TCNzfK4YokWtqw" title="Inheritance in JavaScript" target="_blank">Inheritance in JavaScript</a></p>
+            <p><a href="/rltoken/PJuWX_vg8gV8GZ857IVJ0w" title="Closures" target="_blank">Closures</a></p>
+            <p><a href="/rltoken/p-2tz1dmmOLuCPULMZ3wYg" title="this/self" target="_blank">this/self</a></p>
         </div>
     </div>
 
     <div id="partitions">
-        <h1>CSS Quiz</h1>
+        <h1>JavaScript Quiz</h1>
 
         <div class="partition">
-            <h2>Test Your CSS Knowledge</h2>
+            <h2>Test Your JavaScript Knowledge</h2>
 
             <div class="quiz-question" id="question1">
-                <p>1. What does CSS stand for?</p>
+                <p>1. What is the purpose of the JavaScript <code>var</code> keyword?</p>
 
                 <ul class="quiz-options radio-group">
-                    <li class="quiz-option"><input type="radio" name="q1" value="a">Cascading Style Sheets</li>
-                    <li class="quiz-option"><input type="radio" name="q1" value="b">Computer Style Sheets</li>
-                    <li class="quiz-option"><input type="radio" name="q1" value="c">Colorful Style Sheets</li>
-                    <li class="quiz-option"><input type="radio" name="q1" value="d">Creative Style Sheets</li>
+                    <li class="quiz-option"><input type="radio" name="q1" value="a">Declare a variable with block scope</li>
+                    <li class="quiz-option"><input type="radio" name="q1" value="b">Declare a variable with function scope</li>
+                    <li class="quiz-option"><input type="radio" name="q1" value="c">Declare a variable with global scope</li>
+                    <li class="quiz-option"><input type="radio" name="q1" value="d">None of the above</li>
                 </ul>
             </div>
 
             <div class="quiz-question" id="question2">
-                <p>2. Which CSS property is used to change the text color of an element?</p>
+                <p>2. What is the role of the JavaScript <code>let</code> keyword in variable declaration?</p>
 
                 <ul class="quiz-options radio-group">
-                    <li class="quiz-option"><input type="radio" name="q2" value="a">color</li>
-                    <li class="quiz-option"><input type="radio" name="q2" value="b">font-color</li>
-                    <li class="quiz-option"><input type="radio" name="q2" value="c">text-color</li>
-                    <li class="quiz-option"><input type="radio" name="q2" value="d">change-color</li>
+                    <li class="quiz-option"><input type="radio" name="q2" value="a">Declare a variable with block scope</li>
+                    <li class="quiz-option"><input type="radio" name="q2" value="b">Declare a variable with function scope</li>
+                    <li class="quiz-option"><input type="radio" name="q2" value="c">Declare a variable with global scope</li>
+                    <li class="quiz-option"><input type="radio" name="q2" value="d">None of the above</li>
                 </ul>
             </div>
 
             <div class="quiz-question" id="question3">
-                <p>3. Which CSS property is used to set the background color of an element?</p>
+                <p>3. What is the purpose of the JavaScript <code>const</code> keyword?</p>
 
                 <ul class="quiz-options radio-group">
-                    <li class="quiz-option"><input type="radio" name="q3" value="a">bgcolor</li>
-                    <li class="quiz-option"><input type="radio" name="q3" value="b">color-background</li>
-                    <li class="quiz-option"><input type="radio" name="q3" value="c">background-color</li>
-                    <li class="quiz-option"><input type="radio" name="q3" value="d">element-background</li>
+                    <li class="quiz-option"><input type="radio" name="q3" value="a">Declare a variable with block scope</li>
+                    <li class="quiz-option"><input type="radio" name="q3" value="b">Declare a constant variable</li>
+                    <li class="quiz-option"><input type="radio" name="q3" value="c">Declare a variable with function scope</li>
+                    <li class="quiz-option"><input type="radio" name="q3" value="d">None of the above</li>
                 </ul>
             </div>
 
             <div class="quiz-question" id="question4">
-                <p>4. How do you select all paragraphs with the class "intro" in CSS?</p>
+                <p>4. How is a JavaScript function defined?</p>
 
                 <ul class="quiz-options radio-group">
-                    <li class="quiz-option"><input type="radio" name="q4" value="a">p.intro</li>
-                    <li class="quiz-option"><input type="radio" name="q4" value="b">#intro</li>
-                    <li class="quiz-option"><input type="radio" name="q4" value="c">.intro</li>
-                    <li class="quiz-option"><input type="radio" name="q4" value="d">paragraph.intro</li>
+                    <li class="quiz-option"><input type="radio" name="q4" value="a">Using the <code>function</code> keyword</li>
+                    <li class="quiz-option"><input type="radio" name="q4" value="b">Using the <code>def</code> keyword</li>
+                    <li class="quiz-option"><input type="radio" name="q4" value="c">Using the <code>method</code> keyword</li>
+                    <li class="quiz-option"><input type="radio" name="q4" value="d">None of the above</li>
                 </ul>
             </div>
 
             <div class="quiz-question" id="question5">
-                <p>5. What does the CSS property "display: none;" do?</p>
+                <p>5. What is the purpose of the JavaScript <code>return</code> statement in a function?</p>
 
                 <ul class="quiz-options radio-group">
-                    <li class="quiz-option"><input type="radio" name="q5" value="a">Hides the element</li>
-                    <li class="quiz-option"><input type="radio" name="q5" value="b">Shows the element</li>
-                    <li class="quiz-option"><input type="radio" name="q5" value="c">Changes the font color</li>
-                    <li class="quiz-option"><input type="radio" name="q5" value="d">Increases the element's size</li>
+                    <li class="quiz-option"><input type="radio" name="q5" value="a">Terminate the function execution</li>
+                    <li class="quiz-option"><input type="radio" name="q5" value="b">Return a value from the function</li>
+                    <li class="quiz-option"><input type="radio" name="q5" value="c">Jump to another function</li>
+                    <li class="quiz-option"><input type="radio" name="q5" value="d">None of the above</li>
                 </ul>
             </div>
 
             <div class="quiz-question" id="question6">
-                <p>6. What is the purpose of the CSS property "margin: auto;"?</p>
+                <p>6. How can you check the type of a variable in JavaScript?</p>
 
                 <ul class="quiz-options radio-group">
-                    <li class="quiz-option"><input type="radio" name="q6" value="a">Centers the element horizontally</li>
-                    <li class="quiz-option"><input type="radio" name="q6" value="b">Adds margin to the element</li>
-                    <li class="quiz-option"><input type="radio" name="q6" value="c">Aligns the element to the left</li>
-                    <li class="quiz-option"><input type="radio" name="q6" value="d">Increases the element's width</li>
+                    <li class="quiz-option"><input type="radio" name="q6" value="a">Using the <code>typeOf</code> operator</li>
+                    <li class="quiz-option"><input type="radio" name="q6" value="b">Using the <code>typeof()</code> function</li>
+                    <li class="quiz-option"><input type="radio" name="q6" value="c">Using the <code>type()</code> method</li>
+                    <li class="quiz-option"><input type="radio" name="q6" value="d">None of the above</li>
                 </ul>
             </div>
 
             <div class="quiz-question" id="question7">
-                <p>7. Which CSS property is used for changing the font size of an element?</p>
+                <p>7. What is the purpose of the JavaScript <code>for</code> loop?</p>
 
                 <ul class="quiz-options radio-group">
-                    <li class="quiz-option"><input type="radio" name="q7" value="a">text-size</li>
-                    <li class="quiz-option"><input type="radio" name="q7" value="b">font-size</li>
-                    <li class="quiz-option"><input type="radio" name="q7" value="c">size</li>
-                    <li class="quiz-option"><input type="radio" name="q7" value="d">change-size</li>
+                    <li class="quiz-option"><input type="radio" name="q7" value="a">Execute a block of code repeatedly</li>
+                    <li class="quiz-option"><input type="radio" name="q7" value="b">Define a function</li>
+                    <li class="quiz-option"><input type="radio" name="q7" value="c">Check the condition once</li>
+                    <li class="quiz-option"><input type="radio" name="q7" value="d">None of the above</li>
                 </ul>
             </div>
 
             <div class="quiz-question" id="question8">
-                <p>8. What is the CSS property used for adding a shadow to an element?</p>
+                <p>8. How can you include comments in JavaScript code?</p>
 
                 <ul class="quiz-options radio-group">
-                    <li class="quiz-option"><input type="radio" name="q8" value="a">shadow</li>
-                    <li class="quiz-option"><input type="radio" name="q8" value="b">box-shadow</li>
-                    <li class="quiz-option"><input type="radio" name="q8" value="c">element-shadow</li>
-                    <li class="quiz-option"><input type="radio" name="q8" value="d">add-shadow</li>
+                    <li class="quiz-option"><input type="radio" name="q8" value="a">Using double slashes <code>//</code></li>
+                    <li class="quiz-option"><input type="radio" name="q8" value="b">Using triple slashes <code>///</code></li>
+                    <li class="quiz-option"><input type="radio" name="q8" value="c">Using single quotes <code>' '</code></li>
+                    <li class="quiz-option"><input type="radio" name="q8" value="d">None of the above</li>
                 </ul>
             </div>
 
             <div class="quiz-question" id="question9">
-                <p>9. In CSS, what does the acronym "CSS" stand for?</p>
+                <p>9. What is the purpose of the JavaScript <code>if</code> statement?</p>
 
                 <ul class="quiz-options radio-group">
-                    <li class="quiz-option"><input type="radio" name="q9" value="a">Cascading Style Selector</li>
-                    <li class="quiz-option"><input type="radio" name="q9" value="b">Colorful Style Selector</li>
-                    <li class="quiz-option"><input type="radio" name="q9" value="c">Cascading Style Sheet</li>
-                    <li class="quiz-option"><input type="radio" name="q9" value="d">Color Style Sheet</li>
+                    <li class="quiz-option"><input type="radio" name="q9" value="a">Execute a block of code repeatedly</li>
+                    <li class="quiz-option"><input type="radio" name="q9" value="b">Define a function</li>
+                    <li class="quiz-option"><input type="radio" name="q9" value="c">Conditionally execute a block of code</li>
+                    <li class="quiz-option"><input type="radio" name="q9" value="d">None of the above</li>
                 </ul>
             </div>
 
             <div class="quiz-question" id="question10">
-                <p>10. Which CSS property is used for controlling the space between elements?</p>
+                <p>10. What does the JavaScript <code>NaN</code> represent?</p>
 
                 <ul class="quiz-options radio-group">
-                    <li class="quiz-option"><input type="radio" name="q10" value="a">spacing</li>
-                    <li class="quiz-option"><input type="radio" name="q10" value="b">margin</li>
-                    <li class="quiz-option"><input type="radio" name="q10" value="c">padding</li>
-                    <li class="quiz-option"><input type="radio" name="q10" value="d">distance</li>
+                    <li class="quiz-option"><input type="radio" name="q10" value="a">Infinity</li>
+                    <li class="quiz-option"><input type="radio" name="q10" value="b">Not a Number</li>
+                    <li class="quiz-option"><input type="radio" name="q10" value="c">Zero</li>
+                    <li class="quiz-option"><input type="radio" name="q10" value="d">Negative Infinity</li>
                 </ul>
             </div>
-
         </div>
-    </div>
+        <div id="result-container">
+            <button id="submit-btn" onclick="calculateScore()">Submit Answers</button>
+            <p id="result"></p>
+        </div>
 
-    <div id="result-container">
-        <button id="submit-btn" onclick="calculateScore()">Submit Answers</button>
-        <p id="result"></p>
-    </div>
+        <script>
+            function calculateScore() {
+                // Array of correct answers
+                const correctAnswers = ["a", "b", "a", "c", "b", "a", "a", "a", "b", "b"];
 
-    <script>
-        function calculateScore() {
-            // Array of correct answers
-            const correctAnswers = ['a', 'a', 'c', 'c', 'a', 'a', 'b', 'b', 'c', 'c'];
+                // Get all radio groups
+                const radioGroups = document.querySelectorAll('.radio-group');
 
-            // Get all radio groups
-            const radioGroups = document.querySelectorAll('.radio-group');
+                let score = 0;
 
-            let score = 0;
+                // Loop through each radio group
+                radioGroups.forEach((group, index) => {
+                    // Get the selected answer
+                    const selectedAnswer = group.querySelector('input:checked');
 
-            // Loop through each radio group
-            radioGroups.forEach((group, index) => {
-                // Get the selected answer
-                const selectedAnswer = group.querySelector('input:checked');
 
-                // Check if an answer is selected
-                if (selectedAnswer) {
-                    // Check if the selected answer is correct
-                    if (selectedAnswer.value === correctAnswers[index]) {
-                        score++;
-                        // Highlight correct choice in green
-                        selectedAnswer.parentNode.classList.add('correct-answer');
-                    } else {
-                        // Highlight incorrect choice in red
-                        selectedAnswer.parentNode.classList.add('incorrect-answer');
+                    // Check if an answer is selected
+                    if (selectedAnswer) {
+                        // Check if the selected answer is correct
+                        if (selectedAnswer.value === correctAnswers[index]) {
+                            score++;
+                            // Highlight correct choice in green
+                            selectedAnswer.parentNode.classList.add('correct-answer');
+                        } else {
+                            // Highlight incorrect choice in red
+                            selectedAnswer.parentNode.classList.add('incorrect-answer');
 
-                        // Find and highlight the correct choice in green
-                        const correctChoice = group.querySelector(`input[value="${correctAnswers[index]}"]`);
-                        if (correctChoice) {
-                            correctChoice.parentNode.classList.add('correct-answer');
+                            // Find and highlight the correct choice in green
+                            const correctChoice = group.querySelector(`input[value="${correctAnswers[index]}"]`);
+                            if (correctChoice) {
+                                correctChoice.parentNode.classList.add('correct-answer');
+                            }
                         }
                     }
-                }
-            });
+                });
+
+            
 
             // Display the result
-            document.getElementById('result').innerText = `You scored ${score} out of ${correctAnswers.length}!`;
+            document.getElementById('result').innerText = `You scored ${score*10}%`;
+
+            fetch('/User/SaveGrade', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    userId: userId,
+                    score: score,
+                    manualNumber: 3 // Replace with the actual manual number or input field value
+                })
+            }).then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            }).then(data => {
+                console.log('Success:', data);
+            }).catch(error => {
+                console.error('Error:', error);
+            });
         }
+    }
     </script>
 </main>

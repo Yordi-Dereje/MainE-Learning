@@ -24,7 +24,7 @@ public class E_LearningWebAppContext : IdentityDbContext<E_LearningWebAppUser>
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
-        builder.Entity<Courses>()
+       /* builder.Entity<Courses>()
            .HasOne(c => c.Payment) // Use the renamed navigation property
            .WithOne(p => p.Course) // Use the renamed navigation property
            .HasForeignKey<Payment>(p => p.CourseId); // Configure the foreign key
@@ -40,7 +40,7 @@ public class E_LearningWebAppContext : IdentityDbContext<E_LearningWebAppUser>
         builder.Entity<Grade>()
                 .HasOne(g => g.User) // Navigation property on the Grade entity
                 .WithMany(u => u.grades) // Collection navigation property on the E_LearningWebAppUser entity
-                .HasForeignKey(g => g.Userid);
+                .HasForeignKey(g => g.Userid);*/
 
 
         base.OnModelCreating(builder);

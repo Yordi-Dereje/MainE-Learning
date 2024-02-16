@@ -104,6 +104,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Hp/Desktop/MainElearningAppSubmit/MainE-Learning/E-LearningWebApp/Views/Course/Codingbasics.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXENvZGluZ2Jhc2ljcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Hp/Desktop/MainElearningAppSubmit/MainE-Learning/E-LearningWebApp/Views/Course/Concepts.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXENvbmNlcHRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -122,6 +126,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Hp/Desktop/MainElearningAppSubmit/MainE-Learning/E-LearningWebApp/Views/Course/CourseDetailUser.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXENvdXJzZURldGFpbFVzZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hp/Desktop/MainElearningAppSubmit/MainE-Learning/E-LearningWebApp/Views/Course/CourseDetailUserpay.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXENvdXJzZURldGFpbFVzZXJwYXkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Hp/Desktop/MainElearningAppSubmit/MainE-Learning/E-LearningWebApp/Views/Course/CourseDisplay.cshtml]
@@ -164,6 +172,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXEVkaXRDb3Vyc2VzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Hp/Desktop/MainElearningAppSubmit/MainE-Learning/E-LearningWebApp/Views/Course/GenerateCertificate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXEdlbmVyYXRlQ2VydGlmaWNhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Hp/Desktop/MainElearningAppSubmit/MainE-Learning/E-LearningWebApp/Views/Course/GetAllCourses.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXEdldEFsbENvdXJzZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -174,6 +186,42 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Hp/Desktop/MainElearningAppSubmit/MainE-Learning/E-LearningWebApp/Views/Course/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hp/Desktop/MainElearningAppSubmit/MainE-Learning/E-LearningWebApp/Views/Course/leaderquiz.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXGxlYWRlcnF1aXouY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hp/Desktop/MainElearningAppSubmit/MainE-Learning/E-LearningWebApp/Views/Course/Leadership.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXExlYWRlcnNoaXAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hp/Desktop/MainElearningAppSubmit/MainE-Learning/E-LearningWebApp/Views/Course/Marketing.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXE1hcmtldGluZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hp/Desktop/MainElearningAppSubmit/MainE-Learning/E-LearningWebApp/Views/Course/markquiz.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXG1hcmtxdWl6LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hp/Desktop/MainElearningAppSubmit/MainE-Learning/E-LearningWebApp/Views/Course/NoCourse.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXE5vQ291cnNlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hp/Desktop/MainElearningAppSubmit/MainE-Learning/E-LearningWebApp/Views/Course/Webdevadv.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXFdlYmRldmFkdi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hp/Desktop/MainElearningAppSubmit/MainE-Learning/E-LearningWebApp/Views/Course/Webdevadvquiz.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXFdlYmRldmFkdnF1aXouY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hp/Desktop/MainElearningAppSubmit/MainE-Learning/E-LearningWebApp/Views/Course/Webdevbasics.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXFdlYmRldmJhc2ljcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hp/Desktop/MainElearningAppSubmit/MainE-Learning/E-LearningWebApp/Views/Course/Webdevbasicsquiz.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXFdlYmRldmJhc2ljc3F1aXouY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Hp/Desktop/MainElearningAppSubmit/MainE-Learning/E-LearningWebApp/Views/Home/Contact.cshtml]
@@ -198,6 +246,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Hp/Desktop/MainElearningAppSubmit/MainE-Learning/E-LearningWebApp/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hp/Desktop/MainElearningAppSubmit/MainE-Learning/E-LearningWebApp/Views/Home/SendEmail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTZW5kRW1haWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hp/Desktop/MainElearningAppSubmit/MainE-Learning/E-LearningWebApp/Views/Instructor/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Hp/Desktop/MainElearningAppSubmit/MainE-Learning/E-LearningWebApp/Views/Landing/About.cshtml]
@@ -232,6 +288,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Hp/Desktop/MainElearningAppSubmit/MainE-Learning/E-LearningWebApp/Views/SubCourse/ChangeMan.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViQ291cnNlXENoYW5nZU1hbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hp/Desktop/MainElearningAppSubmit/MainE-Learning/E-LearningWebApp/Views/SubCourse/Comm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViQ291cnNlXENvbW0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hp/Desktop/MainElearningAppSubmit/MainE-Learning/E-LearningWebApp/Views/SubCourse/Cons.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViQ291cnNlXENvbnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Hp/Desktop/MainElearningAppSubmit/MainE-Learning/E-LearningWebApp/Views/SubCourse/CreateSubCourse.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViQ291cnNlXENyZWF0ZVN1YkNvdXJzZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -252,8 +320,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViQ291cnNlXERlbGV0ZVN1YkNvdXJzZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Hp/Desktop/MainElearningAppSubmit/MainE-Learning/E-LearningWebApp/Views/SubCourse/DigMark.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViQ291cnNlXERpZ01hcmsuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Hp/Desktop/MainElearningAppSubmit/MainE-Learning/E-LearningWebApp/Views/SubCourse/EditSubCourse.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViQ291cnNlXEVkaXRTdWJDb3Vyc2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hp/Desktop/MainElearningAppSubmit/MainE-Learning/E-LearningWebApp/Views/SubCourse/EmInt.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViQ291cnNlXEVtSW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Hp/Desktop/MainElearningAppSubmit/MainE-Learning/E-LearningWebApp/Views/SubCourse/Flowchart.cshtml]
@@ -292,8 +368,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViQ291cnNlXEpzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Hp/Desktop/MainElearningAppSubmit/MainE-Learning/E-LearningWebApp/Views/SubCourse/MarketingWebsubcourses.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViQ291cnNlXE1hcmtldGluZ1dlYnN1YmNvdXJzZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hp/Desktop/MainElearningAppSubmit/MainE-Learning/E-LearningWebApp/Views/SubCourse/MarkRes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViQ291cnNlXE1hcmtSZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Hp/Desktop/MainElearningAppSubmit/MainE-Learning/E-LearningWebApp/Views/SubCourse/Mysql.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViQ291cnNlXE15c3FsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hp/Desktop/MainElearningAppSubmit/MainE-Learning/E-LearningWebApp/Views/SubCourse/OB.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViQ291cnNlXE9CLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Hp/Desktop/MainElearningAppSubmit/MainE-Learning/E-LearningWebApp/Views/SubCourse/Py.cshtml]
@@ -308,8 +396,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViQ291cnNlXFJ1c3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Hp/Desktop/MainElearningAppSubmit/MainE-Learning/E-LearningWebApp/Views/SubCourse/Sales.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViQ291cnNlXFNhbGVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Hp/Desktop/MainElearningAppSubmit/MainE-Learning/E-LearningWebApp/Views/SubCourse/Shell.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViQ291cnNlXFNoZWxsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hp/Desktop/MainElearningAppSubmit/MainE-Learning/E-LearningWebApp/Views/SubCourse/Strat.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViQ291cnNlXFN0cmF0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hp/Desktop/MainElearningAppSubmit/MainE-Learning/E-LearningWebApp/Views/SubCourse/Team.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViQ291cnNlXFRlYW0uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Hp/Desktop/MainElearningAppSubmit/MainE-Learning/E-LearningWebApp/Views/SubCourse/WebSubcourses.cshtml]
@@ -334,6 +434,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Hp/Desktop/MainElearningAppSubmit/MainE-Learning/E-LearningWebApp/Views/User/Profile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxQcm9maWxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hp/Desktop/MainElearningAppSubmit/MainE-Learning/E-LearningWebApp/Views/User/success.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxzdWNjZXNzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Hp/Desktop/MainElearningAppSubmit/MainE-Learning/E-LearningWebApp/Views/User/UserLogin.cshtml]

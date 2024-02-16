@@ -25,9 +25,27 @@
 
     <title>User Dashboard</title>
     <link rel="stylesheet" href="~/Content/css/courses.css">
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            showToast();
+        });
+
+        function showToast() {
+            var toaster = document.getElementById('toaster');
+            toaster.classList.add('show'); // Show the toaster
+
+            // Hide the toaster after  3 seconds
+            setTimeout(function () {
+                toaster.classList.remove('show');
+            }, 3000);
+        }
+    </script>
+    <br />
 </head>
 <body>
-
+    <div class="toast-body alert-success">
+        User Logged in Successfuly!
+    </div>
     @* <aside>
         <img src="~/Content/logincss/logo.PNG" />
         <nav>

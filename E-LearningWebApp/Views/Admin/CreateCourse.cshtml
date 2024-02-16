@@ -3,11 +3,33 @@
 @{
     ViewData["Title"] = "Course";
 }
+<head>
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            showToast();
+        });
+
+        function showToast() {
+            var toaster = document.getElementById('toaster');
+            toaster.classList.add('show'); // Show the toaster
+
+            // Hide the toaster after  3 seconds
+            setTimeout(function () {
+                toaster.classList.remove('show');
+            }, 3000);
+        }
+    </script>
+    <br />
+</head>
 
 <h1>Course</h1>
 
 <h4>Courses</h4>
 <hr />
+<div class="toast-body alert-success">
+    Course Addedd Successfully
+</div>
+
 <div class="row">
     <div class="col-md-4">
         <form action="/Course/Create" method="post" >

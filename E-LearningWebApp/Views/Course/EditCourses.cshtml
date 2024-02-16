@@ -14,10 +14,29 @@
 
     <title>User Dashboard</title>
     <link rel="stylesheet" href="~/Content/css/courses.css">
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            showToast();
+        });
+
+        function showToast() {
+            var toaster = document.getElementById('toaster');
+            toaster.classList.add('show'); // Show the toaster
+
+            // Hide the toaster after  3 seconds
+            setTimeout(function () {
+                toaster.classList.remove('show');
+            }, 3000);
+        }
+    </script>
+    <br />
 </head>
 <body>
     <h1>EditCourses</h1>
     <hr />
+    <div class="toast-body alert-success">
+        Course Eddited Successfully!
+    </div>
     <div class="row">
         <div class="card mb-4 shadow-sm" style="width: 25rem; height: 200px; padding-left: 10px">
             <img src="@Model.imagePath" width="150" height="300" class="card-img-top" alt="...">

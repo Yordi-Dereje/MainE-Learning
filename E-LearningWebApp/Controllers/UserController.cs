@@ -1,9 +1,13 @@
 ﻿using E_LearningWebApp.Areas.Identity.Data;
 using E_LearningWebApp.Data;
 using E_LearningWebApp.Models;
+using E_LearningWebApp.Repository;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
+using System.Net.Mail;
+using System.Net;
 using System.Security.Principal;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
@@ -86,29 +90,30 @@ namespace E_LearningWebApp.Controllers
             }
             return RedirectToAction("Profile", "User");
         }
-        [HttpGet]
-        public async Task<IActionResult> Payment([FromQuery] string userId, [FromQuery] int courseId)
+        public async Task<IActionResult> Payment( [FromForm] string userId,  [FromForm ]int courseId) 
         {
             try
             {
-                var user = await _userManager.FindByIdAsync(userId);
                 var course = await _context.Courses.FindAsync(courseId);
-               /* if (user != null || course != null)
-                {*/
+                var user = await _userManager.FindByIdAsync(userId);
+
+
+                if ( course != null && user!= null)
+
+                {
                     var pay = new Payment
                     {
-                        User = user,
+                        PaymentStatus = "Paid",
                         CourseId = courseId,
-                        PaymentStatus = "Paid"
+                        UserId = userId
+
                     };
                     _context.Payments.Add(pay); // Assuming Payments is the DbSet for Payment entities
                     await _context.SaveChangesAsync(); // Save changes to the database
-                    return RedirectToAction("Payment"); // Redirect to an index page or similar
-              /*  }
-                else
-                {
-                    return NotFound($"Unable to find '{userId}'.");
-                }*/
+                }
+                return RedirectToAction("Index", "Home"); // Redirect to an index page or similar
+                
+
             }
             catch (Exception ex)
             {
@@ -116,7 +121,11 @@ namespace E_LearningWebApp.Controllers
                 return StatusCode(500, $"Internal server error: {ex}");
             }
         }
-
+        public IActionResult success()
+        {
+            return View();
+        }
+       
 
     }
 }
