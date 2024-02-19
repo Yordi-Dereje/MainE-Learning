@@ -61,11 +61,11 @@ namespace E_LearningWebApp.Controllers
             return View(courses);
         }
         [HttpGet]
-        public IActionResult CourseDisplayUser()
+        public IActionResult CourseDisplayUser([FromQuery] string userid)
         {
             CourseRepository pr = new CourseRepository(_context);
             List<Courses> courses = pr.GetAllCourses();
-
+            ViewBag.userid = userid;
             return View(courses);
         }
 
@@ -96,7 +96,7 @@ namespace E_LearningWebApp.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> CourseDetailUser([FromQuery] int courseId)
+        public async Task<IActionResult> CourseDetailUser([FromQuery] int courseId, [FromQuery] string userid)
         {
             // Find the course asynchronously
             var course = await _context.Courses.FindAsync(courseId);
@@ -114,7 +114,7 @@ namespace E_LearningWebApp.Controllers
                                                   join subcourse in subcourses on app.CourseId equals subcourse.CourseId into table2
                                                   from subcourse in table2.DefaultIfEmpty() // Corrected spelling: DefaultIfEmpty
                                                   select new MultipleViewModel { courseview = app, subcourseview = subcourses };
-            ViewBag.userid = _userManager.GetUserId(HttpContext.User);
+            ViewBag.userid = userid;
 
             // Pass the view model to the view
             return View(multiplViewCourseSubCourseModeluser.FirstOrDefault()); // FirstOrDefault ensures a null is handled gracefully if no matching subcourses

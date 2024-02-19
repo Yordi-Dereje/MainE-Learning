@@ -46,7 +46,7 @@
                                         <h4>Basics For All</h4>
                                         <p class="price">$@item.CoursePrice</p>
                                     </div>
-                                    <h3><a asp-controller="Course" asp-action="CourseDetailUser" asp-route-courseId="@item.CourseId">@item.CourseName</a></h3>
+                                    <h3><a asp-controller="Course" asp-action="CourseDetailUser" asp-route-courseId="@item.CourseId" asp-route-userid="@ViewBag.userid">@item.CourseName</a></h3>
 
                                     <p>Get to know the basics of @item.CourseName here</p>
                                     <div class="trainer d-flex justify-content-between align-items-center">

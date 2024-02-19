@@ -158,20 +158,23 @@ namespace E_LearningWebApp.Migrations.E_LearningDb
                     b.Property<int>("CourseId")
                         .HasColumnType("int");
 
-                    b.Property<string>("PaymentStatus")
+                    b.Property<string>("E_LearningWebAppUserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Id")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("UserId")
+                    b.Property<string>("PaymentStatus")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("PaymentId");
 
                     b.HasIndex("CourseId")
                         .IsUnique();
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("E_LearningWebAppUserId");
 
                     b.ToTable("Payments");
                 });
@@ -225,15 +228,11 @@ namespace E_LearningWebApp.Migrations.E_LearningDb
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("E_LearningWebApp.Areas.Identity.Data.E_LearningWebAppUser", "User")
+                    b.HasOne("E_LearningWebApp.Areas.Identity.Data.E_LearningWebAppUser", null)
                         .WithMany("payments")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("E_LearningWebAppUserId");
 
                     b.Navigation("Course");
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("E_LearningWebApp.Models.SubCourses", b =>

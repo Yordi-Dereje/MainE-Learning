@@ -105,7 +105,7 @@ namespace E_LearningWebApp.Controllers
                     {
                         PaymentStatus = "Paid",
                         CourseId = courseId,
-                        UserId = userId
+                        Id = userId
 
                     };
                     _context.Payments.Add(pay); // Assuming Payments is the DbSet for Payment entities

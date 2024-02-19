@@ -13,14 +13,16 @@
         string txRef = "negade-tx-" + Guid.NewGuid().ToString("N");
         return txRef;
     }
-   
+    E_LearningDbContext _context = new E_LearningDbContext();
+
+
     using (HttpClient client = new HttpClient())
     {
-        HttpResponseMessage response = await client.GetAsync("https://40d1-104-234-212-140.ngrok-free.app/data");
+        HttpResponseMessage response = await client.GetAsync("https://7681-104-234-212-136.ngrok-free.app/data");
 
         if (response.IsSuccessStatusCode)
         {
-            string returnUrl = "https://40d1-104-234-212-140.ngrok-free.app/Home/Privacy";
+            string returnUrl = "https://7681-104-234-212-136.ngrok-free.app/Home/Privacy";
             // Pass the return URL to the view
             ViewBag.ReturnUrl = returnUrl;
 
@@ -33,7 +35,20 @@
         {
             // Handle error response
             // Display error message or log the error
-            string returnUrl = "https://40d1-104-234-212-140.ngrok-free.app/Home/Index";
+            var data = new Payment
+                    {
+                        Id = @ViewBag.userid,
+                        PaymentStatus = "Paid",
+                        CourseId = @Model.courseview.CourseId
+                    };
+
+            // Add the new data to the DbSet
+            _context.Add(data);
+
+            // Save the changes to the database
+            await _context.SaveChangesAsync();
+
+            string returnUrl = "https://7681-104-234-212-136.ngrok-free.app/Home/Index";
 
             // Pass the return URL to the view
             ViewBag.ReturnUrl = returnUrl;
@@ -142,7 +157,8 @@
                         <input type="hidden" name="title" value="Let us do this" />
                         <input type="hidden" name="description" value="Paying with Confidence with cha" />
                         <input type="hidden" name="logo" value="https://chapa.link/asset/images/chapa_swirl.svg" />
-                            <input type="hidden" name="callback_url" value="https://40d1-104-234-212-140.ngrok-free.app" />
+
+                            <input type="hidden" name="callback_url" value="https://7681-104-234-212-136.ngrok-free.app/post" />
                             <input type="hidden" name="return_url" value="@ViewBag.ReturnUrl" />
 
                         <input type="hidden" name="meta[title]" value="test" />

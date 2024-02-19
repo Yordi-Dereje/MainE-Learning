@@ -31,11 +31,11 @@ namespace E_LearningWebApp.Models
          .WithOne(p => p.Course) // Use the renamed navigation property
          .HasForeignKey<Payment>(p => p.CourseId); // Configure the foreign key
 
-
+/*
             modelBuilder.Entity<E_LearningWebAppUser>()
                 .HasMany(u => u.payments) // A User can have many Payments
                 .WithOne(p => p.User) // A Payment can belong to one User
-                .HasForeignKey(p => p.UserId); // Foreign key for User
+                .HasForeignKey(p => p.Id); // Foreign key for User*/
 
 
 
