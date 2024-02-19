@@ -43,6 +43,15 @@
 
     <!-- Template Main CSS File -->
     <link rel ="stylesheet" href="~/content/assets/css/style.css" >
+    <style>
+        .home-links{
+            color: black;
+        }
+
+        .home-links:hover {
+                color: #4CAF50;
+        }
+    </style>
 </head>
 
 
@@ -61,7 +70,7 @@
                 <ul>
                     <!--use the below commented li on admin layout-->
                      <li class="nav-item">
-                    <a class="nav-link text-dark" asp-area="Identity" asp-controller="Role" asp-action="Index">Roles</a>
+                    <a class="home-links" asp-area="Identity" asp-controller="Role" asp-action="Index">Roles</a>
                     </li>
 @*                     <a class="nav-link text-dark" asp-controller="Admin" asp-action="Index">Admin</a>
  *@                    @* <li class="nav-item">
@@ -72,15 +81,15 @@
                     </li> *@
                     <li class="nav-item">
                         @* <a class="nav-link text-dark" asp-controller="Home" asp-action="Courses">Courses</a> *@
-                        <a class="nav-link text-dark" asp-controller="Home" asp-action="Index">Home</a>
+                        <a class="home-links" asp-controller="Home" asp-action="Index">Home</a>
                     </li>
-                    <li><a class="active" href="#about">About</a></li>
+                    <li><a class="home-links" href="#about">About</a></li>
                     <li class="nav-item">
                         @* <a class="nav-link text-dark" asp-controller="Home" asp-action="Courses">Courses</a> *@
-                        <a class="nav-link text-dark" asp-controller="Course" asp-action="CourseDisplay">Courses</a>
+                        <a class="home-links" asp-controller="Course" asp-action="CourseDisplay">Courses</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" asp-controller="Course" asp-action="Concepts">Concepts</a>
+                        <a class="home-links" asp-controller="Course" asp-action="Concepts">Concepts</a>
                     </li>
 
 
@@ -90,10 +99,12 @@
                    @*  <li><a href="#trainers">Trainers</a></li> *@
 
                     <li class="nav-item">
-                        <a class="nav-link text-dark" asp-controller="Home" asp-action="ContactUss">Contact</a>
+                        <a class="home-links" asp-controller="Home" asp-action="ContactUss">Contact</a>
                     </li>
 
-                    <i class="bi bi-list mobile-nav-toggle"></i>
+                    <li><i class="bi bi-list mobile-nav-toggle"></i></li>
+                    <li><a class="home-links" href="#devs">Developers</a></li>
+                    </ul>
             </nav>
             <a class="get-started-btn" asp-area="Identity" asp-page="/Account/Login">Get Started</a>
 

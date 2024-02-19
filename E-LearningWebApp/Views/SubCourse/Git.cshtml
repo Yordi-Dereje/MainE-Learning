@@ -136,7 +136,38 @@
 
             <div class="partition">
                 <h2>3. SSH Key</h2>
-                <p>SSH vid embed</p>
+                <p><iframe width="560" height="315" src="https://www.youtube.com/embed/X8Mp-s6ZQVo" title="Git SSH auth video demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></p>
+                </br>
+                <h2>Generate an SSH Key:</h2>
+                <ol>
+                    <li>Open a terminal window.</li>
+                    <li>Generate a new SSH key with the following command:</li>
+                </ol>
+                <pre><code>ssh-keygen -t ed25519</code></pre>
+                <ol start="3">
+                    <li>Enter a passphrase for your key when prompted. The passphrase is optional.</li>
+                    <li>Press Enter to accept the default file location for your key.</li>
+                </ol>
+                <p>Your SSH key has now been generated. The public key is stored in the file <code>~/.ssh/id_ed25519.pub</code> and the private key is stored in the file <code>~/.ssh/id_ed25519</code>.</p>
+
+            </div>
+            <div class="partition">
+                <h2>Add your SSH key to GitHub:</h2>
+                <ol>
+                    <li>Go to your GitHub profile settings.</li>
+                    <li>Click the SSH and GPG keys tab.</li>
+                    <li>Click the New SSH key button.</li>
+                    <li>Paste the contents of your public key file (<code>~/.ssh/id_ed25519.pub</code>) into the Key field.</li>
+                    <li>Click the Add SSH key button.</li>
+                </ol>
+
+                <p>GitHub SSH key authentication is a method of authentication that uses SSH keys to verify your identity. SSH keys are a cryptographic key pair that consists of a public key and a private key. The public key is shared with others, while the private key is kept secret.</p>
+
+                <p>To use SSH key authentication with GitHub, you will need to generate an SSH key pair and add the public key to your GitHub account. Once you have done this, you can use the private key to authenticate to GitHub and access your repositories.</p>
+            </div>
+            <div class="partition">
+                <h2>Resources</h2>
+                <p>For more information, refer to the <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/about-authentication-to-github" target="_blank" rel="noopener noreferrer">GitHub Auth Documentation</a>.</p>
             </div>
         </div>
     </main>

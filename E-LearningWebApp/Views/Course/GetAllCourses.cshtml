@@ -27,25 +27,23 @@
 </head>
 
 <body>
-    <h1>AllCourses</h1>
+    <h1>All Courses</h1>
 
-    <p>
-        <a asp-controller="Course" asp-action="CreateCourse">Create New Course</a>
-    </p>
+    
     <table class="table table-striped table-bordered">
         <thead>
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.CourseName)
+                    Course Name
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.CourseCode)
+                    Course Code
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.CourseDescription)
+                    Course Description
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.CoursePrice)
+                    Course Price
                 </th>
                 
                 <th></th>
@@ -77,5 +75,9 @@
             }
         </tbody>
     </table>
+    <p>
+        <a asp-controller="Course" asp-action="CreateCourse">Create New Course</a>
+    </p>
+
 </body>
 

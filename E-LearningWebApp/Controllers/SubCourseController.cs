@@ -92,6 +92,51 @@ namespace E_LearningWebApp.Controllers
         {
             return View();
         }
+        public IActionResult Grades()
+        {
+            return View();
+        }
+        public IActionResult DigMark()
+        {
+            return View();
+        }
+        public IActionResult MarkRes()
+        {
+            return View();
+        }
+        public IActionResult Cons()
+        {
+            return View();
+        }
+
+        public IActionResult Sales()
+        {
+            return View();
+        }
+        public IActionResult Comm()
+        {
+            return View();
+        }
+        public IActionResult OB()
+        {
+            return View();
+        }
+        public IActionResult Strat()
+        {
+            return View();
+        }
+        public IActionResult Team()
+        {
+            return View();
+        }
+        public IActionResult EmInt()
+        {
+            return View();
+        }
+        public IActionResult ChangeMan()
+        {
+            return View();
+        }
         public IActionResult WebSubcourses()
         {
             return View();

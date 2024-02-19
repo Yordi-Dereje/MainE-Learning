@@ -45,6 +45,23 @@
     <link rel="stylesheet" href="~/content/assets/css/style.css">
     <link rel="stylesheet" href="~/Content/css/courses.css" asp-append-version="true">
 
+    <style>
+        .a-links {
+            color: #000000;
+        }
+
+        .a-links:hover {
+            color: lightgreen;
+        }
+        .prof a-links:hover{
+            border: none;
+        }
+
+        body {
+            background-color: white;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -52,13 +69,13 @@
     <aside>
         <img src="~/content/logincss/logo.jpg" alt="">
         <nav>
-            <a class="nav-link text-dark" asp-controller="User" asp-action="Index"><i class="fas fa-house"></i> Home</a>
-            <a class="nav-link text-dark" asp-controller="Course" asp-action="CourseDisplayUser" asp-route-userid="@UserManager.GetUserId(User)"><i class="fas fa-book"></i> Courses</a>
-            <a class="nav-link text-dark" asp-controller="SubCourse" asp-action="WebSubcourses"><i class="fas fa-book"></i> My Courses</a>
-            <a class="nav-link text-dark" asp-area="Identity" asp-controller="User" asp-action="Index"><i class="fas fa-chart-bar"></i> Grades</a>
-            <a class="nav-link text-dark" asp-area="Identity" asp-controller="Course" asp-action="ConceptsUser"><i class="fas fa-lightbulb"></i> Concepts</a>
+            <a class="a-links" asp-controller="User" asp-action="Index"><i class="fas fa-house"></i> Home</a>
+            <a class="a-links" asp-controller="Course" asp-action="CourseDisplayUser"><i class="fas fa-book"></i> Courses</a>
+            <a class="a-links" asp-controller="Course" asp-action="NoCourse"><i class="fas fa-book"></i> My Courses</a>
+            <a class="a-links" asp-area="Identity" asp-controller="SubCourse" asp-action="Grades"><i class="fas fa-chart-bar"></i> Grades</a>
+            <a class="a-links" asp-area="Identity" asp-controller="Course" asp-action="ConceptsUser"><i class="fas fa-lightbulb"></i> Concepts</a>
 @*             <a class="nav-link text-dark" asp-area="Identity" asp-controller="Admin" asp-action="Index"><i class="fas fa-chart-pie"></i> Admin</a>
- *@            <a class="nav-link text-dark" asp-controller="Home" asp-action="Index"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            *@            <a class="a-links" asp-controller="Home" asp-action="Index"><i class="fas fa-sign-out-alt"></i> Logout</a>
         </nav>
 
     </aside>
@@ -66,7 +83,7 @@
     <header>
         <h2>Welcome back</h2>
         <div class="prof">
-            <a class="nav-link text-dark" asp-controller="User" asp-action="Profile" asp-route-userid="@UserManager.GetUserId(User)"><i class="fas fa-user"></i> @UserManager.GetUserName(User) </a>
+            <a class="a-links" asp-controller="User" asp-action="Profile" asp-route-userid="@UserManager.GetUserId(User)"><i class="fas fa-user"></i> @UserManager.GetUserName(User) </a>
         </div>
     </header>
 

@@ -161,6 +161,54 @@ namespace E_LearningWebApp.Controllers
         {
             return View();
         }
+        public IActionResult Webdevbasicsquiz()
+        {
+            return View();
+        }
+        public IActionResult Webdevadvquiz()
+        {
+            return View();
+        }
+        public IActionResult markquiz()
+        {
+            return View();
+        }
+        public IActionResult codbasquiz()
+        {
+            return View();
+        }
+        public IActionResult leaderquiz()
+        {
+            return View();
+        }
+        public IActionResult GenerateCertificate()
+        {
+            return View();
+        }
+        public IActionResult Webdevbasics()
+        {
+            return View();
+        }
+        public IActionResult Webdevadv()
+        {
+            return View();
+        }
+        public IActionResult Codingbasics()
+        {
+            return View();
+        }
+        public IActionResult Marketing()
+        {
+            return View();
+        }
+        public IActionResult Leadership()
+        {
+            return View();
+        }
+        public IActionResult NoCourse()
+        {
+            return View();
+        }
         [HttpPost]
         /*  public IActionResult CreateCourse(Courses course)--it works perfectly i commented it coz i updated the model
           {

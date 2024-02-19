@@ -5,6 +5,13 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<style>
+    .course-item img {
+        width: 330px;
+        height: 170px;
+    }
+</style>
+
 <body>
 
     <!-- ======= Breadcrumbs ======= -->
@@ -30,12 +37,12 @@
                                 <img src="@item.imagePath" class="img-fluid" alt="...">
                                 <div class="course-content">
                                     <div class="d-flex justify-content-between align-items-center mb-3">
-                                        <h4>Basics For All</h4>
+                                        <h4>Temari Courses</h4>
                                         <p class="price">$@item.CoursePrice</p>
                                     </div>
                                     <h3><a asp-controller="Course" asp-action="CourseDetail" asp-route-courseId="@item.CourseId">@item.CourseName</a></h3>
 
-                                    <p>Get to know the basics of @item.CourseName here</p>
+                                    <p>The basics of @item.CourseName</p>
                                     <div class="trainer d-flex justify-content-between align-items-center">
                                         <div class="trainer-rank d-flex align-items-center">
                                             <i class="bx bx-user"></i>&nbsp;50

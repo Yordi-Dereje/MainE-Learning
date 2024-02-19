@@ -29,14 +29,19 @@
             }, 3000);
         }
     </script>
-    <br />
+    <style>
+        body{
+            width: 85vw;
+            background-color: white;
+        }
+    </style>
 </head>
 <body>
     <h1>EditCourses</h1>
     <hr />
-    <div class="toast-body alert-success">
+    @* <div class="toast-body alert-success">
         Course Eddited Successfully!
-    </div>
+    </div> *@
     <div class="row">
         <div class="card mb-4 shadow-sm" style="width: 25rem; height: 200px; padding-left: 10px">
             <img src="@Model.imagePath" width="150" height="300" class="card-img-top" alt="...">
@@ -83,7 +88,7 @@
                 <div class="form-group" >
                     <input type="submit" value="Update" class="btn btn-primary" style="background-color: green" />
                 </div>
-                <a asp-action="GetAllCourses">Back to List</a>
+                <a asp-action="GetAllCourses">Back</a>
             </form>
         </div>
     </div>

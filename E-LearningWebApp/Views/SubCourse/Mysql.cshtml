@@ -153,21 +153,6 @@
         <code>CREATE TABLE table (..., FOREIGN KEY (field1, field2) REFERENCES table2 (t2_field1, t2_field2));</code>
     </div>
 
-    @* <div class="partition">
-        <h2>Users and Privileges</h2>
-        <code>CREATE USER 'user'@'localhost';</code>
-        <code>GRANT ALL PRIVILEGES ON base.* TO 'user'@'localhost' IDENTIFIED BY 'password';</code>
-        <code>GRANT SELECT, INSERT, DELETE ON base.* TO 'user'@'localhost' IDENTIFIED BY 'password';</code>
-        <code>REVOKE ALL PRIVILEGES ON base.* FROM 'user'@'host';</code>
-        <code>REVOKE ALL PRIVILEGES, GRANT OPTION FROM 'user'@'host';</code>
-        <code>FLUSH PRIVILEGES;</code>
-        <code>SET PASSWORD = PASSWORD('new_pass');</code>
-        <code>SET PASSWORD FOR 'user'@'host' = PASSWORD('new_pass');</code>
-        <code>SET PASSWORD = OLD_PASSWORD('new_pass');</code>
-        <code>DROP USER 'user'@'host';</code>
-        <p>Host ‘%’ indicates any host.</p>
-    </div> *@
-
     <div class="partition">
         <h2>Main Data Types</h2>
         <code>TINYINT (1o: -128 to +127);</code>

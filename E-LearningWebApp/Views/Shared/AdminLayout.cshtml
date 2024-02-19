@@ -51,6 +51,21 @@
         .breadcrumbs{
             margin-top: 0;
         }
+
+        .a-links {
+            color: #000000;
+        }
+
+        .a-links:hover {
+            color: lightgreen;
+        }
+
+        .prof a-links:hover {
+            border: none;
+        }
+        body{
+            background-color: white;
+        }
     </style>
     
 </head>
@@ -61,12 +76,12 @@
     <aside>
         <img src="~/content/logincss/logo.jpg" alt="">
         <nav>
-            <a class="nav-link text-dark" asp-controller="Admin" asp-action="Index"><i class="fas fa-house"></i> Home</a>
-            <a class="nav-link text-dark" asp-controller="Course" asp-action="GetAllCourses"><i class="fas fa-book"></i> Courses</a>
-            <a class="nav-link text-dark" asp-area="Identity" asp-controller="Course" asp-action="ConceptsAdmin"><i class="fas fa-lightbulb"></i> Concepts</a>
-            <a class="nav-link text-dark" asp-controller="User" asp-action="ListUsers"><i class="fas fa-users"></i> Students</a>
-            <a class="nav-link text-dark" asp-area="Identity" asp-controller="Role" asp-action="Index"><i class="fas fa-user"></i>Roles</a>
-            <a class="nav-link text-dark" asp-controller="Home" asp-action="Index"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            <a class="a-links" asp-controller="Admin" asp-action="Index"><i class="fas fa-house"></i> Home</a>
+            <a class="a-links" asp-controller="Course" asp-action="GetAllCourses"><i class="fas fa-book"></i> Courses</a>
+            <a class="a-links" asp-area="Identity" asp-controller="Course" asp-action="ConceptsAdmin"><i class="fas fa-lightbulb"></i> Concepts</a>
+            <a class="a-links" asp-controller="User" asp-action="ListUsers"><i class="fas fa-users"></i> Students</a>
+            <a class="a-links" asp-area="Identity" asp-controller="Role" asp-action="Index"><i class="fas fa-user"></i>Roles</a>
+            <a class="a-links" asp-controller="Home" asp-action="Index"><i class="fas fa-sign-out-alt"></i> Logout</a>
 
 
             
@@ -84,7 +99,7 @@
     <header>
         <h2>Learn Today Lead Tomorrow</h2>
         <div class="prof">
-            <a class="nav-link text-dark" asp-controller="User" asp-action="Profile"><i class="fas fa-user"></i> @UserManager.GetUserName(User) </a>
+            <a class="a-links" asp-controller="User" asp-action="Profile"><i class="fas fa-user"></i> @UserManager.GetUserName(User) </a>
         </div>
     </header>
 

@@ -12,373 +12,270 @@
 }
 
 <main>
-<div id="partitions">
-    <h1>Time to test your basic web development skill. You will obtain a certificate of completion if you score <bold>13 or more</bold> questions. Good luck!</h1>
-    <div class="partition">
-        <div class="quiz-question" id="question1">
-            <p>1. What is the primary purpose of databases in applications?</p>
+    <div id="partitions">
+        <h1>Basic Web Development Quiz</h1>
+        <div class="partition">
+            <!-- HTML -->
+            <div class="quiz-question" id="question1">
+                <p>1. What is the main role of HTML in web development?</p>
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q1" value="a">To execute server-side code</li>
+                    <li class="quiz-option"><input type="radio" name="q1" value="b">To define the structure of web pages</li>
+                    <li class="quiz-option"><input type="radio" name="q1" value="c">To calculate complex mathematical problems</li>
+                    <li class="quiz-option"><input type="radio" name="q1" value="d">To play audio and video files</li>
+                </ul>
+            </div>
 
-            <ul class="quiz-options radio-group">
-                <li class="quiz-option"><input type="radio" name="q1" value="a">Store data temporarily in memory</li>
-                <li class="quiz-option"><input type="radio" name="q1" value="b">Ensure data persistence beyond server stops</li>
-                <li class="quiz-option"><input type="radio" name="q1" value="c">Execute JavaScript code</li>
-                <li class="quiz-option"><input type="radio" name="q1" value="d">None of the above</li>
-            </ul>
-        </div>
+            <!-- CSS -->
+            <div class="quiz-question" id="question2">
+                <p>2. Which CSS property is used to change the font size of text?</p>
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q2" value="a">font-color</li>
+                    <li class="quiz-option"><input type="radio" name="q2" value="b">font-size</li>
+                    <li class="quiz-option"><input type="radio" name="q2" value="c">font-style</li>
+                    <li class="quiz-option"><input type="radio" name="q2" value="d">font-variant</li>
+                </ul>
+            </div>
 
-        <div class="quiz-question" id="question2">
-            <p>2. Which HTML tag is used to create a hyperlink?</p>
+            <!-- JavaScript -->
+            <div class="quiz-question" id="question3">
+                <p>3. How does JavaScript handle errors?</p>
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q3" value="a">By stopping the execution of the script</li>
+                    <li class="quiz-option"><input type="radio" name="q3" value="b">By throwing exceptions</li>
+                    <li class="quiz-option"><input type="radio" name="q3" value="c">By ignoring the error</li>
+                    <li class="quiz-option"><input type="radio" name="q3" value="d">All of the above</li>
+                </ul>
+            </div>
 
-            <ul class="quiz-options radio-group">
-                <li class="quiz-option"><input type="radio" name="q2" value="a">&lt;link&gt;</li>
-                <li class="quiz-option"><input type="radio" name="q2" value="b">&lt;a&gt;</li>
-                <li class="quiz-option"><input type="radio" name="q2" value="c">&lt;hyperlink&gt;</li>
-                <li class="quiz-option"><input type="radio" name="q2" value="d">&lt;url&gt;</li>
-            </ul>
-        </div>
+            <!-- MySQL -->
+            <div class="quiz-question" id="question4">
+                <p>4. What is the default storage engine for MySQL?</p>
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q4" value="a">MyISAM</li>
+                    <li class="quiz-option"><input type="radio" name="q4" value="b">InnoDB</li>
+                    <li class="quiz-option"><input type="radio" name="q4" value="c">NDB</li>
+                    <li class="quiz-option"><input type="radio" name="q4" value="d">Memory</li>
+                </ul>
+            </div>
 
-        <div class="quiz-question" id="question3">
-            <p>3. In CSS, what does the acronym "CSS" stand for?</p>
+            <!-- HTML -->
+            <div class="quiz-question" id="question5">
+                <p>5. Which HTML tag defines an ordered list?</p>
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q5" value="a">&lt;ul&gt;</li>
+                    <li class="quiz-option"><input type="radio" name="q5" value="b">&lt;ol&gt;</li>
+                    <li class="quiz-option"><input type="radio" name="q5" value="c">&lt;dl&gt;</li>
+                    <li class="quiz-option"><input type="radio" name="q5" value="d">&lt;list&gt;</li>
+                </ul>
+            </div>
 
-            <ul class="quiz-options radio-group">
-                <li class="quiz-option"><input type="radio" name="q3" value="a">Cascading Style Sheet</li>
-                <li class="quiz-option"><input type="radio" name="q3" value="b">Computer Style Sheet</li>
-                <li class="quiz-option"><input type="radio" name="q3" value="c">Creative Style Sheet</li>
-                <li class="quiz-option"><input type="radio" name="q3" value="d">Colorful Style Sheet</li>
-            </ul>
-        </div>
+            <!-- CSS -->
+            <div class="quiz-question" id="question6">
+                <p>6. Which CSS property is used to change the background color of an element?</p>
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q6" value="a">background-colour</li>
+                    <li class="quiz-option"><input type="radio" name="q6" value="b">bgcolor</li>
+                    <li class="quiz-option"><input type="radio" name="q6" value="c">background-color</li>
+                    <li class="quiz-option"><input type="radio" name="q6" value="d">color</li>
+                </ul>
+            </div>
 
-        <div class="quiz-question" id="question4">
-            <p>4. Which HTML tag is used to define an unordered list?</p>
+            <!-- JavaScript -->
+            <div class="quiz-question" id="question7">
+                <p>7. What is the result of the expression  10 %  3?</p>
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q7" value="a">1</li>
+                    <li class="quiz-option"><input type="radio" name="q7" value="b">2</li>
+                    <li class="quiz-option"><input type="radio" name="q7" value="c">3</li>
+                    <li class="quiz-option"><input type="radio" name="q7" value="d">10</li>
+                </ul>
+            </div>
 
-            <ul class="quiz-options radio-group">
-                <li class="quiz-option"><input type="radio" name="q4" value="a">&lt;ol&gt;</li>
-                <li class="quiz-option"><input type="radio" name="q4" value="b">&lt;dl&gt;</li>
-                <li class="quiz-option"><input type="radio" name="q4" value="c">&lt;ul&gt;</li>
-                <li class="quiz-option"><input type="radio" name="q4" value="d">&lt;list&gt;</li>
-            </ul>
-        </div>
+            <!-- MySQL -->
+            <div class="quiz-question" id="question8">
+                <p>8. Which SQL statement is used to delete a row from a table?</p>
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q8" value="a">SELECT</li>
+                    <li class="quiz-option"><input type="radio" name="q8" value="b">INSERT INTO</li>
+                    <li class="quiz-option"><input type="radio" name="q8" value="c">DELETE FROM</li>
+                    <li class="quiz-option"><input type="radio" name="q8" value="d">UPDATE</li>
+                </ul>
+            </div>
 
-        <div class="quiz-question" id="question5">
-            <p>5. What is the purpose of the JavaScript function <code>parseInt()</code>?</p>
+            <div class="quiz-question" id="question9">
+                <p>9. What is the purpose of the "alt" attribute in an HTML image tag?</p>
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q9" value="a">Alternative text for the image</li>
+                    <li class="quiz-option"><input type="radio" name="q9" value="b">Alignment of the image</li>
+                    <li class="quiz-option"><input type="radio" name="q9" value="c">Animated text loop</li>
+                    <li class="quiz-option"><input type="radio" name="q9" value="d">Attribute list</li>
+                </ul>
+            </div>
 
-            <ul class="quiz-options radio-group">
-                <li class="quiz-option"><input type="radio" name="q5" value="a">Parse a string into an integer</li>
-                <li class="quiz-option"><input type="radio" name="q5" value="b">Convert a string to lowercase</li>
-                <li class="quiz-option"><input type="radio" name="q5" value="c">Round a floating-point number</li>
-                <li class="quiz-option"><input type="radio" name="q5" value="d">Print text to the console</li>
-            </ul>
-        </div>
-        <!-- Question 6 -->
-        <div class="quiz-question" id="question6">
-            <p>6. What does the acronym HTML stand for?</p>
+            <div class="quiz-question" id="question10">
+                <p>10. How can you create a hyperlink that opens in a new tab?</p>
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q10" value="a">&lt;a href="url" target="_self"&gt;</li>
+                    <li class="quiz-option"><input type="radio" name="q10" value="b">&lt;a href="url" target="_blank"&gt;</li>
+                    <li class="quiz-option"><input type="radio" name="q10" value="c">&lt;a href="url" target="_new"&gt;</li>
+                    <li class="quiz-option"><input type="radio" name="q10" value="d">&lt;a href="url" target="_tab"&gt;</li>
+                </ul>
+            </div>
 
-            <ul class="quiz-options radio-group">
-                <li class="quiz-option"><input type="radio" name="q6" value="a">Hypertext Markup Language</li>
-                <li class="quiz-option"><input type="radio" name="q6" value="b">Hyperlink and Text Markup Language</li>
-                <li class="quiz-option"><input type="radio" name="q6" value="c">High-Level Text Markup Language</li>
-                <li class="quiz-option"><input type="radio" name="q6" value="d">Home Tool Markup Language</li>
-            </ul>
-        </div>
+            <div class="quiz-question" id="question11">
+                <p>11. What HTML tag is used for creating a numbered list?</p>
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q11" value="a">&lt;ul&gt;</li>
+                    <li class="quiz-option"><input type="radio" name="q11" value="b">&lt;list&gt;</li>
+                    <li class="quiz-option"><input type="radio" name="q11" value="c">&lt;ol&gt;</li>
+                    <li class="quiz-option"><input type="radio" name="q11" value="d">&lt;li&gt;</li>
+                </ul>
+            </div>
 
-        <!-- Question 7 -->
-        <div class="quiz-question" id="question7">
-            <p>7. Which CSS property is used to change the text color of an element?</p>
+            <!-- CSS Questions -->
 
-            <ul class="quiz-options radio-group">
-                <li class="quiz-option"><input type="radio" name="q7" value="a">text-color</li>
-                <li class="quiz-option"><input type="radio" name="q7" value="b">color</li>
-                <li class="quiz-option"><input type="radio" name="q7" value="c">font-color</li>
-                <li class="quiz-option"><input type="radio" name="q7" value="d">text-style</li>
-            </ul>
-        </div>
+            <div class="quiz-question" id="question12">
+                <p>12. What does CSS stand for?</p>
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q12" value="a">Counter Style Sheets</li>
+                    <li class="quiz-option"><input type="radio" name="q12" value="b">Colorful Style Sheets</li>
+                    <li class="quiz-option"><input type="radio" name="q12" value="c">Cascading Style Sheets</li>
+                    <li class="quiz-option"><input type="radio" name="q12" value="d">Computer Style Sheets</li>
+                </ul>
+            </div>
 
-        <!-- Question 8 -->
-        <div class="quiz-question" id="question8">
-            <p>8. In JavaScript, what does the "DOM" stand for?</p>
+            <div class="quiz-question" id="question13">
+                <p>13. Which CSS property is used for changing the text color of an element?</p>
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q13" value="a">text-color</li>
+                    <li class="quiz-option"><input type="radio" name="q13" value="b">font-color</li>
+                    <li class="quiz-option"><input type="radio" name="q13" value="c">color</li>
+                    <li class="quiz-option"><input type="radio" name="q13" value="d">text-style</li>
+                </ul>
+            </div>
 
-            <ul class="quiz-options radio-group">
-                <li class="quiz-option"><input type="radio" name="q8" value="a">Document Object Model</li>
-                <li class="quiz-option"><input type="radio" name="q8" value="b">Data Output Mechanism</li>
-                <li class="quiz-option"><input type="radio" name="q8" value="c">Dynamic Object Manipulation</li>
-                <li class="quiz-option"><input type="radio" name="q8" value="d">Document Order Module</li>
-            </ul>
-        </div>
+            <div class="quiz-question" id="question14">
+                <p>14. In CSS, what does the "box-sizing: border-box;" property do?</p>
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q14" value="a">Includes padding and border in the total width/height of an element</li>
+                    <li class="quiz-option"><input type="radio" name="q14" value="b">Excludes margin from the total width/height of an element</li>
+                    <li class="quiz-option"><input type="radio" name="q14" value="c">Changes the box model to a circular shape</li>
+                    <li class="quiz-option"><input type="radio" name="q14" value="d">None of the above</li>
+                </ul>
+            </div>
 
-        <!-- Question 9 -->
-        <div class="quiz-question" id="question9">
-            <p>9. What is the purpose of the CSS property "margin"?</p>
+            <!-- JavaScript Questions -->
 
-            <ul class="quiz-options radio-group">
-                <li class="quiz-option"><input type="radio" name="q9" value="a">Set the space between the border and content</li>
-                <li class="quiz-option"><input type="radio" name="q9" value="b">Define the element's width</li>
-                <li class="quiz-option"><input type="radio" name="q9" value="c">Change the text alignment</li>
-                <li class="quiz-option"><input type="radio" name="q9" value="d">Adjust the font size</li>
-            </ul>
-        </div>
+            <div class="quiz-question" id="question15">
+                <p>15. What is the correct way to declare a variable in JavaScript?</p>
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q15" value="a">variable x = 10;</li>
+                    <li class="quiz-option"><input type="radio" name="q15" value="b">var x = 10;</li>
+                    <li class="quiz-option"><input type="radio" name="q15" value="c">int x = 10;</li>
+                    <li class="quiz-option"><input type="radio" name="q15" value="d">x = 10;</li>
+                </ul>
+            </div>
 
-        <!-- Question 10 -->
-        <div class="quiz-question" id="question10">
-            <p>10. Which SQL keyword is used to retrieve data from a database table?</p>
+            <div class="quiz-question" id="question16">
+                <p>16. What does the "=== " operator do in JavaScript?</p>
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q16" value="a">Assigns a value to a variable</li>
+                    <li class="quiz-option"><input type="radio" name="q16" value="b">Checks for equality of value and type</li>
+                    <li class="quiz-option"><input type="radio" name="q16" value="c">Concatenates two strings</li>
+                    <li class="quiz-option"><input type="radio" name="q16" value="d">Performs a strict comparison</li>
+                </ul>
+            </div>
 
-            <ul class="quiz-options radio-group">
-                <li class="quiz-option"><input type="radio" name="q10" value="a">RETRIEVE</li>
-                <li class="quiz-option"><input type="radio" name="q10" value="b">SELECT</li>
-                <li class="quiz-option"><input type="radio" name="q10" value="c">FETCH</li>
-                <li class="quiz-option"><input type="radio" name="q10" value="d">GET</li>
-            </ul>
-        </div>
+            <div class="quiz-question" id="question17">
+                <p>17. What is the purpose of the "else" statement in JavaScript?</p>
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q17" value="a">To define a loop</li>
+                    <li class="quiz-option"><input type="radio" name="q17" value="b">To execute code if the condition is false</li>
+                    <li class="quiz-option"><input type="radio" name="q17" value="c">To declare a variable</li>
+                    <li class="quiz-option"><input type="radio" name="q17" value="d">To create a function</li>
+                </ul>
+            </div>
 
-        <!-- Question 11 -->
-        <div class="quiz-question" id="question11">
-            <p>11. Which HTML tag is used to create a table?</p>
+            <!-- MySQL Questions -->
 
-            <ul class="quiz-options radio-group">
-                <li class="quiz-option"><input type="radio" name="q11" value="a">&lt;table&gt;</li>
-                <li class="quiz-option"><input type="radio" name="q11" value="b">&lt;tab&gt;</li>
-                <li class="quiz-option"><input type="radio" name="q11" value="c">&lt;tbl&gt;</li>
-                <li class="quiz-option"><input type="radio" name="q11" value="d">&lt;tr&gt;</li>
-            </ul>
-        </div>
+            <div class="quiz-question" id="question18">
+                <p>18. Which SQL statement is used to delete a row from a table?</p>
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q18" value="a">SELECT</li>
+                    <li class="quiz-option"><input type="radio" name="q18" value="b">INSERT INTO</li>
+                    <li class="quiz-option"><input type="radio" name="q18" value="c">DELETE FROM</li>
+                    <li class="quiz-option"><input type="radio" name="q18" value="d">UPDATE</li>
+                </ul>
+            </div>
 
-        <!-- Question 12 -->
-        <div class="quiz-question" id="question12">
-            <p>12. What is the purpose of the CSS property "padding"?</p>
+            <div class="quiz-question" id="question19">
+                <p>19. What does SQL stand for?</p>
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q19" value="a">Structured Language</li>
+                    <li class="quiz-option"><input type="radio" name="q19" value="b">Sequential Language</li>
+                    <li class="quiz-option"><input type="radio" name="q19" value="c">Structured Query Language</li>
+                    <li class="quiz-option"><input type="radio" name="q19" value="d">Sequential Query Language</li>
+                </ul>
+            </div>
 
-            <ul class="quiz-options radio-group">
-                <li class="quiz-option"><input type="radio" name="q12" value="a">Define the element's width</li>
-                <li class="quiz-option"><input type="radio" name="q12" value="b">Set the space between the border and content</li>
-                <li class="quiz-option"><input type="radio" name="q12" value="c">Change the text alignment</li>
-                <li class="quiz-option"><input type="radio" name="q12" value="d">Adjust the font size</li>
-            </ul>
-        </div>
+            <div class="quiz-question" id="question20">
+                <p>20. Which SQL clause is used to filter the result set?</p>
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q20" value="a">ORDER BY</li>
+                    <li class="quiz-option"><input type="radio" name="q20" value="b">FILTER</li>
+                    <li class="quiz-option"><input type="radio" name="q20" value="c">SELECT</li>
+                    <li class="quiz-option"><input type="radio" name="q20" value="d">WHERE</li>
+                </ul>
+            </div>
 
-        <!-- Question 13 -->
-        <div class="quiz-question" id="question13">
-            <p>13. In JavaScript, what is the purpose of the "else" statement?</p>
-
-            <ul class="quiz-options radio-group">
-                <li class="quiz-option"><input type="radio" name="q13" value="a">Terminate the program</li>
-                <li class="quiz-option"><input type="radio" name="q13" value="b">Define a loop</li>
-                <li class="quiz-option"><input type="radio" name="q13" value="c">Execute a block of code if the condition is false</li>
-                <li class="quiz-option"><input type="radio" name="q13" value="d">Print a message to the console</li>
-            </ul>
-        </div>
-
-        <!-- Question 14 -->
-        <div class="quiz-question" id="question14">
-            <p>14. What type of comment is used in CSS?</p>
-
-            <ul class="quiz-options radio-group">
-                <li class="quiz-option"><input type="radio" name="q14" value="a">// This is a comment</li>
-                <li class="quiz-option"><input type="radio" name="q14" value="b">/* This is a comment */</li>
-                <li class="quiz-option"><input type="radio" name="q14" value="c"><!-- This is a comment --></li>
-                <li class="quiz-option"><input type="radio" name="q14" value="d"># This is a comment</li>
-            </ul>
-        </div>
-
-        <!-- Question 15 -->
-        <div class="quiz-question" id="question15">
-            <p>15. Which JavaScript method is used to add a new element to the end of an array?</p>
-
-            <ul class="quiz-options radio-group">
-                <li class="quiz-option"><input type="radio" name="q15" value="a">push()</li>
-                <li class="quiz-option"><input type="radio" name="q15" value="b">add()</li>
-                <li class="quiz-option"><input type="radio" name="q15" value="c">append()</li>
-                <li class="quiz-option"><input type="radio" name="q15" value="d">insert()</li>
-            </ul>
-        </div>
-
-        <!-- Question 16 -->
-        <div class="quiz-question" id="question16">
-            <p>16. What is the purpose of the HTML tag &lt;head&gt;?</p>
-
-            <ul class="quiz-options radio-group">
-                <li class="quiz-option"><input type="radio" name="q16" value="a">Define the main content of the page</li>
-                <li class="quiz-option"><input type="radio" name="q16" value="b">Specify the document's metadata</li>
-                <li class="quiz-option"><input type="radio" name="q16" value="c">Create a header section</li>
-                <li class="quiz-option"><input type="radio" name="q16" value="d">Format text as bold</li>
-            </ul>
-        </div>
-
-        <!-- Question 17 -->
-        <div class="quiz-question" id="question17">
-            <p>17. Which CSS property is used to control the space between lines of text?</p>
-
-            <ul class="quiz-options radio-group">
-                <li class="quiz-option"><input type="radio" name="q17" value="a">line-height</li>
-                <li class="quiz-option"><input type="radio" name="q17" value="b">text-spacing</li>
-                <li class="quiz-option"><input type="radio" name="q17" value="c">line-spacing</li>
-                <li class="quiz-option"><input type="radio" name="q17" value="d">spacing</li>
-            </ul>
-        </div>
-
-        <!-- Question 18 -->
-        <div class="quiz-question" id="question18">
-            <p>18. What is the purpose of the JavaScript method <code>indexOf()</code>?</p>
-
-            <ul class="quiz-options radio-group">
-                <li class="quiz-option"><input type="radio" name="q18" value="a">Find the index of a specified element in an array</li>
-                <li class="quiz-option"><input type="radio" name="q18" value="b">Insert a new element at a specific index</li>
-                <li class="quiz-option"><input type="radio" name="q18" value="c">Remove an element from an array</li>
-                <li class="quiz-option"><input type="radio" name="q18" value="d">Execute a function at a specific index</li>
-            </ul>
-        </div>
-
-        <!-- Question 19 -->
-        <div class="quiz-question" id="question19">
-            <p>19. In CSS, what property is used to change the background color of an element?</p>
-
-            <ul class="quiz-options radio-group">
-                <li class="quiz-option"><input type="radio" name="q19" value="a">background-color</li>
-                <li class="quiz-option"><input type="radio" name="q19" value="b">color-background</li>
-                <li class="quiz-option"><input type="radio" name="q19" value="c">element-background</li>
-                <li class="quiz-option"><input type="radio" name="q19" value="d">bgcolor</li>
-            </ul>
-        </div>
-
-        <!-- Question 20 -->
-        <div class="quiz-question" id="question20">
-            <p>20. What is the purpose of the MySQL command <code>SELECT * FROM table_name;</code>?</p>
-
-            <ul class="quiz-options radio-group">
-                <li class="quiz-option"><input type="radio" name="q20" value="a">Insert new data into the table</li>
-                <li class="quiz-option"><input type="radio" name="q20" value="b">Retrieve all records from the table</li>
-                <li class="quiz-option"><input type="radio" name="q20" value="c">Delete all records from the table</li>
-                <li class="quiz-option"><input type="radio" name="q20" value="d">Update records in the table</li>
-            </ul>
-        </div>
-
-        <!-- Question 21 -->
-        <div class="quiz-question" id="question21">
-            <p>21. Which HTML tag is used to define a form?</p>
-
-            <ul class="quiz-options radio-group">
-                <li class="quiz-option"><input type="radio" name="q21" value="a">&lt;form&gt;</li>
-                <li class="quiz-option"><input type="radio" name="q21" value="b">&lt;input&gt;</li>
-                <li class="quiz-option"><input type="radio" name="q21" value="c">&lt;submit&gt;</li>
-                <li class="quiz-option"><input type="radio" name="q21" value="d">&lt;field&gt;</li>
-            </ul>
-        </div>
-
-        <!-- Question 22 -->
-        <div class="quiz-question" id="question22">
-            <p>22. In CSS, what is the purpose of the "float" property?</p>
-
-            <ul class="quiz-options radio-group">
-                <li class="quiz-option"><input type="radio" name="q22" value="a">Control the spacing between elements</li>
-                <li class="quiz-option"><input type="radio" name="q22" value="b">Create a floating text effect</li>
-                <li class="quiz-option"><input type="radio" name="q22" value="c">Align elements to the left or right</li>
-                <li class="quiz-option"><input type="radio" name="q22" value="d">Adjust the font size</li>
-            </ul>
-        </div>
-
-        <!-- Question 23 -->
-        <div class="quiz-question" id="question23">
-            <p>23. What is the purpose of the JavaScript method <code>setTimeout()</code>?</p>
-
-            <ul class="quiz-options radio-group">
-                <li class="quiz-option"><input type="radio" name="q23" value="a">Pause the execution of code for a specified time</li>
-                <li class="quiz-option"><input type="radio" name="q23" value="b">Execute a function repeatedly</li>
-                <li class="quiz-option"><input type="radio" name="q23" value="c">Delay the execution of code for a specified time</li>
-                <li class="quiz-option"><input type="radio" name="q23" value="d">Set a timeout for an AJAX request</li>
-            </ul>
-        </div>
-
-        <!-- Question 24 -->
-        <div class="quiz-question" id="question24">
-            <p>24. What is the purpose of the CSS property "border-radius"?</p>
-
-            <ul class="quiz-options radio-group">
-                <li class="quiz-option"><input type="radio" name="q24" value="a">Change the element's border color</li>
-                <li class="quiz-option"><input type="radio" name="q24" value="b">Define the thickness of the element's border</li>
-                <li class="quiz-option"><input type="radio" name="q24" value="c">Add rounded corners to the element</li>
-                <li class="quiz-option"><input type="radio" name="q24" value="d">Set the space between the border and content</li>
-            </ul>
-        </div>
-
-        <!-- Question 25 -->
-        <div class="quiz-question" id="question25">
-            <p>25. In MySQL, what does the command <code>CREATE DATABASE dbname;</code> do?</p>
-
-            <ul class="quiz-options radio-group">
-                <li class="quiz-option"><input type="radio" name="q25" value="a">Delete a database</li>
-                <li class="quiz-option"><input type="radio" name="q25" value="b">Modify the structure of a database</li>
-                <li class="quiz-option"><input type="radio" name="q25" value="c">Create a new database with the specified name</li>
-                <li class="quiz-option"><input type="radio" name="q25" value="d">Retrieve data from a database</li>
-            </ul>
+            
         </div>
     </div>
+
     <div id="result-container">
         <button id="submit-btn" onclick="calculateScore()">Submit Answers</button>
         <p id="result"></p>
+        
     </div>
-    
-</div>
-<script>
-    function calculateScore() {
-            
-        // Array of correct answers
-        const correctAnswers = ['b', 'b', 'a', 'c', 'a', 'a', 'b', 'a', 'a', 'b', 'a', 'b', 'a', 'b', 'a', 'c', 'a', 'a', 'c', 'b', 'a', 'c', 'c', 'c', 'c'];
 
+    <script>
+        function calculateScore() {
+            // Array of correct answers
+            const correctAnswers = ["b", "b", "b", "b", "b", "c", "a", "c", "a", "b", "c", "c", "c", "a", "b", "b", "b", "c", "c", "d"];
+            // Get all radio groups
+            const radioGroups = document.querySelectorAll('.radio-group');
 
-        // Get all radio groups
-        const radioGroups = document.querySelectorAll('.radio-group');
+            let score = 0;
 
-        let score = 0;
+            // Loop through each radio group
+            radioGroups.forEach((group, index) => {
+                // Get the selected answer
+                const selectedAnswer = group.querySelector('input:checked');
 
-        // Loop through each radio group
-        radioGroups.forEach((group, index) => {
-            // Get the selected answer
-            const selectedAnswer = group.querySelector('input:checked');
+                // Check if an answer is selected
+                if (selectedAnswer) {
+                    // Check if the selected answer is correct
+                    if (selectedAnswer.value === correctAnswers[index]) {
+                        score++;
+                        // Highlight correct choice in green
+                        selectedAnswer.parentNode.classList.add('correct-answer');
+                    } else {
+                        // Highlight incorrect choice in red
+                        selectedAnswer.parentNode.classList.add('incorrect-answer');
 
-            // Check if an answer is selected
-            if (selectedAnswer) {
-                // Check if the selected answer is correct
-                if (selectedAnswer.value === correctAnswers[index]) {
-                    score++;
-                    // Highlight correct choice in green
-                    selectedAnswer.parentNode.classList.add('correct-answer');
-                } else {
-                    // Highlight incorrect choice in red
-                    selectedAnswer.parentNode.classList.add('incorrect-answer');
-
-                    // Find and highlight the correct choice in green
-                    const correctChoice = group.querySelector(`input[value="${correctAnswers[index]}"]`);
-                    if (correctChoice) {
-                        correctChoice.parentNode.classList.add('correct-answer');
+                        // Find and highlight the correct choice in green
+                        const correctChoice = group.querySelector(`input[value="${correctAnswers[index]}"]`);
+                        if (correctChoice) {
+                            correctChoice.parentNode.classList.add('correct-answer');
+                        }
                     }
                 }
-            }
-        });
+            });
 
-        // Display the result
-        let score = score * 4;
-        document.getElementById('result').innerText = `You scored ${score} out of ${correctAnswers.length}!`;
-        
-        /*if(parseFloat(score) > 50){
-            $.ajax({
-                type: 'POST',
-                url: '/Course/SetGrade',
-                data: {value: score, courseID: 1},
-                success: function (response) {
-                        var blob = new Blob([response], { type: 'application/pdf' });
-                        var link = document.createElement('a');
-                        link.href = window.URL.createObjectURL(blob);
-                        link.download = "Certificate.pdf";
-                        link.click();
-                },
-                error: function (error){
-                    console.error('Error sending value to the controller:', error);
-                }
-                });
-            } else {
-                console.log('Better luck next time pal.');
-            }
-        });*/
+            // Display the result
+            document.getElementById('result').innerText = `You scored ${score} out of ${correctAnswers.length}!`;
+        }
+    </script>
 
-    /*})*/
-        
-    }
-</script>
 </main>

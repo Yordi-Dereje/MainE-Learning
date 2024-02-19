@@ -16,6 +16,11 @@
             padding: 0;
             margin-left: 15vw;
         }
+
+        .course-item img {
+            width: 320px;
+            height: 180px;
+        }
     </style>
 </head>
 <body>
@@ -38,7 +43,7 @@
 
                     @foreach (var item in Model)
                     {
-                        <div class="col-lg-4 col-md-6 d-flex align-items-stretch" style="margin-left: 5px">
+                        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
                            <div class="course-item">
                                 <img src="@item.imagePath" class="img-fluid" alt="...">
                                 <div class="course-content">
@@ -46,9 +51,9 @@
                                         <h4>Basics For All</h4>
                                         <p class="price">$@item.CoursePrice</p>
                                     </div>
-                                    <h3><a asp-controller="Course" asp-action="CourseDetailUser" asp-route-courseId="@item.CourseId" asp-route-userid="@ViewBag.userid">@item.CourseName</a></h3>
+                                    <h3><a asp-controller="Course" asp-action="CourseDetailUser" asp-route-courseId="@item.CourseId">@item.CourseName</a></h3>
 
-                                    <p>Get to know the basics of @item.CourseName here</p>
+                                    <p>The basics of @item.CourseName</p>
                                     <div class="trainer d-flex justify-content-between align-items-center">
                                         <div class="trainer-rank d-flex align-items-center">
                                             <i class="bx bx-user"></i>&nbsp;50
