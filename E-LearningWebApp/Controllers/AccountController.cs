@@ -1,7 +1,6 @@
 ﻿using E_LearningWebApp.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +8,9 @@ using System.Threading.Tasks;
 using E_LearningWebApp.Models;
 using Microsoft.AspNetCore.Identity;
 using E_LearningWebApp.Areas.Identity.Data;
+using Microsoft.AspNetCore.Authentication.Cookies;
+/*using Microsoft.AspNetCore.Authentication.Google;*/
+using Microsoft.AspNetCore.Authentication;
 
 namespace E_LearningWebApp.Controllers
 {
@@ -22,16 +24,36 @@ namespace E_LearningWebApp.Controllers
             this.signInManager = signInManager;
         }
         [HttpGet]
-    /*    public async IActionResult Login(E_LearningWebAppUser user,string returnUrl)
-        {
-            if(ModelState.IsValid)
+        /*    public async IActionResult Login(E_LearningWebAppUser user,string returnUrl)
             {
-                var result = await signInManager.CheckPasswordSignInAsync(user.Email, user.PasswordHash, false);
+                if(ModelState.IsValid)
+                {
+                    var result = await signInManager.CheckPasswordSignInAsync(user.Email, user.PasswordHash, false);
+                }
+                return View();
             }
-            return View();
-        }
-*/
-        public ActionResult verify(AdminController add, E_LearningWebAppUser user)
+    */
+        /*public async Task Login()
+        {
+            await HttpContext.ChallengeAsync(GoogleDefaults.AuthenticationScheme,
+                new AuthenticationProperties
+                {
+                    RedirectUri = Url.Action("GoogleResponse")
+                });
+        }*/
+        /*public async Task<IActionResult> GoogleResponse()
+        {
+            var result = await HttpContext.AuthenticateAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            var claims = result.Principal.Identities.FirstOrDefault().Claims.Select(claim => new
+            {
+                claim.Issuer,
+                claim.OriginalIssuer,
+                claim.Type,
+                claim.Value
+            });
+            return Json(claims);
+        }*/
+            public ActionResult verify(AdminController add, E_LearningWebAppUser user)
         {
             return View();
         }

@@ -51,6 +51,26 @@ namespace E_LearningWebApp.Controllers
         {
             return View();
         }
+        public IActionResult Certif1()
+        {
+            return View();
+        }
+        public IActionResult Certif2()
+        {
+            return View();
+        }
+        public IActionResult Certif3()
+        {
+            return View();
+        }
+        public IActionResult Certif4()
+        {
+            return View();
+        }
+        public IActionResult Certif5()
+        {
+            return View();
+        }
 
         [HttpGet("CourseDisplay")]
         public IActionResult CourseDisplay()

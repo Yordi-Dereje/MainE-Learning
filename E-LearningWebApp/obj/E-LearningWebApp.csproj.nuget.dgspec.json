@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Desktop\\Feb19\\MainE-Learning\\E-LearningWebApp\\E-LearningWebApp.csproj": {}
+    "C:\\Users\\User\\Desktop\\Feb19 - Copy\\MainE-Learning\\E-LearningWebApp\\E-LearningWebApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Desktop\\Feb19\\MainE-Learning\\E-LearningWebApp\\E-LearningWebApp.csproj": {
+    "C:\\Users\\User\\Desktop\\Feb19 - Copy\\MainE-Learning\\E-LearningWebApp\\E-LearningWebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\Feb19\\MainE-Learning\\E-LearningWebApp\\E-LearningWebApp.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\Feb19 - Copy\\MainE-Learning\\E-LearningWebApp\\E-LearningWebApp.csproj",
         "projectName": "E-LearningWebApp",
-        "projectPath": "C:\\Users\\User\\Desktop\\Feb19\\MainE-Learning\\E-LearningWebApp\\E-LearningWebApp.csproj",
+        "projectPath": "C:\\Users\\User\\Desktop\\Feb19 - Copy\\MainE-Learning\\E-LearningWebApp\\E-LearningWebApp.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\Feb19\\MainE-Learning\\E-LearningWebApp\\obj\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\Feb19 - Copy\\MainE-Learning\\E-LearningWebApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -69,6 +69,10 @@
             "RestSharp": {
               "target": "Package",
               "version": "[110.2.0, )"
+            },
+            "Select.HtmlToPdf.NetCore": {
+              "target": "Package",
+              "version": "[23.2.0, )"
             }
           },
           "imports": [

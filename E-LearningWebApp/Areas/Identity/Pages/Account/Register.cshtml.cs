@@ -155,8 +155,9 @@ namespace E_LearningWebApp.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");
-                    await _userManager.AddToRoleAsync(user, "Admin");
+                    await _userManager.AddToRoleAsync(user, "User");
 
+                    var userrole = await _userManager.GetRolesAsync(user);
                     var userId = await _userManager.GetUserIdAsync(user);
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
@@ -175,8 +176,17 @@ namespace E_LearningWebApp.Areas.Identity.Pages.Account
                     }
                     else
                     {
-                        await _signInManager.SignInAsync(user, isPersistent: false);
-                        return LocalRedirect($"~/User/Index?id={userId}");
+                        if (userrole.Contains("User"))
+                        {
+                            return LocalRedirect($"~/User/Index?id={userId}");
+                        }
+                        else
+                        {
+
+                            return LocalRedirect($"~/Admin/Index?id={userId}");
+                        }
+                        /*await _signInManager.SignInAsync(user, isPersistent: false);
+                        return LocalRedirect($"~/User/Index?id={userId}");*/
                     }
                 }
                 foreach (var error in result.Errors)

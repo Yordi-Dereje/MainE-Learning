@@ -74,7 +74,23 @@
                             <div class="border-bottom w-100 mr-5"></div>
                      
                         </div>
-                        <a class="get-started-btn" asp-controller="Admin" asp-action="Index">Admin</a>
+                        @* <a class="get-started-btn" asp-controller="Admin" asp-action="Index">Admin</a> *@
+                        @{
+                            <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
+                                <div>
+                                    <p>
+                                        @foreach (var provider in Model.ExternalLogins!)
+                                        {
+                                            <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
+                                        }
+                                    </p>
+                                </div>
+                                <a class="btn btn-outline-dark" role="button" style="text-transform:none">
+                                    <img width="15px" style="margin-bottom:3px; margin-right:5px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+                                    Login with Google
+                                </a>
+                            </form>
+                        }
 
                         <!-- Already Registered -->
                         <div class="text-center w-100">

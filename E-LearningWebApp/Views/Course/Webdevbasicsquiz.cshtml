@@ -236,7 +236,10 @@
     <div id="result-container">
         <button id="submit-btn" onclick="calculateScore()">Submit Answers</button>
         <p id="result"></p>
-        
+
+        <a class="certificate-button" id="btnPdf" asp-controller="Course" asp-action="Certif1" style="display: none;">Generate Certificate</a>
+
+
     </div>
 
     <script>
@@ -275,6 +278,9 @@
 
             // Display the result
             document.getElementById('result').innerText = `You scored ${score} out of ${correctAnswers.length}!`;
+            if (score > 5) {
+                document.getElementById('btnPdf').style.display = 'block';
+            }
         }
     </script>
 
