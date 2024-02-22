@@ -1,4 +1,5 @@
 ﻿@using E_LearningWebApp.Areas.Identity.Data;
+@using E_LearningWebApp.Data;
 @using Microsoft.AspNetCore.Identity;
 @using E_LearningWebApp.Models;
 
@@ -13,9 +14,54 @@
         string txRef = "negade-tx-" + Guid.NewGuid().ToString("N");
         return txRef;
     }
-   
 
+    E_LearningDbContext _context = new E_LearningDbContext();
+
+
+    using (HttpClient client = new HttpClient())
+    {
+        HttpResponseMessage response = await client.GetAsync("https://d274-104-234-212-140.ngrok-free.app/data");
+
+        if (response.IsSuccessStatusCode)
+        {
+            string returnUrl = "https://d274-104-234-212-140.ngrok-free.app/Home/Privacy";
+            // Pass the return URL to the view
+            ViewBag.ReturnUrl = returnUrl;
+
+            // Parse the response body
+
+            // Process the response data
+            // Update UI or do other operations
+        }
+        else
+        {
+            // Handle error response
+            // Display error message or log the error
+            var data = new Payment
+                    {
+                        Id = "b5a6b3b9-e1a6-4d92-8160-b4ed2d7925ba",
+                        PaymentStatus = "Paid",
+                        CourseId = @Model.courseview.CourseId
+                    };
+
+            // Add the new data to the DbSet
+            _context.Add(data);
+
+            // Save the changes to the database
+            await _context.SaveChangesAsync();
+
+            string returnUrl = "https://d274-104-234-212-140.ngrok-free.app/Home/Index";
+
+            // Pass the return URL to the view
+            ViewBag.ReturnUrl = returnUrl;
+
+            // Parse the response body
+
+
+        }
+    }
 }
+
 
 <head>
     <meta charset="UTF-8">
@@ -107,9 +153,8 @@
                             @* chapa *@
 
 
-
                             <form method="POST" class="form" action="https://api.chapa.co/v1/hosted/pay">
-                                <input type="hidden" name="public_key" value="CHAPUBK_TEST-iuDgvUTK7jeeGEcNxPMy9Wuf73IdVKYC" />
+                                <input type="hidden" name="public_key" value="CHAPUBK_TEST-nZgZI5lxfdJJu1hriKT3UdnKaRz4LqMA" />
                                 <input type="hidden" name="tx_ref" value="@GenerateTxRef()" />
                                 <input type="hidden" name="amount" value=@Model.courseview.CoursePrice />
                                 <input type="hidden" name="currency" value="ETB" />
@@ -119,15 +164,9 @@
                                 <input type="hidden" name="title" value="Let us do this" />
                                 <input type="hidden" name="description" value="Paying with Confidence with cha" />
                                 <input type="hidden" name="logo" value="https://chapa.link/asset/images/chapa_swirl.svg" />
-                                <input type="hidden" name="callback_url" value="https://localhost:7059" />
-                                @*  <input type="hidden" name="return_url" value="@Url.Action("Payment", "User", new { userId = @ViewBag.userid, courseId =  @Model.courseview.CourseId })" />
-                                <input type="hidden" name="return_url" value="https://localhost:7059/User/Payment?userId=@ViewBag.userid&amp;courseId=@Model.courseview.CourseId" />
-                                <input type="hidden" name="return_url" value="@Url.Action("Payment", "User", new { userId = @ViewBag.userid, courseId = @Model.courseview.CourseId })" />
-                                *@
-                                @*                                                     <input type="hidden" name="return_url" value="https://localhost:7059/User/ListUsers" />
-                                *@
-                                <input type="hidden" name="return_url" value="https://localhost:7059/User/Payment?userId=@ViewBag.userid&courseId=1" />
 
+                                <input type="hidden" name="callback_url" value="https://d274-104-234-212-140.ngrok-free.app/post" />
+                                <input type="hidden" name="return_url" value="@ViewBag.ReturnUrl" />
 
                                 <input type="hidden" name="meta[title]" value="test" />
                                 <button type="submit" class="get-started-btn align-items-right">Enroll</button>
@@ -136,6 +175,7 @@
 
                             @*  end chapa *@
                         </div>
+
                     </div>
 
 

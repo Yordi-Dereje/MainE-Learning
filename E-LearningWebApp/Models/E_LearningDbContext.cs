@@ -50,7 +50,7 @@ namespace E_LearningWebApp.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("server=.; Database= MainE_LearningWebApp1; Integrated security = True;");
+                optionsBuilder.UseSqlServer("server=.; Database= MainE_LearningWebApp13; Integrated security = True;");
             }
         }
     }

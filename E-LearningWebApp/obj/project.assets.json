@@ -11369,19 +11369,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {}
+    "C:\\Users\\Hp\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\Feb19 - Copy\\MainE-Learning\\E-LearningWebApp\\E-LearningWebApp.csproj",
+      "projectUniqueName": "C:\\Users\\Hp\\Desktop\\MainElearningAppSubmit\\MainE-Learning\\E-LearningWebApp\\E-LearningWebApp.csproj",
       "projectName": "E-LearningWebApp",
-      "projectPath": "C:\\Users\\User\\Desktop\\Feb19 - Copy\\MainE-Learning\\E-LearningWebApp\\E-LearningWebApp.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Desktop\\Feb19 - Copy\\MainE-Learning\\E-LearningWebApp\\obj\\",
+      "projectPath": "C:\\Users\\Hp\\Desktop\\MainElearningAppSubmit\\MainE-Learning\\E-LearningWebApp\\E-LearningWebApp.csproj",
+      "packagesPath": "C:\\Users\\Hp\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Hp\\Desktop\\MainElearningAppSubmit\\MainE-Learning\\E-LearningWebApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -11461,7 +11461,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }
