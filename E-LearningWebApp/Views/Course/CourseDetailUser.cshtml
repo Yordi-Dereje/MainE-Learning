@@ -14,16 +14,19 @@
         string txRef = "negade-tx-" + Guid.NewGuid().ToString("N");
         return txRef;
     }
+}
+     
+@*
 
     E_LearningDbContext _context = new E_LearningDbContext();
 
 
     using (HttpClient client = new HttpClient())
-    {
+        {
         HttpResponseMessage response = await client.GetAsync("https://d274-104-234-212-140.ngrok-free.app/data");
 
         if (response.IsSuccessStatusCode)
-        {
+            {
             string returnUrl = "https://d274-104-234-212-140.ngrok-free.app/Home/Privacy";
             // Pass the return URL to the view
             ViewBag.ReturnUrl = returnUrl;
@@ -34,18 +37,18 @@
             // Update UI or do other operations
         }
         else
-        {
+            {
             // Handle error response
             // Display error message or log the error
             var data = new Payment
-                    {
+                        {
                         Id = "b5a6b3b9-e1a6-4d92-8160-b4ed2d7925ba",
                         PaymentStatus = "Paid",
                         CourseId = @Model.courseview.CourseId
-                    };
+            };
 
             // Add the new data to the DbSet
-            _context.Add(data);
+                    _context.Add(data);
 
             // Save the changes to the database
             await _context.SaveChangesAsync();
@@ -58,9 +61,9 @@
             // Parse the response body
 
 
-        }
+                }
     }
-}
+    } *@
 
 
 <head>
@@ -75,7 +78,10 @@
             padding: 0;
         }
         .course-details{
-            padding: 20px;
+            padding: 0px;
+        }
+        body{
+            background-color: white;
         }
         
     </style>
@@ -108,19 +114,12 @@
 <body>
     <main id="main">
 
-        <!-- ======= Breadcrumbs ======= -->
+        @* <!-- ======= Breadcrumbs ======= -->
         <div class="breadcrumbs" data-aos="fade-in">
             <div class="container">
                 <h2>Course Details</h2>
             </div>
-        </div><!-- End Breadcrumbs -->
-
-        @* <div class="container">
-            <button type="button" class="btn btn-success">Success <span class="badge">@Model.courseview.</span></button>
-        </div> *@
-
-
-
+        </div><!-- End Breadcrumbs --> *@
 
         <section id="course-details" class="course-details">
             <div class="container" data-aos="fade-up">
@@ -144,7 +143,7 @@
                         </div>
                         <div class="course-info d-flex justify-content-between align-items-center">
                             <h5>Price</h5>
-                            <p>$@Model.courseview.CoursePrice</p>
+                            <p>Free</p>
                         </div>
                         <div class="form-group">
 
@@ -169,7 +168,35 @@
                                 <input type="hidden" name="return_url" value="@ViewBag.ReturnUrl" />
 
                                 <input type="hidden" name="meta[title]" value="test" />
-                                <button type="submit" class="get-started-btn align-items-right">Enroll</button>
+                                <button type="submit" class="get-started-btn align-items-right">Donate</button>
+                                @{
+                                    var id = @Model.courseview.CourseId;
+                                    string actionName = "";
+                                    if (id == 1)
+                                    {
+                                        actionName = "webdevbasics";
+                                    }
+                                    else if (id == 2)
+                                    {
+                                        actionName = "webdevadv";
+                                    }
+                                    else if (id == 3)
+                                    {
+                                        actionName = "Codingbasics";
+                                    }
+                                    else if (id == 4)
+                                    {
+                                        actionName = "Marketing";
+                                    }
+                                    else if (id == 5)
+                                    {
+                                        actionName = "Leadership";
+                                    }
+
+                                }
+
+                                <a class="Go-button" id="btnGo" asp-controller="Course" asp-action="@actionName">Go to course</a>
+
                             </form>
 
 
@@ -177,17 +204,6 @@
                         </div>
 
                     </div>
-
-
-
-                   
-
-
-
-
-
-
-
 
 
             </div>
@@ -200,7 +216,7 @@
                         {
                             foreach (var subs in Model.subcourseview)
                             {
-                                <li>@subs.SubCourseName - @subs.SubCourseDescription </li>
+                                <li>@subs.SubCourseName: @subs.SubCourseDescription </li>
                             }
 
                         }

@@ -79,16 +79,32 @@ namespace E_LearningWebApp.Controllers
             }
         }
         [HttpPost]
-        public async Task<IActionResult> Profile([FromQuery] string userid, E_LearningWebAppContext userdata)
+        public async Task<IActionResult> Profile([FromQuery] string userid, [FromForm] E_LearningWebAppUser userdata)
         {
 
             var user = await _userManager.FindByIdAsync(userid);
             if (user == null)
             {
-                _appContext.Update(userdata);
-                _appContext.SaveChanges();
+                return NotFound($"Unable to find '{userid}'.");
             }
-            return RedirectToAction("Profile", "User");
+            else
+            {
+                user.FirstName = userdata.FirstName;
+                user.LastName = userdata.LastName;
+                user.PhoneNumber = userdata.PhoneNumber;
+                user.UserName = userdata.UserName;
+
+                var result = await _userManager.UpdateAsync(user);
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("Index", "User");
+                }
+                else
+                {
+                    // Handle errors
+                    return View(user);
+                }
+            }
         }
         public async Task<IActionResult> Payment( [FromForm] string userId,  [FromForm ]int courseId) 
         {

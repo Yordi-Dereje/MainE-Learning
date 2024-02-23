@@ -1,8 +1,19 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<br />
-<br />
+
+<style>
+    .Startedbtn{
+        border: black solid 2px;
+        border-radius: 10px;
+        background-color: transparent;
+        color: black;
+    }
+    .Startedbtn:hover{
+        background-color: black;
+        color: white;
+    }
+</style>
 
 <body>
 
@@ -10,8 +21,8 @@
     <section id="hero" class="d-flex justify-Content-center align-items-center">
         <div class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
             <h1>Learning Today,<br>Leading Tomorrow</h1>
-@*             <h2>We are team of talented designers making websites with Bootstrap</h2>
- *@            <a class="get-started-btn" asp-area="Identity" asp-page="/Account/Login">Get Started</a>
+
+             <a class="Startedbtn" asp-area="Identity" asp-page="/Account/Login">Get Started</a>
             
         </div>
     </section><!-- End Hero -->
@@ -121,7 +132,7 @@
 
             </div>
         </section><!-- End Why Us Section -->
-        <!-- ======= Pricing Section ======= -->
+       @*  <!-- ======= Pricing Section ======= -->
         <div class="breadcrumbs" data-aos="fade-in">
             <div class="container">
                 <h2>Pricing</h2>
@@ -145,7 +156,7 @@
                            @*  <div class="btn-wrap">
                                 <a href="#" class="btn-buy">Buy Now</a>
                             </div> *@
-                        </div>
+                       @* </div>
                     </div>
 
                     <div class="col-lg-3 col-md-6 mt-4 mt-md-0">
@@ -164,7 +175,7 @@
                 </div>
 
             </div>
-        </section><!-- End Pricing Section -->
+        </section><!-- End Pricing Section --> *@
         <section id="trainers" class="trainers">
             <div class="container aos-init aos-animate" data-aos="fade-up">
 

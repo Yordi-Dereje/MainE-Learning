@@ -63,32 +63,49 @@ namespace E_LearningWebApp.Controllers
                 return BadRequest(ex.Message);
             }
         }
+        [HttpGet]
+        public async Task<IActionResult> ProfileAsync([FromQuery] string userid)
+        {
+            var user = await _userManager.FindByIdAsync(userid);
+            if (user == null)
+            {
+                return NotFound($"Unable to find '{userid}'.");
+            }
+            else
+            {
+                return View(user);
+            }
+        }
+        [HttpPost]
+        public async Task<IActionResult> Profile([FromQuery] string userid, [FromForm] E_LearningWebAppUser userdata)
+        {
 
+            var user = await _userManager.FindByIdAsync(userid);
+            if (user == null)
+            {
+                return NotFound($"Unable to find '{userid}'.");
+            }
+            else
+            {
+                user.FirstName = userdata.FirstName;
+                user.LastName = userdata.LastName;
+                user.PhoneNumber = userdata.PhoneNumber;
+                user.UserName = userdata.UserName;
 
+                var result = await _userManager.UpdateAsync(user);
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("Index", "Admin");
+                }
+                else
+                {
+                    // Handle errors
+                    return View(user);
+                }
+            }
+        }
 
-
-      /*  public IActionResult DashBoard() {
-           
-               *//* int countPayment = _context.Payments.Count();
-                ViewBag.ItemCountPayment = countPayment;*//*
-
-                int countCourse = _context.Courses.Count();
-                ViewBag.ItemCountCourse = countCourse;
-          
-            int countSubCourse = _context.SubCourses.Count();
-                ViewBag.ItemCountSubCourse = countSubCourse;
-*//*
-         
-                IdentityRole myRole = E_LearningWebAppContext.Roles.First(r => r.Name == ro);
-                int count = db.Set<IdentityUserRole>().Count(r => r.RoleId == myRole.Id);
-                *//*
-            
-
-
-            return View();
-        }*/
-
-       // [Authorize(Policy = "Adminroles")]
+        // [Authorize(Policy = "Adminroles")]
         public IActionResult Index()
         {
             int countCourse = _context.Courses.Count();

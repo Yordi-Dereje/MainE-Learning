@@ -71,17 +71,14 @@
         <nav>
             <a class="a-links" asp-controller="User" asp-action="Index"><i class="fas fa-house"></i> Home</a>
             <a class="a-links" asp-controller="Course" asp-action="CourseDisplayUser"><i class="fas fa-book"></i> Courses</a>
-            <a class="a-links" asp-controller="Course" asp-action="NoCourse"><i class="fas fa-book"></i> My Courses</a>
-            <a class="a-links" asp-area="Identity" asp-controller="SubCourse" asp-action="Grades"><i class="fas fa-chart-bar"></i> Grades</a>
             <a class="a-links" asp-area="Identity" asp-controller="Course" asp-action="ConceptsUser"><i class="fas fa-lightbulb"></i> Concepts</a>
-@*             <a class="nav-link text-dark" asp-area="Identity" asp-controller="Admin" asp-action="Index"><i class="fas fa-chart-pie"></i> Admin</a>
-            *@            <a class="a-links" asp-controller="Home" asp-action="Index"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            <a class="a-links" asp-controller="Home" asp-action="Index"><i class="fas fa-sign-out-alt"></i> Logout</a>
         </nav>
 
     </aside>
 
     <header>
-        <h2>Welcome back</h2>
+        
         <div class="prof">
             <a class="a-links" asp-controller="User" asp-action="Profile" asp-route-userid="@UserManager.GetUserId(User)"><i class="fas fa-user"></i> @UserManager.GetUserName(User) </a>
         </div>

@@ -3,15 +3,15 @@
 @{
     ViewData["Title"] = "GetAllCourses";
 }
-<br />
-<br />
-<br />
-<main
+<style>
+    main{
+        background-color: white;
+    }
+</style>
+<main>
 <h1>GetAllCourses</h1>
 
-<p>
-    <a asp-action="Course/Create">Create New</a>
-</p>
+
 <table class="table">
     <thead>
         <tr>
@@ -77,4 +77,7 @@
 }
     </tbody>
 </table>
-></main>
+    <p>
+        <a asp-action="Course/Create">Create New</a>
+    </p>
+</main>

@@ -5,13 +5,6 @@
 }
 
 
-@* <h2>Username: @Model.UserName</h2>
-<h2>FirstName: @Model.FirstName</h2>
-<h2>LastName: @Model.LastName</h2>
- *@
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -35,7 +28,7 @@
     <hr />
     <div class="row">
           <div class="col-md-4">
-            <form asp-controller="User" asp-action="Profile">
+                <form asp-controller="User" asp-action="Profile" method="post">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                
                 <div class="form-group">
