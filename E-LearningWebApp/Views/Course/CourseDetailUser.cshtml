@@ -14,20 +14,17 @@
         string txRef = "negade-tx-" + Guid.NewGuid().ToString("N");
         return txRef;
     }
-}
-     
-@*
 
     E_LearningDbContext _context = new E_LearningDbContext();
 
 
     using (HttpClient client = new HttpClient())
-        {
-        HttpResponseMessage response = await client.GetAsync("https://d274-104-234-212-140.ngrok-free.app/data");
+    {
+        HttpResponseMessage response = await client.GetAsync("https://f180-104-234-212-140.ngrok-free.app/data");
 
         if (response.IsSuccessStatusCode)
-            {
-            string returnUrl = "https://d274-104-234-212-140.ngrok-free.app/Home/Privacy";
+        {
+            string returnUrl = "https://f180-104-234-212-140.ngrok-free.app/Home/Privacy";
             // Pass the return URL to the view
             ViewBag.ReturnUrl = returnUrl;
 
@@ -37,33 +34,34 @@
             // Update UI or do other operations
         }
         else
-            {
+        {
             // Handle error response
             // Display error message or log the error
+            string returnUrl = "https://f180-104-234-212-140.ngrok-free.app/Home/Index";
+
             var data = new Payment
-                        {
-                        Id = "b5a6b3b9-e1a6-4d92-8160-b4ed2d7925ba",
+                    {
+                        Id = @ViewBag.userid,
                         PaymentStatus = "Paid",
+                        Price = @Model.courseview.CoursePrice,
                         CourseId = @Model.courseview.CourseId
-            };
+                    };
 
             // Add the new data to the DbSet
-                    _context.Add(data);
+            _context.Payment.Add(data);
 
             // Save the changes to the database
             await _context.SaveChangesAsync();
-
-            string returnUrl = "https://d274-104-234-212-140.ngrok-free.app/Home/Index";
 
             // Pass the return URL to the view
             ViewBag.ReturnUrl = returnUrl;
 
             // Parse the response body
 
+        }
 
-                }
     }
-    } *@
+}
 
 
 <head>
@@ -74,40 +72,41 @@
     <title>User Dashboard</title>
     <link rel="stylesheet" href="~/Content/css/courses.css">
     <style>
-        #main{
+        #main {
             padding: 0;
         }
-        .course-details{
+
+        .course-details {
             padding: 0px;
         }
-        body{
+
+        body {
             background-color: white;
         }
-        
     </style>
-  
-      @*   <script>
-            document.addEventListener('DOMContentLoaded', function () {
-            var userId = '@ViewBag.userid'; // Replace with the actual user ID
 
-                fetch(`api/Pays/${userId}`)
-                    .then(function (response) {
-                        if (!response.ok) {
-                            throw new Error('Network response was not ok');
-                        }
-                        return response.json();
-                    })
-                    .then(function (data) {
-                        console.log(data);
-                        // Process the data received from the API
-                        // For example, display the checkout URL
-                        window.location.href = data.checkoutUrl;
-                    })
-                    .catch(function (error) {
-                        console.error('There has been a problem with your fetch operation:', error);
-                    });
-            });
-        </script> *@
+    @*   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+    var userId = '@ViewBag.userid'; // Replace with the actual user ID
+
+    fetch(`api/Pays/${userId}`)
+    .then(function (response) {
+    if (!response.ok) {
+    throw new Error('Network response was not ok');
+    }
+    return response.json();
+    })
+    .then(function (data) {
+    console.log(data);
+    // Process the data received from the API
+    // For example, display the checkout URL
+    window.location.href = data.checkoutUrl;
+    })
+    .catch(function (error) {
+    console.error('There has been a problem with your fetch operation:', error);
+    });
+    });
+    </script> *@
 
 </head>
 
@@ -116,9 +115,9 @@
 
         @* <!-- ======= Breadcrumbs ======= -->
         <div class="breadcrumbs" data-aos="fade-in">
-            <div class="container">
-                <h2>Course Details</h2>
-            </div>
+        <div class="container">
+        <h2>Course Details</h2>
+        </div>
         </div><!-- End Breadcrumbs --> *@
 
         <section id="course-details" class="course-details">
@@ -164,65 +163,63 @@
                                 <input type="hidden" name="description" value="Paying with Confidence with cha" />
                                 <input type="hidden" name="logo" value="https://chapa.link/asset/images/chapa_swirl.svg" />
 
-                                <input type="hidden" name="callback_url" value="https://d274-104-234-212-140.ngrok-free.app/post" />
+                                <input type="hidden" name="callback_url" value="https://f180-104-234-212-140.ngrok-free.app/post" />
                                 <input type="hidden" name="return_url" value="@ViewBag.ReturnUrl" />
 
                                 <input type="hidden" name="meta[title]" value="test" />
                                 <button type="submit" class="get-started-btn align-items-right">Donate</button>
-                                @{
-                                    var id = @Model.courseview.CourseId;
-                                    string actionName = "";
-                                    if (id == 1)
-                                    {
-                                        actionName = "webdevbasics";
-                                    }
-                                    else if (id == 2)
-                                    {
-                                        actionName = "webdevadv";
-                                    }
-                                    else if (id == 3)
-                                    {
-                                        actionName = "Codingbasics";
-                                    }
-                                    else if (id == 4)
-                                    {
-                                        actionName = "Marketing";
-                                    }
-                                    else if (id == 5)
-                                    {
-                                        actionName = "Leadership";
-                                    }
-
-                                }
-
-                                <a class="Go-button" id="btnGo" asp-controller="Course" asp-action="@actionName">Go to course</a>
-
                             </form>
 
+                            @{
+                                var id = @Model.courseview.CourseId;
+                                string actionName = "";
+                                if (id == 1)
+                                {
+                                    actionName = "webdevbasics";
+                                }
+                                else if (id == 2)
+                                {
+                                    actionName = "webdevadv";
+                                }
+                                else if (id == 3)
+                                {
+                                    actionName = "Codingbasics";
+                                }
+                                else if (id == 4)
+                                {
+                                    actionName = "Marketing";
+                                }
+                                else if (id == 5)
+                                {
+                                    actionName = "Leadership";
+                                }
 
+                            }
+
+                            <a class="Go-button" id="btnGo" asp-controller="Course" asp-action="@actionName">Go to course</a>
                             @*  end chapa *@
                         </div>
 
                     </div>
 
 
-            </div>
-            <div class="col-lg-4">
-                <!-- SubCourses List -->
-                <div class="subcourses-list">
-                    <h3>SubCourses</h3>
-                    <ul>
-                        @if (Model.subcourseview != null)
-                        {
-                            foreach (var subs in Model.subcourseview)
-                            {
-                                <li>@subs.SubCourseName: @subs.SubCourseDescription </li>
-                            }
-
-                        }
-                    </ul>
                 </div>
-            </div>
+                <div class="col-lg-4">
+                    <!-- SubCourses List -->
+                    <div class="subcourses-list">
+                        <h3>SubCourses</h3>
+                        <ul>
+                            @if (Model.subcourseview != null)
+                            {
+                                foreach (var subs in Model.subcourseview)
+                                {
+                                    <li>@subs.SubCourseName: @subs.SubCourseDescription </li>
+                                }
+
+                            }
+                        </ul>
+                    </div>
+                </div>
             </div>
 
         </section>

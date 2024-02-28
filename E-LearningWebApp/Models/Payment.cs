@@ -9,6 +9,7 @@ namespace E_LearningWebApp.Models
         [Key]
         public int PaymentId { get; set; } // Renamed to follow convention
         public string PaymentStatus { get; set; }
+        public int Price { get; set; }
 
         public int CourseId { get; set; } // Renamed to CourseId
 

@@ -679,6 +679,22 @@
       "MessagePackAnalyzer/2.1.152": {
         "type": "package"
       },
+      "Microsoft.AspNetCore.Authentication.Google/6.0.27": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Microsoft.AspNetCore.Authentication.Google.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.AspNetCore.Authentication.Google.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "Microsoft.AspNetCore.Cryptography.Internal/6.0.26": {
         "type": "package",
         "compile": {
@@ -4815,6 +4831,21 @@
         "messagepackanalyzer.nuspec",
         "tools/install.ps1",
         "tools/uninstall.ps1"
+      ]
+    },
+    "Microsoft.AspNetCore.Authentication.Google/6.0.27": {
+      "sha512": "+CIxYLuVCGRWSYn9l3pTVLt4lm4DrNTN8l49MJIWRQHrUT1axd+Q/LNgso0lsOADswZ29BgYt7eAH1EypURXJg==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.authentication.google/6.0.27",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net6.0/Microsoft.AspNetCore.Authentication.Google.dll",
+        "lib/net6.0/Microsoft.AspNetCore.Authentication.Google.xml",
+        "microsoft.aspnetcore.authentication.google.6.0.27.nupkg.sha512",
+        "microsoft.aspnetcore.authentication.google.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Cryptography.Internal/6.0.26": {
@@ -11359,6 +11390,7 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "Chapa.NET >= 2.1.0",
+      "Microsoft.AspNetCore.Authentication.Google >= 6.0.27",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.26",
       "Microsoft.AspNetCore.Identity.UI >= 6.0.26",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.26",
@@ -11369,19 +11401,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {}
+    "C:\\Users\\Hp\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\Feb23\\MainE-Learning\\E-LearningWebApp\\E-LearningWebApp.csproj",
+      "projectUniqueName": "C:\\Users\\Hp\\Desktop\\MainElearningAppSubmit\\MainE-Learning\\E-LearningWebApp\\E-LearningWebApp.csproj",
       "projectName": "E-LearningWebApp",
-      "projectPath": "C:\\Users\\User\\Desktop\\Feb23\\MainE-Learning\\E-LearningWebApp\\E-LearningWebApp.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Desktop\\Feb23\\MainE-Learning\\E-LearningWebApp\\obj\\",
+      "projectPath": "C:\\Users\\Hp\\Desktop\\MainElearningAppSubmit\\MainE-Learning\\E-LearningWebApp\\E-LearningWebApp.csproj",
+      "packagesPath": "C:\\Users\\Hp\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Hp\\Desktop\\MainElearningAppSubmit\\MainE-Learning\\E-LearningWebApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -11410,6 +11442,10 @@
           "Chapa.NET": {
             "target": "Package",
             "version": "[2.1.0, )"
+          },
+          "Microsoft.AspNetCore.Authentication.Google": {
+            "target": "Package",
+            "version": "[6.0.27, )"
           },
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
             "target": "Package",
@@ -11461,7 +11497,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

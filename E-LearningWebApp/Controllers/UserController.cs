@@ -78,6 +78,7 @@ namespace E_LearningWebApp.Controllers
                 return View(user);
             }
         }
+
         [HttpPost]
         public async Task<IActionResult> Profile([FromQuery] string userid, [FromForm] E_LearningWebAppUser userdata)
         {
@@ -106,7 +107,7 @@ namespace E_LearningWebApp.Controllers
                 }
             }
         }
-        public async Task<IActionResult> Payment( [FromForm] string userId,  [FromForm ]int courseId) 
+        /*public async Task<IActionResult> Payment( [FromForm] string userId,  [FromForm ]int courseId) 
         {
             try
             {
@@ -124,7 +125,7 @@ namespace E_LearningWebApp.Controllers
                         Id = userId
 
                     };
-                    _context.Payments.Add(pay); // Assuming Payments is the DbSet for Payment entities
+                    _context.Payment.Add(pay); // Assuming Payments is the DbSet for Payment entities
                     await _context.SaveChangesAsync(); // Save changes to the database
                 }
                 return RedirectToAction("Index", "Home"); // Redirect to an index page or similar
@@ -136,7 +137,7 @@ namespace E_LearningWebApp.Controllers
                 // Handle exceptions appropriately, logging or displaying an error message
                 return StatusCode(500, $"Internal server error: {ex}");
             }
-        }
+        }*/
         public IActionResult success()
         {
             return View();

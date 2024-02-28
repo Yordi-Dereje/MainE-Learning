@@ -2379,3 +2379,4 @@ C:\Users\User\Desktop\Feb23\MainE-Learning\E-LearningWebApp\obj\Debug\net6.0\ref
 C:\Users\User\Desktop\Feb23\MainE-Learning\E-LearningWebApp\obj\Debug\net6.0\E-LearningWebApp.pdb
 C:\Users\User\Desktop\Feb23\MainE-Learning\E-LearningWebApp\obj\Debug\net6.0\E-LearningWebApp.genruntimeconfig.cache
 C:\Users\User\Desktop\Feb23\MainE-Learning\E-LearningWebApp\obj\Debug\net6.0\ref\E-LearningWebApp.dll
+C:\Users\Hp\Desktop\MainElearningAppSubmit\MainE-Learning\E-LearningWebApp\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.Google.dll

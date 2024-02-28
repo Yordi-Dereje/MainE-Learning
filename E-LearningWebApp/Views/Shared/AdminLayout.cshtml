@@ -99,8 +99,10 @@
     <header>
         <h2>Learn Today Lead Tomorrow</h2>
         <div class="prof">
-            <a class="a-links" asp-controller="User" asp-action="Profile"><i class="fas fa-user"></i> @UserManager.GetUserName(User) </a>
-        </div>
+            <a class="a-links" asp-controller="User" asp-action="Profile" asp-route-userid="@UserManager.GetUserId(User)"><i class="fas fa-user"></i> @UserManager.GetUserName(User) </a>
+
+@*             <a class="a-links" asp-controller="User" asp-action="Profile"><i class="fas fa-user"></i> @UserManager.GetUserName(User) </a>
+ *@        </div>
     </header>
 
     <main>

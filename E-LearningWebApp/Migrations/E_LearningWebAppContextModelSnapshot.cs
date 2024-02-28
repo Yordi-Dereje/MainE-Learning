@@ -182,6 +182,9 @@ namespace E_LearningWebApp.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("Price")
+                        .HasColumnType("int");
+
                     b.HasKey("PaymentId");
 
                     b.HasIndex("CourseId")

@@ -11,6 +11,7 @@ using E_LearningWebApp.Areas.Identity.Data;
 using Microsoft.AspNetCore.Authentication.Cookies;
 /*using Microsoft.AspNetCore.Authentication.Google;*/
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Google;
 
 namespace E_LearningWebApp.Controllers
 {
@@ -33,15 +34,15 @@ namespace E_LearningWebApp.Controllers
                 return View();
             }
     */
-        /*public async Task Login()
+       /* public async Task Login()
         {
             await HttpContext.ChallengeAsync(GoogleDefaults.AuthenticationScheme,
                 new AuthenticationProperties
                 {
                     RedirectUri = Url.Action("GoogleResponse")
                 });
-        }*/
-        /*public async Task<IActionResult> GoogleResponse()
+        }
+        public async Task<IActionResult> GoogleResponse()
         {
             var result = await HttpContext.AuthenticateAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             var claims = result.Principal.Identities.FirstOrDefault().Claims.Select(claim => new
@@ -53,7 +54,7 @@ namespace E_LearningWebApp.Controllers
             });
             return Json(claims);
         }*/
-            public ActionResult verify(AdminController add, E_LearningWebAppUser user)
+        public ActionResult verify(AdminController add, E_LearningWebAppUser user)
         {
             return View();
         }

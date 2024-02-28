@@ -15,9 +15,25 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using E_LearningWebApp.Models;
 using Microsoft.AspNetCore.Identity.UI.Services;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.Google;
 
 var builder = WebApplication.CreateBuilder(args);
 
+/*
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = GoogleDefaults.AuthenticationScheme;
+})
+.AddCookie()
+    .AddGoogle(GoogleDefaults.AuthenticationScheme, options =>
+    {
+        options.ClientId = builder.Configuration.GetSection("GoogleKeys:ClientId").Value;
+        options.ClientSecret = builder.Configuration.GetSection("GoogleKeys:ClientSecret").Value;
+    });
+
+*/
 
 builder.Services.AddControllersWithViews();
 /*builder.Services.AddScoped<E_LearningWebAppContext, E_LearningWebAppContext>();

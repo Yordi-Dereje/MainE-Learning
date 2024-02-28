@@ -70,7 +70,8 @@
         <img src="~/content/logincss/logo.jpg" alt="">
         <nav>
             <a class="a-links" asp-controller="User" asp-action="Index"><i class="fas fa-house"></i> Home</a>
-            <a class="a-links" asp-controller="Course" asp-action="CourseDisplayUser"><i class="fas fa-book"></i> Courses</a>
+            <a class="a-links" asp-controller="Course" asp-action="CourseDisplayUser" asp-route-userid="@UserManager.GetUserId(User)"><i class="fas fa-book"></i> Donations</a>
+            <a class="a-links" asp-controller="Course" asp-action="NoCourse"><i class="fas fa-book"></i> My Courses</a>
             <a class="a-links" asp-area="Identity" asp-controller="Course" asp-action="ConceptsUser"><i class="fas fa-lightbulb"></i> Concepts</a>
             <a class="a-links" asp-controller="Home" asp-action="Index"><i class="fas fa-sign-out-alt"></i> Logout</a>
         </nav>
@@ -78,8 +79,10 @@
     </aside>
 
     <header>
-        
+        <h2>Learn Today Lead Tomorrow</h2>
         <div class="prof">
+            
+
             <a class="a-links" asp-controller="User" asp-action="Profile" asp-route-userid="@UserManager.GetUserId(User)"><i class="fas fa-user"></i> @UserManager.GetUserName(User) </a>
         </div>
     </header>

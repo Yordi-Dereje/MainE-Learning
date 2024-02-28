@@ -75,7 +75,10 @@
                      
                         </div>
                         @* <a class="get-started-btn" asp-controller="Admin" asp-action="Index">Admin</a> *@
-                        @{
+
+                        
+
+                  @*       @{
                             <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
                                 <div>
                                     <p>
@@ -85,12 +88,19 @@
                                         }
                                     </p>
                                 </div>
-                                <a class="btn btn-outline-dark" role="button" style="text-transform:none">
-                                    <img width="15px" style="margin-bottom:3px; margin-right:5px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
-                                    Login with Google
-                                </a>
+
+                                <button type="submit" class="btn btn-outline-dark" style="text-transform:none">
+                                  
+                                    Login with Google
+                                </button>
+                                
                             </form>
                         }
+                        <button type="submit" asp-controller="Account" asp-action="Login" class="btn btn-outline-dark" style="text-transform:none">
+
+                            Login with Google
+                        </button> *@
+
 
                         <!-- Already Registered -->
                         <div class="text-center w-100">
@@ -100,6 +110,26 @@
                 </form>
             </div>
         </div>
+       @*  <div class="col-md-6 col-md-offset-2">
+            <section>
+                <h3>Use another service to register.</h3>
+                <hr />
+                @{
+
+                    <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
+                        <div>
+                            <p>
+                                @foreach (var provider in Model.ExternalLogins!)
+                                {
+                                    <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
+                                }
+                            </p>
+                        </div>
+                    </form>
+
+                }
+            </section>
+        </div> *@
     </div>
 </body>
 </html>
